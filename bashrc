@@ -26,13 +26,10 @@ shopt -s checkwinsize
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
-  fi
 fi
+
 
 # Colores para GCC
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -43,37 +40,24 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # Alias
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
 fi
 
 # Prompt
 export PROMPT="FULL"
-. ~/.config/bash/prompt.sh
-
-# Xterm poner tirulo
-put_title()
-{
-  __el_LAST_EXECUTED_COMMAND="${BASH_COMMAND}"
-  printf "\033]0;%s\007" "$1"
-}
-update_tab_command()
-{
-    # catch blacklisted commands and nested escapes
-    case "$BASH_COMMAND" in 
-        *\033]0*|update_*|echo*|printf*|clear*|cd*)
-        __el_LAST_EXECUTED_COMMAND=""
-            ;;
-        *)
-        put_title "${BASH_COMMAND}"
-        ;;
-    esac
-}
-preexec_functions+=(update_tab_command)
+. $HOME/.config/prompt/prompt.sh
 
 # Exports
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/Scripts:$PATH"
+export PATH="$HOME/.config/prompt/scripts:$PATH"
 export EDITOR="/usr/bin/vim"
+
+source "$HOME/.cargo/env"
+
+# nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 
