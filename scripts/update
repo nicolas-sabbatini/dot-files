@@ -4,21 +4,21 @@ set -e
 function npm_update {
 	for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f3)
 	do
-    		echo "Actualizando: $package"
+    		echo "Updating: $package"
 		npm -g install "$package"
 	done
 }
 
-echo 'Actualizando el sistema'
+echo 'Updating system 💻'
 sudo apt update
 sudo apt upgrade -y
-echo 'Actualizando npm'
+echo 'Updating npm '
 npm_update
-echo 'Actualizando snap'
+echo 'Updating snap 📸'
 sudo snap refresh
-echo 'Actualizando flatpak'
+echo 'Updating flatpak'
 flatpak update
-echo 'Actualizando rust ⚙'
+echo 'Updating rust 🦀'
 rustup update
-echo 'Actualizando cargo'
+echo 'Updating cargo 📦'
 cargo install-update -a
