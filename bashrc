@@ -48,7 +48,7 @@ export PROMPT="FULL"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/prompt/scripts:$PATH"
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/bin/nvim"
 
 source "$HOME/.cargo/env"
 
