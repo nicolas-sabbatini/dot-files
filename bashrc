@@ -42,7 +42,7 @@ fi
 
 # Load prompt
 export PROMPT="FULL"
-. $HOME/.config/prompt/prompt.sh
+. $HOME/.config/dot-files/prompt.sh
 
 # Exports
 export PATH="$HOME/.local/bin:$PATH"
