@@ -14,11 +14,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# The fuck eval
-eval "$(thefuck --alias)"
-
 # Misc
-alias server='http-server .'
+alias server='simple-http-server --nocache --upload .'
 alias vim='nvim'
 
 # Acer Predator G3-572
@@ -26,3 +23,4 @@ alias fan_full='mono /opt/nbfc/nbfc.exe set -f 0 -s 100; mono /opt/nbfc/nbfc.exe
 alias fan_auto='mono /opt/nbfc/nbfc.exe set -f 0 -a; mono /opt/nbfc/nbfc.exe set -f 1 -a'
 alias fan_status='mono /opt/nbfc/nbfc.exe status'
 
+alias go-to-hard-drive='cd /run/media/nicolas/HDD'

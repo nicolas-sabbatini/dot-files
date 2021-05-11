@@ -10,12 +10,11 @@ function npm_update {
 }
 
 echo 'Updating system 💻'
-sudo apt update
-sudo apt upgrade -y
+sudo dnf update -y
 echo 'Updating npm '
 npm_update
 echo 'Updating snap 📸'
-sudo snap refresh
+#sudo snap refresh
 echo 'Updating flatpak'
 flatpak update
 echo 'Updating rust 🦀'

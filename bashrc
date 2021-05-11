@@ -47,7 +47,7 @@ export PROMPT="FULL"
 # Exports
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.config/prompt/scripts:$PATH"
+export PATH="$HOME/.config/dot-files/scripts:$PATH"
 export EDITOR="/usr/bin/nvim"
 
 source "$HOME/.cargo/env"
@@ -55,3 +55,6 @@ source "$HOME/.cargo/env"
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+. /usr/share/bash-completion/bash_completion
+

@@ -32,7 +32,7 @@ build_prompt() {
   fi
 
   # Host name
-  if [ "$HOSTNAME" != "pop-os" ]; then
+  if [ "$HOSTNAME" != "fedora" ]; then
     host=" 🌐 ${light_green}\h"
   fi
 
