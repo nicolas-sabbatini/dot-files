@@ -1,5 +1,0 @@
-{
-    "_comment" : ".config/VSCodium/User/settings.json;  dnf install fira-code-fonts",
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-}
