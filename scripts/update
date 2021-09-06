@@ -10,7 +10,7 @@ function npm_update {
 }
 
 echo 'Updating system 💻'
-sudo dnf update -y
+sudo apt update && sudo apt upgrade -y
 echo 'Updating npm '
 npm_update
 echo 'Updating snap 📸'

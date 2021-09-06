@@ -17,6 +17,7 @@ alias l='ls -CFlh'
 # Misc
 alias server='simple-http-server --nocache --upload .'
 alias vim='nvim'
+alias cat='bat'
 
 # Acer Predator G3-572
 alias fan_full='mono /opt/nbfc/nbfc.exe set -f 0 -s 100; mono /opt/nbfc/nbfc.exe set -f 1 -s 100' 
