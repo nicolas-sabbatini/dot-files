@@ -49,4 +49,6 @@ default_height = 3
     "rust",
     "javascript"
   ]
+  [layers.override_cmd]
+    rust = ["rls"]
 

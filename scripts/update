@@ -1,18 +1,10 @@
 #!/bin/bash
 set -e
 
-function npm_update {
-	for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f3)
-	do
-    		echo "Updating: $package"
-		npm -g install "$package"
-	done
-}
-
 echo 'Updating system 💻'
 sudo apt update && sudo apt upgrade -y
 echo 'Updating npm '
-npm_update
+npm update -g
 echo 'Updating snap 📸'
 #sudo snap refresh
 echo 'Updating flatpak'

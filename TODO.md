@@ -1,6 +1,10 @@
 change bashrc and bash_alias
 
 install nvm
+
+install tldr
+	npm install -g tldr
+
 insatll rust
   rustup target add wasm32-unknown-unknown
 
