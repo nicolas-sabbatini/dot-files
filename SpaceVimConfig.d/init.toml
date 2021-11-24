@@ -1,5 +1,5 @@
 [options]
-    # Colorsheme and colors
+    # Color scheme and colors
     colorscheme = "nord"
     colorscheme_bg = "dark" 
     enable_guicolors = true
@@ -19,37 +19,39 @@
 
     relativenumber = false
 
-# Enables color colorscheme
+    bootstrap_after = 'config#after'
+
+# Enables color color scheme
 [[layers]]
   name = "colorscheme"
 
-# Enable autocomplete layer
+# Enable auto complete layer
 [[layers]]
 name = 'autocomplete'
 auto_completion_return_key_behavior = "complete"
 auto_completion_tab_key_behavior = "cycle"
 
-# Shell suport
+# Shell support
 [[layers]]
 name = 'shell'
 default_position = 'top'
 default_height = 3
 
-# Git suport
+# Git support
 [[layers]]
     name = 'git'
 [[layers]]
     name = 'VersionControl'
 
-# Typescript lenguage server
+# Typescript language server
 [[layers]]
   name = "lang#typescript"
 
-# Rust lenguage server
+# Rust language server
 [[layers]]
   name = "lang#rust"
 
-# JS lenguage server
+# JS language server
 [[layers]]
   name = "lang#javascript"
   auto_fix = true
@@ -59,7 +61,7 @@ default_height = 3
 [[layers]]
   name = "lang#toml"
 
-# Lenguage protocol server
+# Language protocol server
 [[layers]]
   name = "lsp"
   filetypes = [
@@ -68,4 +70,10 @@ default_height = 3
   ]
   [layers.override_cmd]
     rust = ["rls"]
+
+[[layers]]
+  name = "format"
+
+[[layers]]
+  name = "checkers"
 
