@@ -1,21 +1,36 @@
+install nvim
+install xclip
+
 change bashrc and bash_alias
+	rm ~/.bashrc
+	ln -s ~/.config/dot-files/bashrc ~/.bashrc
+	ln -s ~/.config/dot-files/bash_aliases ~/.bash_aliases
 
-install nvm
+install nvm	
 
+install node
 install tldr
 	npm install -g tldr
 
-insatll rust
-  rustup target add wasm32-unknown-unknown
+insatll rusit
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  	rustup target add wasm32-unknown-unknown
+	sudo apt-get install libssl-dev
 
-install cargo-libs: 
-  cargo install cargo-update simple-http-server cargo-watch bat cargo-generate wasm-bindgen-cli
+install cargo-libs:
+  	cargo install cargo-update simple-http-server cargo-watch bat cargo-generate wasm-bindgen-cli
 
-install wasam-pack
+install wasm-pack
+	 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 
-install xclip
-install nvim
-install space vim
-install node
 
+install spacevim
+	curl -sLf https://spacevim.org/install.sh | bash
+	ln -s ~/.config/dot-files/SpaceVimConfig.d/ .SpaceVim.d
+
+Install fonts
+	https://www.nerdfonts.com/font-downloads
+	mkdir ~/.local/share/fonts
+	mv {{Font}} ~/.local/share/fonts/
+	fc-cache -f -v
 

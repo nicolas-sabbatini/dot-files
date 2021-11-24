@@ -15,6 +15,11 @@
     windows_index_type = 1
     vimcompatible = false
 
+    project_rooter_outermost = false
+
+    relativenumber = false
+
+# Enables color colorscheme
 [[layers]]
   name = "colorscheme"
 
@@ -24,25 +29,37 @@ name = 'autocomplete'
 auto_completion_return_key_behavior = "complete"
 auto_completion_tab_key_behavior = "cycle"
 
+# Shell suport
 [[layers]]
 name = 'shell'
 default_position = 'top'
 default_height = 3
 
+# Git suport
+[[layers]]
+    name = 'git'
+[[layers]]
+    name = 'VersionControl'
+
+# Typescript lenguage server
 [[layers]]
   name = "lang#typescript"
 
+# Rust lenguage server
 [[layers]]
   name = "lang#rust"
 
+# JS lenguage server
 [[layers]]
   name = "lang#javascript"
   auto_fix = true
   format_on_save = true
 
+# Tom layer
 [[layers]]
   name = "lang#toml"
 
+# Lenguage protocol server
 [[layers]]
   name = "lsp"
   filetypes = [
