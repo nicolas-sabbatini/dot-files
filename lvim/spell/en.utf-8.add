@@ -1,0 +1,16 @@
+config
+LunarVim
+PackerInstall
+PackerCompile
+lunarvim
+colorschemes
+javascript
+json
+lua
+css
+yaml
+haskell
+wasm32
+WebGL2
+WASM
+wasm

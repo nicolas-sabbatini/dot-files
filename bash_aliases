@@ -16,7 +16,7 @@ alias l='ls -CFlh'
 
 # Misc
 alias server='simple-http-server --nocache --upload .'
-alias vim='nvim'
+alias vim='lvim'
 alias cat='bat'
 
 # Acer Predator G3-572

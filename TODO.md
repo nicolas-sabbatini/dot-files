@@ -24,9 +24,9 @@ install wasm-pack
 	 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 
 
-install spacevim
-	curl -sLf https://spacevim.org/install.sh | bash
-	ln -s ~/.config/dot-files/SpaceVimConfig.d/ .SpaceVim.d
+install lunarvim
+  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+	ln -s ~/.config/dot-files/lvim/ ~/.config/lvim/
 
 Install fonts
 	https://www.nerdfonts.com/font-downloads
