@@ -8,7 +8,7 @@ npm update -g
 echo 'Updating snap 📸'
 #sudo snap refresh
 echo 'Updating flatpak'
-flatpak update
+flatpak update -y
 echo 'Updating rust 🦀'
 rustup update
 echo 'Updating cargo 📦'

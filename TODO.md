@@ -12,9 +12,10 @@ install node
 install tldr
 	npm install -g tldr
 
-insatll rusit
+insatll rust
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   	rustup target add wasm32-unknown-unknown
+	rustup component add rls rust-analysis rust-src
 	sudo apt-get install libssl-dev
 
 install cargo-libs:
