@@ -33,6 +33,22 @@ lvim.builtin.nvimtree.show_icons.git = 0
 -- Additional plugins
 lvim.plugins = {
   {"lunarvim/colorschemes"},
+  -- Solidity dev
+  { "tomlion/vim-solidity" },
+  {
+    "tzachar/cmp-tabnine",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+      }
+    end,
+
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  },
 }
 
 -- Treesitter Config
