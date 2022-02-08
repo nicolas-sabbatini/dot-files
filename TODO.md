@@ -9,6 +9,7 @@ change bashrc and bash_alias
 install nvm	
 
 install node
+
 install tldr
 	npm install -g tldr
 
@@ -19,19 +20,18 @@ insatll rust
 	sudo apt-get install libssl-dev
 
 install cargo-libs:
-  	cargo install cargo-update simple-http-server cargo-watch bat cargo-generate wasm-bindgen-cli
+  	cargo install --locked cargo-update simple-http-server cargo-watch bat cargo-generate wasm-bindgen-cli starship
 
 install wasm-pack
-	 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
+	curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 
 
 install lunarvim
-  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-	ln -s ~/.config/dot-files/lvim/ ~/.config/lvim/
+  	bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+  	ln -s ~/.config/dot-files/lvim ~/.config/lvim
 
 Install fonts
 	https://www.nerdfonts.com/font-downloads
 	mkdir ~/.local/share/fonts
 	mv {{Font}} ~/.local/share/fonts/
 	fc-cache -f -v
-

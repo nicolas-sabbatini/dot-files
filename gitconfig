@@ -1,6 +1,7 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-name = Nico
-email = nik.code.things@gmail.com
-
+  name = Nico
+  email = nik.code.things@gmail.com
+[alias]
+	plog = log --graph --oneline --decorate --date=relative --all
+	unstage = reset HEAD --
+	last = log -1 HEAD
