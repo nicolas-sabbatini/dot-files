@@ -27,8 +27,6 @@ alias fan_status='mono /opt/nbfc/nbfc.exe status'
 alias go-to-hard-drive='cd /run/media/nicolas/HDD'
 
 alias play-midi='timidity'
-alias love='~/Applications/love-11.3-x86_64.AppImage'
-alias manage-docker='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 
 alias revisar-vulkan='/usr/share/vulkan/icd.d'
 

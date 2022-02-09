@@ -8,12 +8,14 @@ ln -s ~/.config/dot-files/bashrc ~/.bashrc
 ln -s ~/.config/dot-files/bash_aliases ~/.bash_aliases
 ```
 
+
 - install nvm
 - install node
 - install tldr
 ``` bash
 npm install -g tldr
 ```
+
 
 - install rust
 ``` bash
@@ -23,6 +25,7 @@ rustup component add rls rust-analysis rust-src
 # on pop os
 sudo apt-get install libssl-dev
 ```
+
 
 - install cargo-libs:
 ``` bash
@@ -35,16 +38,19 @@ cargo install --locked cargo-update\
   starship
 ```
 
+
 - install wasm-pack
 ``` bash
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 ```
+
 
 - install lunarvim
 ``` bash
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ln -s ~/.config/dot-files/lvim ~/.config/lvim
 ```
+
 
 - install fonts
 ``` bash
@@ -54,10 +60,24 @@ ln -s ~/.config/dot-files/lvim ~/.config/lvim
 # fc-cache -f -v
 ```
 
-# Optional:
-- install alacritty
+
+- link starship config
+``` bash
+ln -s ~/.config/dot-files/starship.toml ~/.config/starship.toml
+```
+
+
+# Optional (Quality of life):
+- install alacritty (The config is bare bones)
 ``` bash
 cargo install alacritty
 ln -s ~/.config/dot-files/alacritty ~/.config/alacritty
+```
+
+
+- install cheat.sh (you don't want to use the "cheat" script)
+``` bash
+curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
+sudo chmod +x ~/.local/bin/cht.sh
 ```
 
