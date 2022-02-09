@@ -21,6 +21,7 @@ day
 src
 org
 lang
+<<<<<<< Updated upstream
 #vim
 nvim/!
 nvim
@@ -30,3 +31,6 @@ nvm
 tldr
 alacritty
 ln
+=======
+stdout
+>>>>>>> Stashed changes
