@@ -5,7 +5,8 @@ echo 'Updating system 💻'
 sudo apt update && sudo apt upgrade -y
 echo 'Updating npm '
 npm update -g
-echo 'Updating flatpak' flatpak update -y
+echo 'Updating flatpak'
+flatpak update -y
 echo 'Updating rust 🦀'
 rustup update
 echo 'Updating cargo 📦'

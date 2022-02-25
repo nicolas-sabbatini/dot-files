@@ -35,6 +35,9 @@ cargo install --locked cargo-update\
   bat\
   cargo-generate\
   wasm-bindgen-cli\
+  license-generator\
+  fd-find\
+  ripgrep\
   starship
 ```
 
