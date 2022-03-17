@@ -1,5 +1,9 @@
+# Prompt
 add_newline = false
 
+[character]
+success_symbol = ' 🔥️'
+error_symbol = ' 🚩'
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
