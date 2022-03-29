@@ -1,5 +1,5 @@
 [user]
-  name = Nico
+  name = Nicolas Cesar Sabbatini Vrech
   email = nik.code.things@gmail.com
 [alias]
 	plog = log --graph --oneline --decorate --date=relative --all
