@@ -85,3 +85,7 @@ curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
 sudo chmod +x ~/.local/bin/cht.sh
 ```
 
+- nvim nik instad of `lunarvim`
+```
+stow -t $HOME nvim
+```
