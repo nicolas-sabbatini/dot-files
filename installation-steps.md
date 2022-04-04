@@ -39,7 +39,8 @@ cargo install --locked cargo-update\
   fd-find\
   ripgrep\
   starship\
-  cargo-edit
+  cargo-edit\
+  alacritty\
 ```
 
 
