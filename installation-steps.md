@@ -38,7 +38,8 @@ cargo install --locked cargo-update\
   license-generator\
   fd-find\
   ripgrep\
-  starship
+  starship\
+  cargo-edit
 ```
 
 
