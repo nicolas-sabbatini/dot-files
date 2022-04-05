@@ -43,12 +43,29 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
+  -- Core
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
+  -- Colorscheme
   use 'folke/tokyonight.nvim'
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  -- Cmp plugins
+  use "hrsh7th/nvim-cmp"          -- The completion plugin
+  use "hrsh7th/cmp-buffer"        -- Buffer completions
+  use "hrsh7th/cmp-path"          -- Path completions
+  use "hrsh7th/cmp-cmdline"       -- Cmdline completions
+  use "saadparwaiz1/cmp_luasnip"  -- Snippet completions
+  use {                           -- crates.io completion
+    'saecki/crates.nvim',
+    event = { "BufRead Cargo.toml" },
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    config = function()
+        require('crates').setup()
+    end,
+  }
+  -- Snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
