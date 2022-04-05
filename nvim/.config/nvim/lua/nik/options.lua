@@ -45,6 +45,7 @@ vim.opt.splitbelow = true                       -- Force all horizontal splits t
 vim.opt.splitright = true                       -- Force all vertical splits to go to the right of current window
 vim.opt.swapfile = false                        -- Don't create a swapfile
 vim.opt.tabstop = 2                             -- Insert 2 spaces for a tab
+vim.opt.termguicolors = true                    -- Colors!! 🎨
 vim.opt.timeoutlen = 2000                       -- Time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true                         -- Enable persistent undo
 vim.opt.updatetime = 300                        -- Faster completion
