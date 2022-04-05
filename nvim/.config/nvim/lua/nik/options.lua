@@ -2,7 +2,7 @@
 -- :help opt
 --
 vim.opt.backup = false                          -- Don't make a backup before overwriting a file
-vim.opt.clipboard = "unnamed"                   -- Allows neovim to access the system clipboard
+vim.opt.clipboard = "unnamedplus"                   -- Allows neovim to access the system clipboard
 vim.opt.cmdheight = 2                           -- Height of the cmd
 vim.opt.confirm = true                          -- Operations that would normally fail because of unsaved changes
                                                 -- to a buffer raise a dialog asking if you wish to save
