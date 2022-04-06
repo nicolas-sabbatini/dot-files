@@ -48,7 +48,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
   -- Colorscheme
-  use 'folke/tokyonight.nvim'
+  use "folke/tokyonight.nvim"
   -- Cmp plugins
   use "hrsh7th/nvim-cmp"          -- The completion plugin
   use "hrsh7th/cmp-buffer"        -- Buffer completions
@@ -56,12 +56,16 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"       -- Cmdline completions
   use "saadparwaiz1/cmp_luasnip"  -- Snippet completions
   use {                           -- crates.io completion
-    'saecki/crates.nvim',
+    "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
-    requires = { { 'nvim-lua/plenary.nvim' } },
     config = function()
-        require('crates').setup()
+        require("crates").setup()
     end,
+  }
+  use "hrsh7th/cmp-emoji"
+  use {
+      "David-Kunz/cmp-npm",
+      event = { "BufRead package.json" },
   }
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine

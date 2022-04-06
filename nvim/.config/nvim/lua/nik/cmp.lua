@@ -115,7 +115,9 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
-        crates = "[Creates]"
+        crates = "[Creates]",
+        emoji = "[😬]",
+        npm = "[npm]",
       })[entry.source.name]
       return vim_item
     end,
@@ -123,9 +125,11 @@ cmp.setup {
   -- Sources for the completion
   sources = {
     { name = "crates" },
+    { name = "npm", keyword_length = 4 },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = "emoji" },
   },
   -- Confirm options
   confirm_opts = {
@@ -142,3 +146,21 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+-- Complition on search
+cmp.setup.cmdline("/", {
+    sources = {
+      { name = "buffer" }
+    }
+  }
+)
+
+-- Complition on comand mode
+cmp.setup.cmdline(":", {
+    sources = {
+      { name = "path" },
+      { name = "cmdline" },
+    }
+  }
+)
+
