@@ -60,8 +60,8 @@ cmp.setup {
     -- ["<C-k>"] = cmp.mapping.select_prev_item(),
 		-- ["<C-j>"] = cmp.mapping.select_next_item(),
     -- Move inside of the tooltip CTRL + [b|f]
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     -- Open all snippet CTRL + SPACE
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
@@ -118,12 +118,16 @@ cmp.setup {
         crates = "[Creates]",
         emoji = "[😬]",
         npm = "[npm]",
+        nvim_lua = "[LSP]",
+        nvim_lsp = "[LSP]",
       })[entry.source.name]
       return vim_item
     end,
   },
   -- Sources for the completion
   sources = {
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "crates" },
     { name = "npm", keyword_length = 4 },
     { name = "luasnip" },

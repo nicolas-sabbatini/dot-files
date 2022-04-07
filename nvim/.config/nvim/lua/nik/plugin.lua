@@ -67,9 +67,16 @@ return packer.startup(function(use)
       "David-Kunz/cmp-npm",
       event = { "BufRead package.json" },
   }
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- Lsp
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  -- Bootstrap to paker if is not instaled
+  -- has to be last
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
