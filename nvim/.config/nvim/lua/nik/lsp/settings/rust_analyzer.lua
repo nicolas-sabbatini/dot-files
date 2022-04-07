@@ -1,5 +1,3 @@
-print("Load cargo")
-
 return {
   settings = {
     ["rust-analyzer"] = {
