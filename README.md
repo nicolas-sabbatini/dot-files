@@ -9,7 +9,9 @@ My prompt and a few scripts that I use every day.
 - [] nvim config. ⚠️
 
 😄 => Done!  
+
 ⚠️ => Half baked.  
+
 🚫 => No even started. 😦  
 
 ## How to install
