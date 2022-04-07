@@ -8,9 +8,9 @@ My prompt and a few scripts that I use every day.
 - [] a good readme. 🚫
 - [] nvim config. ⚠️
 
-😄 => Done!
-⚠️ => Half baked.
-🚫 => No even started. 😦
+😄 => Done!  
+⚠️ => Half baked.  
+🚫 => No even started. 😦  
 
 ## How to install
 Check out the `installation-steps.md` file.
