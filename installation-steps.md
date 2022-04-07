@@ -1,34 +1,51 @@
 # Main:
-- install nvim
+
+## MacOS Only
+- Install brew
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+## Deps:
+- install [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 - install xclip
+- install stow
+- install [nvm](https://github.com/nvm-sh/nvm#install--update-script)
+- Install your favorite [nerdfont](https://www.nerdfonts.com/font-downloads)
+```bash
+# Linux add to fonts
+unzip {{Font name}}
+mkdir ~/.local/share/fonts
+mv {{Font name}}* ~/.local/share/fonts/
+fc-cache -f -v
+```
+
+## Steps
 - change bashrc and bash_alias:
-``` bash
+```bash
 rm ~/.bashrc
 ln -s ~/.config/dot-files/bashrc ~/.bashrc
 ln -s ~/.config/dot-files/bash_aliases ~/.bash_aliases
+source ~/.bashrc
 ```
-
-
-- install nvm
 - install node
+```bash
+nvm install --lts
+```
 - install tldr
-``` bash
+```bash
 npm install -g tldr
 ```
-
-
 - install rust
-``` bash
+```bash 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src
 # on pop os
 sudo apt-get install libssl-dev
 ```
-
-
 - install cargo-libs:
-``` bash
+```bash
 cargo install --locked cargo-update\
   simple-http-server\
   cargo-watch\
@@ -40,53 +57,40 @@ cargo install --locked cargo-update\
   ripgrep\
   starship\
   cargo-edit\
-  alacritty\
 ```
-
-
 - install wasm-pack
-``` bash
+```bash
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 ```
-
-
 - install lunarvim
-``` bash
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+```bash
+ <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ln -s ~/.config/dot-files/lvim ~/.config/lvim
 ```
-
-
-- install fonts
-``` bash
-# https://www.nerdfonts.com/font-downloads
-# mkdir ~/.local/share/fonts
-# mv {{Font}} ~/.local/share/fonts/
-# fc-cache -f -v
-```
-
-
 - link starship config
-``` bash
+```bash
 ln -s ~/.config/dot-files/starship.toml ~/.config/starship.toml
 ```
-
-
-# Optional (Quality of life):
-- install alacritty (The config is bare bones)
-``` bash
-cargo install alacritty
-ln -s ~/.config/dot-files/alacritty ~/.config/alacritty
+- install kitty
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+stow -t $HOME kitty
 ```
 
-
+# Optional (Quality of life):
+- install alacritty (Deprecate)
+```bash
+cargo install alacritty
+stow -t $HOME alacritty
+```
 - install cheat.sh (you don't want to use the "cheat" script)
-``` bash
+```bash
 curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
 sudo chmod +x ~/.local/bin/cht.sh
 ```
-
-- nvim nik instad of `lunarvim`
-```
+- nvim nik instad of `lunarvim` (Work in progres)
+```bash
 stow -t $HOME nvim
 ```
+
