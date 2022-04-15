@@ -141,7 +141,8 @@ cmp.setup {
     select = false,
   },
   -- Show documentation
-  documentation = {
+  windows = {
+    documentation = true,
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   -- Disable experimenetal
