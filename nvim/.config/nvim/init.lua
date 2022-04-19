@@ -5,4 +5,5 @@ require("nik.colorscheme")
 require("nik.cmp")
 require("nik.lsp")
 require("nik.treesitter")
+require("nik.gitsigns")
 

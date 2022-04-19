@@ -48,7 +48,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
   -- Colorscheme
-  use "folke/tokyonight.nvim"
+  use "lunarvim/darkplus.nvim"
   -- Cmp plugins
   use "hrsh7th/nvim-cmp"          -- The completion plugin
   use "hrsh7th/cmp-buffer"        -- Buffer completions
@@ -81,6 +81,8 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "p00f/nvim-ts-rainbow"
+  -- git
+  use "lewis6991/gitsigns.nvim"
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then
