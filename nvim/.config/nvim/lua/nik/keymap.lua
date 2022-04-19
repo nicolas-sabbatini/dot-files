@@ -28,13 +28,14 @@ keymap("n", "<C-k>", "<C-w>k", options)
 keymap("n", "<C-l>", "<C-w>l", options)
 
 -- <Space + e> open explorer
-keymap("n", "<leader>e", ":Lex 30<cr>", options)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", options)
+keymap("n", "<leader>r", ":NvimTreeRefresh<cr>", options)
 
 -- Split resize
-keymap("n", "<C-Up>", ":resize -1<CR>", options)
-keymap("n", "<C-Down>", ":resize +1<CR>", options)
-keymap("n", "<C-Left>", ":vertical resize +1<CR>", options)
-keymap("n", "<C-Right>", ":vertical resize -1<CR>", options)
+keymap("n", "<A-Up>", ":resize -1<CR>", options)
+keymap("n", "<A-Down>", ":resize +1<CR>", options)
+keymap("n", "<A-Left>", ":vertical resize +1<CR>", options)
+keymap("n", "<A-Right>", ":vertical resize -1<CR>", options)
 
 -- Buffer navigation
 keymap("n", "<S-l>", ":bnext<CR>", options)

@@ -12,7 +12,7 @@ My prompt and a few scripts that I use every day.
   - [] starship
 - [] starship. ⚠️
 - [] kitty. ⚠️
-- [] a good readme. 🚫
+- [] a good readme. ⚠️
 - [] nvim config. ⚠️
 
 😄 => Done!  
@@ -28,7 +28,6 @@ Check out the `installation-steps.md` file.
 
 
 ## TODO Helpers:
-- https://github.com/Saecki/crates.nvim
 - https://github.com/tzachar/cmp-tabnine
 - https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=1
 

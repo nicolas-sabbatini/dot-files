@@ -62,15 +62,15 @@ return packer.startup(function(use)
         require("crates").setup()
     end,
   }
-  use "hrsh7th/cmp-emoji"
-  use {
+  use "hrsh7th/cmp-emoji"         -- Emoji completion
+  use {                           -- npm completion
       "David-Kunz/cmp-npm",
       event = { "BufRead package.json" },
   }
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   -- Snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use "L3MON4D3/LuaSnip"             --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   -- Lsp
   use "neovim/nvim-lspconfig"
@@ -83,6 +83,9 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   -- git
   use "lewis6991/gitsigns.nvim"
+  -- nvimtree
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then
