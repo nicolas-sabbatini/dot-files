@@ -63,7 +63,7 @@ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 ```
 - install lunarvim
 ```bash
- <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+<(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 ln -s ~/.config/dot-files/lvim ~/.config/lvim
 ```
 - link starship config

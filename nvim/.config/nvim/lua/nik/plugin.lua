@@ -16,7 +16,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
@@ -45,32 +44,32 @@ packer.init {
 return packer.startup(function(use)
   -- Core
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim"  -- Useful lua functions used by lots of plugins
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   -- Colorscheme
   use "lunarvim/darkplus.nvim"
   -- Cmp plugins
-  use "hrsh7th/nvim-cmp"          -- The completion plugin
-  use "hrsh7th/cmp-buffer"        -- Buffer completions
-  use "hrsh7th/cmp-path"          -- Path completions
-  use "hrsh7th/cmp-cmdline"       -- Cmdline completions
-  use "saadparwaiz1/cmp_luasnip"  -- Snippet completions
-  use {                           -- crates.io completion
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- Buffer completions
+  use "hrsh7th/cmp-path" -- Path completions
+  use "hrsh7th/cmp-cmdline" -- Cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- Snippet completions
+  use { -- crates.io completion
     "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
     config = function()
-        require("crates").setup()
+      require("crates").setup()
     end,
   }
-  use "hrsh7th/cmp-emoji"         -- Emoji completion
-  use {                           -- npm completion
-      "David-Kunz/cmp-npm",
-      event = { "BufRead package.json" },
+  use "hrsh7th/cmp-emoji" -- Emoji completion
+  use { -- npm completion
+    "David-Kunz/cmp-npm",
+    event = { "BufRead package.json" },
   }
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   -- Snippets
-  use "L3MON4D3/LuaSnip"             --snippet engine
+  use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   -- Lsp
   use "neovim/nvim-lspconfig"
@@ -92,4 +91,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-

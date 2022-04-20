@@ -32,9 +32,7 @@ lvim.builtin.nvimtree.show_icons.git = 0
 
 -- Additional plugins
 lvim.plugins = {
-  {"lunarvim/colorschemes"},
-  -- Solidity dev
-  { "tomlion/vim-solidity" },
+  { "lunarvim/colorschemes" },
   {
     "tzachar/cmp-tabnine",
     config = function()
