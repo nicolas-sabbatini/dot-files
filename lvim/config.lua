@@ -58,8 +58,10 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
+lvim.colorscheme = 'catppuccin'
+
 lvim.plugins = {
-  { "lunarvim/colorschemes" },
+  { "catppuccin/nvim" },
   {
     "tzachar/cmp-tabnine",
     config = function()
@@ -70,7 +72,6 @@ lvim.plugins = {
         sort = true,
       }
     end,
-
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   },
