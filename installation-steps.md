@@ -23,9 +23,8 @@ fc-cache -f -v
 ## Steps
 - change bashrc and bash_alias:
 ```bash
-rm ~/.bashrc
-ln -s ~/.config/dot-files/bashrc ~/.bashrc
-ln -s ~/.config/dot-files/bash_aliases ~/.bash_aliases
+rm ~/.bashrc ~/.bash_aliases
+stow -t $HOME bash
 source ~/.bashrc
 ```
 - install node
