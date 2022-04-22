@@ -8,6 +8,7 @@ vim.cmd [[
 
 lvim.plugins = {
   { "catppuccin/nvim" },
+  { "p00f/nvim-ts-rainbow" },
   {
     "tzachar/cmp-tabnine",
     config = function()
