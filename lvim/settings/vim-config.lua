@@ -31,7 +31,7 @@ vim.opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below 
 vim.opt.shiftround = true -- Round indent to multiple of 'shiftwidth'
 vim.opt.shiftwidth = 2 -- The number of spaces inserted for each indentation
 vim.opt.shortmess:append "c" -- ?? Recomende but i don't know why
-vim.opt.showbreak = "➡️ " -- String to put at the start of lines that have been wrapped
+vim.opt.showbreak = "➽➽ " -- String to put at the start of lines that have been wrapped
 vim.opt.showmode = false -- Don' show mode
 vim.opt.showtabline = 2 -- Always show tabs
 vim.opt.sidescrolloff = 4 -- Minimal number of screen columns to keep left and right the cursor
