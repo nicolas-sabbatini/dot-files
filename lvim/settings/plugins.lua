@@ -22,4 +22,5 @@ lvim.plugins = {
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
   },
+  { 'nvim-telescope/telescope-media-files.nvim' },
 }
