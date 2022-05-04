@@ -21,3 +21,5 @@ alias cat='bat'
 alias play-midi='timidity'
 
 alias icat='kitty +kitten icat --scale-up'
+
+alias grep='rg'

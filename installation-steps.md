@@ -56,6 +56,7 @@ cargo install --locked cargo-update\
   ripgrep\
   starship\
   cargo-edit\
+  ripgrep\
 ```
 - install wasm-pack
 ```bash
