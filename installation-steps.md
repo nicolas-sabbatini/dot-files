@@ -8,6 +8,12 @@
 
 ## Deps:
 - install [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+```bash
+# Install AppImage
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+mv nvim.appimage ~/.local/bin/nvim
+```
 - install xclip
 - install stow
 - install [nvm](https://github.com/nvm-sh/nvm#install--update-script)
