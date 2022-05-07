@@ -75,6 +75,7 @@ return packer.startup(function(use)
   -- Lsp
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
+  use "jose-elias-alvarez/null-ls.nvim"
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
