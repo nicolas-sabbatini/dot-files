@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-echo 'Updating system 💻'
+echo "Updating system 💻"
 brew upgrade
-echo 'Updating npm '
+echo "Updating npm "
 npm update -g
-echo 'Updating rust 🦀'
+echo "Updating rust 🦀"
 rustup update
-echo 'Updating cargo 📦'
+echo "Updating cargo 📦"
 cargo install-update -a

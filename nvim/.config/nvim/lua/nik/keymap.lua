@@ -41,6 +41,9 @@ keymap("n", "<A-Right>", ":vertical resize -1<CR>", options)
 keymap("n", "<S-l>", ":bnext<CR>", options)
 keymap("n", "<S-h>", ":bprevious<CR>", options)
 
+-- No Highlight
+keymap("n", "<leader>h", ":nohlsearch<CR>", options)
+
 -- Insert --
 
 -- Visual --

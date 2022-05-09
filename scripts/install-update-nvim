@@ -1,12 +1,12 @@
 #!/bin/sh
 
-echo "Cheking the last version of NVIM"
+echo "Cheeking the last version of NVIM"
 NVIM_LAST=$(curl --silent "https://api.github.com/repos/neovim/neovim/releases/latest" |
   grep '"tag_name":' |
   sed -E 's/.*"([^"]+)".*/\1/')
 echo "The last version is: $NVIM_LAST"
 NVIM_INSTALED=$(nvim --version | head -1 | sed -e "s|^[^0-9|v]*||" -e "s| .*||")
-echo "The curent installed version is: $NVIM_INSTALED"
+echo "The current installed version is: $NVIM_INSTALED"
 if [ "$NVIM_LAST" != "$NVIM_INSTALED" ]; then
   echo "The NVIM version are different! Installing the last version..."
   curl -LO --silent https://github.com/neovim/neovim/releases/latest/download/nvim.appimage

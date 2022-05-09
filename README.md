@@ -8,12 +8,19 @@ My prompt and a few scripts that I use every day.
   - [] lvim
   - [x] kitty
   - [x] alacritty
-  - [] bash
+  - [x] bash
   - [] starship
+  - [x] kitty
 - [] starship. ⚠️
 - [] kitty. ⚠️
 - [] a good readme. ⚠️
 - [] nvim config. ⚠️
+  - [] Which key.
+  - [] Telescope.
+  - [] Org mode.
+  - [] Neorg.
+  - [] Buffer line.
+  - [] Status Line.
 
 😄 => Done!  
 
@@ -30,4 +37,7 @@ Check out the `installation-steps.md` file.
 ## TODO Helpers:
 - https://github.com/tzachar/cmp-tabnine
 - https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=1
+- https://github.com/folke/which-key.nvim
+- https://github.com/nvim-telescope/telescope.nvim
+- 
 

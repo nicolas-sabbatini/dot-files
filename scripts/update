@@ -1,15 +1,17 @@
 #!/bin/bash
 set -e
 
-echo 'Updating system 💻'
+echo "Updating system 💻"
 sudo apt update && sudo apt upgrade -y
-echo 'Updating npm '
+echo "Update NVM"
+install-update-nvm
+echo "Updating NPM"
 npm update -g
-echo 'Updating flatpak'
+echo "Updating flatpak"
 flatpak update -y
-echo 'Updating rust 🦀'
+echo "Updating rust 🦀"
 rustup update
-echo 'Updating cargo 📦'
+echo "Updating cargo 📦"
 cargo install-update -a
-echo 'Update NVIM '
-update-nvim-appimage
+echo "Update NVIM "
+install-update-nvim
