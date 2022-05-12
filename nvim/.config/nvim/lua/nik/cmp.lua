@@ -58,7 +58,7 @@ cmp.setup {
   mapping = {
     -- Move using CTRL + [k|j] inside of the map
     -- ["<C-k>"] = cmp.mapping.select_prev_item(),
-		-- ["<C-j>"] = cmp.mapping.select_next_item(),
+    -- ["<C-j>"] = cmp.mapping.select_next_item(),
     -- Move inside of the tooltip CTRL + [b|f]
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -110,7 +110,7 @@ cmp.setup {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format('%s %s', vim_item.kind,  kind_icons[vim_item.kind])
+      vim_item.kind = string.format('%s %s', vim_item.kind, kind_icons[vim_item.kind])
       vim_item.menu = ({
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
@@ -120,6 +120,7 @@ cmp.setup {
         npm = "[npm]",
         nvim_lua = "[LSP]",
         nvim_lsp = "[LSP]",
+        cmp_tabnine = "[TAB9]",
       })[entry.source.name]
       return vim_item
     end,
@@ -134,6 +135,7 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
     { name = "emoji" },
+    { name = "cmp_tabnine" },
   },
   -- Confirm options
   confirm_opts = {
@@ -154,18 +156,17 @@ cmp.setup {
 
 -- Complition on search
 cmp.setup.cmdline("/", {
-    sources = {
-      { name = "buffer" }
-    }
+  sources = {
+    { name = "buffer" }
   }
+}
 )
 
 -- Complition on comand mode
 cmp.setup.cmdline(":", {
-    sources = {
-      { name = "path" },
-      { name = "cmdline" },
-    }
+  sources = {
+    { name = "path" },
+    { name = "cmdline" },
   }
+}
 )
-

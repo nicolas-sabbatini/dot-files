@@ -35,9 +35,7 @@ Check out the `installation-steps.md` file.
 
 
 ## TODO Helpers:
-- https://github.com/tzachar/cmp-tabnine
 - https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=1
 - https://github.com/folke/which-key.nvim
 - https://github.com/nvim-telescope/telescope.nvim
-- 
 
