@@ -67,8 +67,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lua"
   use {
     'tzachar/cmp-tabnine',
-    run='./install.sh'
-  } 
+    run = './install.sh'
+  }
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -87,6 +87,9 @@ return packer.startup(function(use)
   -- nvimtree
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
+  -- Bufferline and tabs
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then
