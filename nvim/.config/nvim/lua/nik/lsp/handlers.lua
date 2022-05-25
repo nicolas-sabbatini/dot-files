@@ -89,9 +89,9 @@ end
 -- On atach server
 Handlers.on_attach = function(client, bufnr)
   -- Disable formating in the tsserver
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-  end
+  -- if client.name == "tsserver" then
+  --   client.resolved_capabilities.document_formatting = false
+  -- end
   -- Setup keymaps
   lsp_keymaps(bufnr)
   -- Highlight key words

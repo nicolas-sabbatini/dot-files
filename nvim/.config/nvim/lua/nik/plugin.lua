@@ -63,10 +63,6 @@ return packer.startup(function(use)
     end,
   }
   use "hrsh7th/cmp-emoji" -- Emoji completion
-  use { -- npm completion
-    "David-Kunz/cmp-npm",
-    event = { "BufRead package.json" },
-  }
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   use {
