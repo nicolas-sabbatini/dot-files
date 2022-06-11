@@ -26,7 +26,17 @@ echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install python3-pip libgit2-dev libssh-dev libssl-dev pkg-config xclip stow
+sudo apt install python3-pip\
+  libgit2-dev\
+  libssh-dev\
+  libssl-dev\
+  pkg-config\
+  xclip\
+  stow\
+  libasound2-dev\
+  libpulse-dev\
+  libdbus-1-dev\
+  build-essential
 
 echo ""
 echo "##############"
