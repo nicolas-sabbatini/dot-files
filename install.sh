@@ -91,6 +91,12 @@ cargo install --locked cargo-update\
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 
 echo ""
+echo "#########################"
+echo "#🚀 Going to the moon 🚀#"
+echo "#########################"
+stow -t $HOME starship
+
+echo ""
 echo "############################"
 echo "#Instaling 🌕 LUNAR VIM 🌕.#"
 echo "############################"

@@ -1,5 +1,5 @@
 # Quick alias edit
-alias edit-alias-vim='vim ~/.bash_aliases'
+alias edit-alias='nvim ~/.bash_aliases'
 
 # Colors
 alias ls='ls --color=auto'
@@ -15,7 +15,7 @@ alias la='ls -A'
 alias l='ls -CFlh'
 
 # Misc
-alias server='simple-http-server --nocache --upload .'
+alias server='simple-http-server --nocache --upload'
 alias cat='bat'
 
 alias play-midi='timidity'
