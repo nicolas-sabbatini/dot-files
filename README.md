@@ -2,15 +2,7 @@
 My prompt and a few scripts that I use every day.
 
 ## TODO:
-- [] stow. ⚠️
-  - [] git
-  - [x] nvim
-  - [] lvim
-  - [x] kitty
-  - [x] alacritty
-  - [x] bash
-  - [] starship
-  - [x] kitty
+- [x] stow. 😄
 - [] starship. ⚠️
 - [] kitty. ⚠️
 - [] a good readme. ⚠️
@@ -22,13 +14,9 @@ My prompt and a few scripts that I use every day.
   - [] Buffer line.
   - [] Status Line.
 
-😄 => Done!  
-
-
-⚠️ => Half baked.  
-
-
-🚫 => No even started. 😦  
+😄 => Done!
+⚠️ => Half baked.
+🚫 => No even started. 😦
 
 ## How to install
 Check out the `installation-steps.md` file.
@@ -38,4 +26,3 @@ Check out the `installation-steps.md` file.
 - https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=1
 - https://github.com/folke/which-key.nvim
 - https://github.com/nvim-telescope/telescope.nvim
-

@@ -6,7 +6,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## Deps:
+## Dependencies:
 - install [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 ```bash
 # Install AppImage
@@ -71,7 +71,8 @@ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 - install lunarvim
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-ln -s ~/.config/dot-files/lvim ~/.config/lvim
+rm -r ~/.config/lvim
+stow -t $HOME lvim
 ```
 - link starship config
 ```bash

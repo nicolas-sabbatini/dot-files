@@ -1,9 +1,0 @@
-[user]
-  name = Nicolas Cesar Sabbatini Vrech
-  email = nik.code.things@gmail.com
-[alias]
-	plog = log --graph --oneline --decorate --date=relative --all
-	unadd = reset HEAD --
-  uncommit = reset HEAD~
-	last = log -1 HEAD
-  alias = config --get-regexp alias
