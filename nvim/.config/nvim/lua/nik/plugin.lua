@@ -65,10 +65,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-emoji" -- Emoji completion
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-  use {
-    'tzachar/cmp-tabnine',
-    run = './install.sh'
-  }
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use

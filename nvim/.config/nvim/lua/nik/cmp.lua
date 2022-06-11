@@ -120,7 +120,6 @@ cmp.setup {
         npm = "[npm]",
         nvim_lua = "[LSP]",
         nvim_lsp = "[LSP]",
-        cmp_tabnine = "[TAB9]",
       })[entry.source.name]
       return vim_item
     end,
@@ -135,7 +134,6 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
     { name = "emoji" },
-    { name = "cmp_tabnine" },
   },
   -- Confirm options
   confirm_opts = {
