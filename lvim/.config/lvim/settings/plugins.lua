@@ -9,18 +9,5 @@ vim.cmd [[
 lvim.plugins = {
   { "catppuccin/nvim" },
   { "p00f/nvim-ts-rainbow" },
-  {
-    "tzachar/cmp-tabnine",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 3,
-        sort = true,
-      }
-    end,
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  },
   { 'nvim-telescope/telescope-media-files.nvim' },
 }
