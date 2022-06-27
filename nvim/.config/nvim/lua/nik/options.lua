@@ -16,6 +16,8 @@ vim.opt.emoji = false -- 😁
 vim.opt.errorbells = false -- No sound
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.fileencoding = "utf-8" -- The encoding written to a file
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.hidden = true -- Hiden insted of closed
 vim.opt.history = 5000 -- : history size
 vim.opt.hlsearch = true -- Highlight all matches on previous search pattern
@@ -31,7 +33,7 @@ vim.opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below 
 vim.opt.shiftround = true -- Round indent to multiple of 'shiftwidth'
 vim.opt.shiftwidth = 2 -- The number of spaces inserted for each indentation
 vim.opt.shortmess:append "c" -- ?? Recomende but i don't know why
-vim.opt.showbreak = "➡️ " -- String to put at the start of lines that have been wrapped
+vim.opt.showbreak = "WARP >> " -- String to put at the start of lines that have been wrapped
 vim.opt.showmode = false -- Don' show mode
 vim.opt.showtabline = 2 -- Always show tabs
 vim.opt.sidescrolloff = 4 -- Minimal number of screen columns to keep left and right the cursor
