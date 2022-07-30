@@ -76,17 +76,17 @@ rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src
 
 cargo install --locked cargo-update\
-  simple-http-server\
-  cargo-watch\
+  bacon\
   bat\
-  cargo-generate\
-  wasm-bindgen-cli\
-  license-generator\
-  fd-find\
-  ripgrep\
-  starship\
   cargo-edit\
+  cargo-generate\
+  evcxr_repl\
+  fd-find\
+  license-generator\
   ripgrep\
+  simple-http-server\
+  starship\
+  wasm-bindgen-cli\
 
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 

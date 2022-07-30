@@ -52,17 +52,17 @@ sudo apt-get install libssl-dev
 - install cargo-libs:
 ```bash
 cargo install --locked cargo-update\
-  simple-http-server\
-  cargo-watch\
+  bacon\
   bat\
-  cargo-generate\
-  wasm-bindgen-cli\
-  license-generator\
-  fd-find\
-  ripgrep\
-  starship\
   cargo-edit\
+  cargo-generate\
+  evcxr_repl\
+  fd-find\
+  license-generator\
   ripgrep\
+  simple-http-server\
+  starship\
+  wasm-bindgen-cli\
 ```
 - install wasm-pack
 ```bash
