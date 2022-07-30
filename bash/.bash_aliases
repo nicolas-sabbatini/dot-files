@@ -22,4 +22,4 @@ alias icat='kitty +kitten icat --scale-up'
 # better grep 
 alias grep='rg'
 # repl
-alias rust-repl='evcxr_repl'
+alias rust-repl='evcxr'
