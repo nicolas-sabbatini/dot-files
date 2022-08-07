@@ -1,6 +1,6 @@
 local Handlers = {}
 
-Handlers.setup = function ()
+Handlers.setup = function()
   -- Setup icons for messages
   local signs = {
     { name = "DiagnosticSignError", text = "" },
@@ -11,7 +11,7 @@ Handlers.setup = function ()
   for _, sing in pairs(signs) do
     vim.fn.sign_define(
       sing.name,
-      {texth1 = sing.name, text = sing.text, numh1 = ""}
+      { texth1 = sing.name, text = sing.text, numh1 = "" }
     )
   end
   -- Setup config
@@ -55,7 +55,7 @@ local function lsp_highlight_document(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]],
+    ]] ,
       false
     )
   end
@@ -78,7 +78,7 @@ local function lsp_keymaps(bufnr)
     bufnr,
     "n",
     "gl",
-    '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>',
+    '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
     opts
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
