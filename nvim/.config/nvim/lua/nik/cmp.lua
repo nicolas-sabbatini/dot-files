@@ -116,7 +116,6 @@ cmp.setup {
         buffer = "[Buffer]",
         path = "[Path]",
         crates = "[Creates]",
-        emoji = "[😬]",
         npm = "[npm]",
         nvim_lua = "[LSP]",
         nvim_lsp = "[LSP]",
@@ -133,7 +132,6 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    { name = "emoji" },
   },
   -- Confirm options
   confirm_opts = {

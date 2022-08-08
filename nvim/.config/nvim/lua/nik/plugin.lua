@@ -59,11 +59,7 @@ return packer.startup(function(use)
   use { -- crates.io completion
     "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
-    config = function()
-      require("crates").setup()
-    end,
   }
-  use "hrsh7th/cmp-emoji" -- Emoji completion
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   -- Snippets
@@ -89,6 +85,8 @@ return packer.startup(function(use)
   -- Bufferline and tabs
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+  -- show todo
+  use "folke/todo-comments.nvim"
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then
