@@ -46,9 +46,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-  use "kevinhwang91/promise-async"
+  use "kevinhwang91/promise-async" -- More extra functions
+  use "kyazdani42/nvim-web-devicons" -- Iconst
   -- Colorscheme
-  -- use "lunarvim/darkplus.nvim"
   use "catppuccin/nvim"
   -- Cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -56,10 +56,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- Path completions
   use "hrsh7th/cmp-cmdline" -- Cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- Snippet completions
-  use { -- crates.io completion
-    "saecki/crates.nvim",
-    event = { "BufRead Cargo.toml" },
-  }
+  use "saecki/crates.nvim" -- crates.io completion
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   -- Snippets
@@ -75,13 +72,14 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "p00f/nvim-ts-rainbow"
-  use 'windwp/nvim-ts-autotag'
+  use "windwp/nvim-ts-autotag"
   use "lewis6991/spellsitter.nvim"
   -- git
   use "lewis6991/gitsigns.nvim"
   -- nvimtree
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
+  use "kyazdani42/nvim-tree.lua"
+  -- Projet setings
+  use "ahmedkhalf/project.nvim"
   -- Bufferline and tabs
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
