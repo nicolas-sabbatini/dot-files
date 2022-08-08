@@ -60,8 +60,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   -- Snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "L3MON4D3/LuaSnip" -- Snippet engine
+  use "rafamadriz/friendly-snippets" -- Bunch of snippets to use
   -- Lsp
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
@@ -74,17 +74,19 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
   use "lewis6991/spellsitter.nvim"
-  -- git
+  -- Git
   use "lewis6991/gitsigns.nvim"
-  -- nvimtree
+  -- Nvimtree
   use "kyazdani42/nvim-tree.lua"
   -- Projet setings
   use "ahmedkhalf/project.nvim"
   -- Bufferline and tabs
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
-  -- show todo
+  -- Show todo
   use "folke/todo-comments.nvim"
+  -- Show colors
+  use "norcalli/nvim-colorizer.lua"
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then

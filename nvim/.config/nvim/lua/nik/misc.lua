@@ -25,3 +25,10 @@ if not project_ok then
 else
   project.setup()
 end
+
+local colorizer_ok, colorizer = pcall(require, "colorizer")
+if not colorizer_ok then
+  vim.notify("Error loading colorizer! misc.lua 31")
+else
+  colorizer.setup()
+end
