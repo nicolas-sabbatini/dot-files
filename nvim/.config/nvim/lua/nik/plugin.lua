@@ -49,7 +49,7 @@ return packer.startup(function(use)
   use "kevinhwang91/promise-async" -- More extra functions
   use "kyazdani42/nvim-web-devicons" -- Iconst
   -- Colorscheme
-  use "catppuccin/nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
   -- Cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- Buffer completions
@@ -87,6 +87,8 @@ return packer.startup(function(use)
   use "folke/todo-comments.nvim"
   -- Show colors
   use "norcalli/nvim-colorizer.lua"
+  -- Status line
+  use "feline-nvim/feline.nvim"
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then

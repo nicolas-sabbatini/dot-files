@@ -11,3 +11,4 @@ require("nik.nvimtree")
 require("nik.null-ls")
 require("nik.bufferline")
 require("nik.misc") -- Random and small plugins with default config
+require("nik.feline")
