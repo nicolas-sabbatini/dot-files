@@ -51,7 +51,7 @@ export PROMPT="FULL"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/dot-files/scripts:$PATH"
-export EDITOR="/usr/bin/nvim"
+export EDITOR="$HOME/.local/bin/nvim"
 
 source "$HOME/.cargo/env"
 
