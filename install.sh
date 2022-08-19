@@ -36,7 +36,8 @@ sudo apt install python3-pip\
   libasound2-dev\
   libpulse-dev\
   libdbus-1-dev\
-  build-essential
+  build-essential\
+  cmake
 
 echo ""
 echo "##############"

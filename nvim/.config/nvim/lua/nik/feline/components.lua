@@ -94,7 +94,9 @@ local T = {
     },
   },
   branch = {
-    provider = "git_branch",
+    provider = function()
+      return b.gitsigns_head or 'NOT IN GIT'
+    end,
     hl = {
       fg = sett.text,
       bg = sett.branch,
@@ -117,7 +119,7 @@ local T = {
   diff = {
     provider = function()
       if not b.gitsigns_head and not b.gitsigns_status_dict then
-        return "NOT IN GIT"
+        return " "
       end
       local added = b.gitsigns_status_dict["added"] or 0
       local changed = b.gitsigns_status_dict["changed"] or 0
