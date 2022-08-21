@@ -12,13 +12,6 @@ else
   spellsitter.setup()
 end
 
-local todo_ok, todo = pcall(require, "todo-comments")
-if not todo_ok then
-  vim.notify("Error loading todo! misc.lua 17")
-else
-  todo.setup()
-end
-
 local project_ok, project = pcall(require, "project_nvim")
 if not project_ok then
   vim.notify("Error loading project! misc.lua 24")

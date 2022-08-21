@@ -1,3 +1,4 @@
+-- ERROR: this do not work
 lvim.autocommands = {
   {
     "BufWritePost",

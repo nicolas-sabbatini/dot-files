@@ -39,6 +39,10 @@ keymap("n", "<leader>h", ":nohlsearch<CR>", options)
 -- Close Buffer
 keymap("n", "<leader>c", ":Bdelete<CR>", options)
 
+-- TODO plugin
+keymap("n", "<leader>tq", ":TodoQuickFix<CR>", options)
+keymap("n", "<leader>tt", ":TodoTelescope", options)
+
 -- Insert --
 -- End of the line
 keymap("i", "<C-E>", "<ESC>A", options);

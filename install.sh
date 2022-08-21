@@ -40,6 +40,14 @@ sudo apt install python3-pip\
   cmake
 
 echo ""
+echo "########################"
+echo "#Instaling python deps.#"
+echo "########################"
+python3 -m pip install gkeepapi\
+  keyring\
+  pynvim
+  
+echo ""
 echo "##############"
 echo "#Update bash.#"
 echo "##############"
@@ -66,7 +74,9 @@ echo "#Installing NVM and deps.#"
 echo "##########################"
 ./scripts/install-update-nvm
 nvm install --lts
-npm install -g tldr
+npm install -g tldr\
+  neovim\
+  tree-sitter-cli
 
 echo ""
 echo "################################"

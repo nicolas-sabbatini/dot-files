@@ -1,3 +1,10 @@
+<!--toc:start-->
+- [Main:](#main)
+ - [MacOS Only](#macos-only)
+ - [Dependencies:](#dependencies)
+ - [Steps](#steps)
+- [Optional (Quality of life):](#optional-quality-of-life)
+<!--toc:end-->
 # Main:
 
 ## MacOS Only

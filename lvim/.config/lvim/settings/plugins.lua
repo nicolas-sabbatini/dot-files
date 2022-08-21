@@ -1,7 +1,6 @@
 lvim.plugins = {
   { "catppuccin/nvim" },
   { "p00f/nvim-ts-rainbow" },
-  { "nvim-telescope/telescope-media-files.nvim" },
   { -- crates.io completion
     "saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
