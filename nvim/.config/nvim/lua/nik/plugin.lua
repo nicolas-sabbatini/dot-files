@@ -89,6 +89,8 @@ return packer.startup(function(use)
   use "norcalli/nvim-colorizer.lua"
   -- Status line
   use "feline-nvim/feline.nvim"
+  -- Folds
+  use "kevinhwang91/nvim-ufo"
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then

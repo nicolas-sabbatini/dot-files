@@ -13,3 +13,4 @@ require("nik.bufferline")
 require("nik.misc") -- Random and small plugins with default config
 require("nik.feline")
 require("nik.todo")
+require("nik.ufo")

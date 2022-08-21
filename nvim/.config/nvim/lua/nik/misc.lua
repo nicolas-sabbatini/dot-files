@@ -14,14 +14,14 @@ end
 
 local project_ok, project = pcall(require, "project_nvim")
 if not project_ok then
-  vim.notify("Error loading project! misc.lua 24")
+  vim.notify("Error loading project! misc.lua 17")
 else
   project.setup()
 end
 
 local colorizer_ok, colorizer = pcall(require, "colorizer")
 if not colorizer_ok then
-  vim.notify("Error loading colorizer! misc.lua 31")
+  vim.notify("Error loading colorizer! misc.lua 24")
 else
   colorizer.setup()
 end

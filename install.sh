@@ -43,8 +43,7 @@ echo ""
 echo "########################"
 echo "#Instaling python deps.#"
 echo "########################"
-python3 -m pip install gkeepapi\
-  keyring\
+python3 -m pip install keyring\
   pynvim
   
 echo ""
