@@ -15,6 +15,7 @@ alias l='ls -CFlh'
 alias server='simple-http-server --nocache --upload'
 # better cat
 alias cat='bat'
+alias tcat='/usr/bin/cat'
 # Test midi files (timidity required)
 alias play-midi='timidity'
 # Pictures in the terminal
