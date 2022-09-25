@@ -15,8 +15,15 @@ plugins=(git docker docker-compose fd macos node npm nvm ripgrep rust)
 
 source $ZSH/oh-my-zsh.sh
 
-export LANG=C LC_CTYPE=UTF-8
-export LC_ALL=C
+export LANG="es_ES.UTF-8"
+export LC_COLLATE="es_ES.UTF-8"
+export LC_CTYPE="es_ES.UTF-8"
+export LC_MESSAGES="es_ES.UTF-8"
+export LC_MONETARY="es_ES.UTF-8"
+export LC_NUMERIC="es_ES.UTF-8"
+export LC_TIME="es_ES.UTF-8"
+export LC_ALL="es_ES.UTF-8"
+
 # Forward search dont send terminal to sleep (ctrl+s)
 stty -ixon
 # History conf
@@ -36,6 +43,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/dot-files/scripts:$PATH"
+export PATH=$(brew --prefix)"/opt/python@3.9/libexec/bin:$PATH"
 export EDITOR="nvim"
 source "$HOME/.cargo/env"
 # nvm
@@ -47,3 +55,7 @@ eval "$(starship init zsh)"
 
 . "$HOME/.cargo/env"
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
