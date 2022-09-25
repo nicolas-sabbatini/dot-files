@@ -17,7 +17,7 @@ todo.setup {
     HACK = { icon = " ", color = "warning" },
     WARN = { icon = " ", color = "warning", alt = { "WARNING" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    NOTE = { icon = " ", color = "default", alt = { "INFO", "DONE" } },
   },
   merge_keywords = true,
   highlight = {

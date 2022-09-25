@@ -40,7 +40,7 @@ keymap("n", "<leader>h", ":nohlsearch<CR>", options)
 keymap("n", "<leader>c", ":Bdelete<CR>", options)
 -- TODO plugin
 keymap("n", "<leader>tq", ":TodoQuickFix<CR>", options)
-keymap("n", "<leader>tt", ":TodoTelescope", options)
+keymap("n", "<leader>tt", ":TodoTelescope<CR>", options)
 
 -- Insert --
 -- End of the line

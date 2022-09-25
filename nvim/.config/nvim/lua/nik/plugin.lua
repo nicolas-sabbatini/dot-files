@@ -91,6 +91,10 @@ return packer.startup(function(use)
   use "feline-nvim/feline.nvim"
   -- Folds
   use "kevinhwang91/nvim-ufo"
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x'
+  }
   -- Bootstrap to paker if is not instaled
   -- has to be last
   if PACKER_BOOTSTRAP then
