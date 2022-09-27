@@ -26,18 +26,21 @@ echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install python3-pip\
+sudo apt install build-essential\
+  cmake\
+  libasound2-dev\
+  libdbus-1-dev\
   libgit2-dev\
+  libgl1-mesa-dev\
+  libpulse-dev\
   libssh-dev\
   libssl-dev\
+  libx11-dev\
+  libxi-dev\
   pkg-config\
-  xclip\
+  python3-pip\
   stow\
-  libasound2-dev\
-  libpulse-dev\
-  libdbus-1-dev\
-  build-essential\
-  cmake
+  xclip
 
 echo ""
 echo "########################"
