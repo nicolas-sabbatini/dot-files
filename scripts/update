@@ -2,7 +2,7 @@
 set -e
 
 echo "Updating system 💻"
-sudo nala update && sudo nala upgrade -y
+sudo nala upgrade -y
 echo "Update NVM"
 install-update-nvm
 echo "Updating NPM"
