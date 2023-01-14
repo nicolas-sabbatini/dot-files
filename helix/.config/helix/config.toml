@@ -1,0 +1,22 @@
+theme = "catppuccin_mocha"
+
+[editor]
+scrolloff = 8
+middle-click-paste = false
+cursorline = true
+bufferline = "always"
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "total-line-numbers", "position"]
+center = []
+right = ["diagnostics", "workspace-diagnostics", "selections", "file-encoding"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"

@@ -1,0 +1,6 @@
+# Rust LSP
+[[language]]
+name = "rust"
+
+[language.config]
+checkOnSave = { command = "clippy" }

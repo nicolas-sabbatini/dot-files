@@ -48,7 +48,7 @@ echo "#Instaling python deps.#"
 echo "########################"
 python3 -m pip install keyring\
   pynvim
-  
+
 echo ""
 echo "##############"
 echo "#Update bash.#"
@@ -87,7 +87,8 @@ echo "#Instaling 🦀 RUST 🦀 and deps.#"
 echo "################################"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup target add wasm32-unknown-unknown
-rustup component add rls rust-analysis rust-src
+rustup component add rls rust-analysis rust-src rust-analyzer
+sudo ln -s $(rustup which rust-analyzer ) /usr/local/bin/rust-analyzer
 
 cargo install --locked cargo-update\
   bacon\
@@ -130,3 +131,13 @@ echo "#Update fonts.#"
 echo "###############"
 stow -t $HOME fontconfig
 fc-cache -f -v
+
+echo ""
+echo "##################"
+echo "#Instaling HELIX.#"
+echo "##################"
+git clone https://github.com/helix-editor/helix ~/.local/helix
+cargo install --locked --path ~/.local/helix/helix-term
+hx --grammar fetch
+hx --grammar build
+stow -t $HOME helix
