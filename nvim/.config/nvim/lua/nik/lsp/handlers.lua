@@ -110,6 +110,6 @@ if not status_ok then
   return
 end
 -- Update capabilities
-Handlers.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+Handlers.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return Handlers

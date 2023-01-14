@@ -75,6 +75,7 @@ echo "##########################"
 echo "#Installing NVM and deps.#"
 echo "##########################"
 ./scripts/install-update-nvm
+source ~/.bashrc
 nvm install --lts
 npm install -g tldr\
   neovim\
@@ -108,15 +109,6 @@ echo "#########################"
 echo "#🚀 Going to the moon 🚀#"
 echo "#########################"
 stow -t $HOME starship
-
-echo ""
-echo "############################"
-echo "#Instaling 🌕 LUNAR VIM 🌕.#"
-echo "############################"
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-ln -s ~/.config/dot-files/lvim ~/.config/lvim
-rm -r ~/.config/lvim
-stow -t $HOME lvim
 
 echo ""
 echo "########################"
