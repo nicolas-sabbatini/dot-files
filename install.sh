@@ -95,6 +95,7 @@ cargo install --locked cargo-update\
   bat\
   cargo-edit\
   cargo-generate\
+  cargo-wgsl\
   evcxr_repl\
   fd-find\
   license-generator\
