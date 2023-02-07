@@ -3,16 +3,11 @@ My prompt and a few scripts that I use every day.
 
 ## TODO:
 - [x] stow. 😄
-- [] starship. ⚠️
-- [] kitty. ⚠️
-- [] a good readme. ⚠️
+- [x] starship. 😄
+- [x] kitty. 😄
+- [] a good readme.
 - [] nvim config. ⚠️
-  - [] Which key.
   - [] Telescope.
-  - [] Org mode.
-  - [] Neorg.
-  - [] Buffer line.
-  - [] Status Line.
 
 😄 => Done!
 ⚠️ => Half baked.
@@ -23,6 +18,4 @@ Check out the `installation-steps.md` file.
 
 
 ## TODO Helpers:
-- https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=1
-- https://github.com/folke/which-key.nvim
 - https://github.com/nvim-telescope/telescope.nvim
