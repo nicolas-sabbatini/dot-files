@@ -71,17 +71,6 @@ echo "##################"
 stow -t $HOME nvim
 
 echo ""
-echo "##########################"
-echo "#Installing NVM and deps.#"
-echo "##########################"
-./scripts/install-update-nvm
-source ~/.bashrc
-nvm install --lts
-npm install -g tldr\
-  neovim\
-  tree-sitter-cli
-
-echo ""
 echo "################################"
 echo "#Instaling 🦀 RUST 🦀 and deps.#"
 echo "################################"
@@ -93,8 +82,10 @@ sudo ln -s $(rustup which rust-analyzer ) /usr/local/bin/rust-analyzer
 cargo install --locked cargo-update\
   bacon\
   bat\
+  bob-nvim\
   cargo-edit\
   cargo-generate\
+  cargo-info\
   cargo-wgsl\
   evcxr_repl\
   fd-find\
@@ -105,6 +96,17 @@ cargo install --locked cargo-update\
   wasm-bindgen-cli\
 
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
+
+echo ""
+echo "##########################"
+echo "#Installing NVM and deps.#"
+echo "##########################"
+bob install stable
+source ~/.bashrc
+nvm install --lts
+npm install -g tldr\
+  neovim\
+  tree-sitter-cli
 
 echo ""
 echo "#########################"
@@ -132,13 +134,3 @@ echo "#Update fonts.#"
 echo "###############"
 stow -t $HOME fontconfig
 fc-cache -f -v
-
-echo ""
-echo "##################"
-echo "#Instaling HELIX.#"
-echo "##################"
-git clone https://github.com/helix-editor/helix ~/.local/helix
-cargo install --locked --path ~/.local/helix/helix-term
-hx --grammar fetch
-hx --grammar build
-stow -t $HOME helix

@@ -41,17 +41,13 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # Load aliases
-. $HOME/.bash_aliases
-
-# Load prompt
-export PROMPT="FULL"
-. $HOME/.config/dot-files/prompt.sh
+source $HOME/.bash_aliases
 
 # Exports
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/dot-files/scripts:$PATH"
-export EDITOR="$HOME/.local/bin/nvim"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
 source "$HOME/.cargo/env"
 
@@ -61,5 +57,3 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(starship init bash)"
-
-. "$HOME/.cargo/env"

@@ -3,11 +3,10 @@ My prompt and a few scripts that I use every day.
 
 ## TODO:
 - [x] stow. 😄
-- [x] starship. 😄
+- [x] starship.
 - [x] kitty. 😄
 - [] a good readme.
-- [] nvim config. ⚠️
-  - [] Telescope.
+- [] oxidise all
 
 😄 => Done!
 ⚠️ => Half baked.
@@ -16,6 +15,7 @@ My prompt and a few scripts that I use every day.
 ## How to install
 Check out the `installation-steps.md` file.
 
-
-## TODO Helpers:
-- https://github.com/nvim-telescope/telescope.nvim
+## TODO
+[] exa
+[] https://github.com/MordechaiHadad/bob
+[] https://github.com/extrawurst/gitui
