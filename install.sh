@@ -88,6 +88,7 @@ cargo install --locked cargo-update\
   cargo-info\
   cargo-wgsl\
   evcxr_repl\
+  exa\
   fd-find\
   license-generator\
   ripgrep\
