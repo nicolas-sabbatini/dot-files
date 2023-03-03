@@ -19,3 +19,4 @@ Check out the `installation-steps.md` file.
 [] exa
 [] https://github.com/MordechaiHadad/bob
 [] https://github.com/extrawurst/gitui
+[] git update-index --assume-unchanged bash/.gitconfig
