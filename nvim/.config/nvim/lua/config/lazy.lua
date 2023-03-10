@@ -16,7 +16,6 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { "folke/tokyonight.nvim", enabled = false },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "plugins" },
   },
   defaults = {

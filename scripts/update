@@ -13,5 +13,3 @@ echo "Updating rust 🦀"
 rustup update
 echo "Updating cargo 📦"
 cargo install-update -a
-echo "Update NVIM "
-install-update-nvim

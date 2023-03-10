@@ -22,6 +22,7 @@ read CONSENT
 if [ "$CONSENT" != "y" ]; then
     exit 0
 fi
+
 echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
@@ -103,6 +104,7 @@ echo "##########################"
 echo "#Installing NVM and deps.#"
 echo "##########################"
 bob install stable
+bob use stable
 source ~/.bashrc
 nvm install --lts
 npm install -g tldr\
