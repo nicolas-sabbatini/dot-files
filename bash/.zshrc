@@ -1,13 +1,6 @@
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
- zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+ zstyle ':omz:update' mode reminder
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
@@ -37,30 +30,35 @@ HISTFILESIZE=20000
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 # GCC colors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-# Load aliases
-. $HOME/.bash_aliases
+
 # Exports
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/dot-files/scripts:$PATH"
 export PATH=$(brew --prefix)"/opt/python@3.9/libexec/bin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
+# Set editor
 export EDITOR="nvim"
-source "$HOME/.cargo/env"
-# nvm
+
+# Load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(starship init zsh)"
+#Load Brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-. "$HOME/.cargo/env"
-
-
-
-# Load Angular CLI autocompletion.
-# source <(ng completion script)
-
-# pnpm
+#Load pnpm
 export PNPM_HOME="/Users/nicolas.sabbatini/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+
+# Load aliases
+source "$HOME/.bash_aliases"
+
+# Load cargo
+source "$HOME/.cargo/env"
+
+#Start starship
+eval "$(starship init zsh)"
+

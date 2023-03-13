@@ -20,35 +20,20 @@ echo "DO YOU UNDERTAND AND WANT TO CONTINUE? (y/n)"
 read CONSENT
 
 if [ "$CONSENT" != "y" ]; then
-    exit 0
+	exit 0
 fi
 
 echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install build-essential\
-  cmake\
-  libasound2-dev\
-  libdbus-1-dev\
-  libgit2-dev\
-  libgl1-mesa-dev\
-  libpulse-dev\
-  libssh-dev\
-  libssl-dev\
-  libx11-dev\
-  libxi-dev\
-  pkg-config\
-  python3-pip\
-  stow\
-  xclip
+sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxi-dev pkg-config python3-pip stow xclip
 
 echo ""
 echo "########################"
 echo "#Instaling python deps.#"
 echo "########################"
-python3 -m pip install keyring\
-  pynvim
+python3 -m pip install keyring pynvim
 
 echo ""
 echo "##############"
@@ -65,39 +50,16 @@ echo "###################"
 mkdir -p ~/.local/bin
 
 echo ""
-echo "##################"
-echo "#Installing NVIM.#"
-echo "##################"
-./scripts/install-update-nvim
-stow -t $HOME nvim
-
-echo ""
 echo "################################"
 echo "#Instaling 🦀 RUST 🦀 and deps.#"
 echo "################################"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer
-sudo ln -s $(rustup which rust-analyzer ) /usr/local/bin/rust-analyzer
+sudo ln -s $(rustup which rust-analyzer) /usr/local/bin/rust-analyzer
 
-cargo install --locked cargo-update\
-  bacon\
-  bat\
-  bob-nvim\
-  cargo-edit\
-  cargo-generate\
-  cargo-info\
-  cargo-wgsl\
-  evcxr_repl\
-  exa\
-  fd-find\
-  license-generator\
-  ripgrep\
-  simple-http-server\
-  starship\
-  wasm-bindgen-cli\
-
-curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
+cargo install --locked cargo-update bacon bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 echo ""
 echo "##########################"
@@ -107,9 +69,7 @@ bob install stable
 bob use stable
 source ~/.bashrc
 nvm install --lts
-npm install -g tldr\
-  neovim\
-  tree-sitter-cli
+npm install -g tldr neovim tree-sitter-cli
 
 echo ""
 echo "#########################"
@@ -129,7 +89,7 @@ sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x2
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 stow -t $HOME kitty
 source ~/.bashrc
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
 
 echo ""
 echo "###############"
