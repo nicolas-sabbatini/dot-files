@@ -25,7 +25,7 @@ return {
       },
       gdscript = {
         -- Comet fot v4
-        command = vim.lsp.rpc.connect("127.0.0.1", 6008),
+        -- command = vim.lsp.rpc.connect("127.0.0.1", 6008),
       },
     },
   },
