@@ -1,7 +1,9 @@
 # My prompt conf
+
 My prompt and a few scripts that I use every day.
 
 ## TODO:
+
 - [x] stow. 😄
 - [x] starship.
 - [x] kitty. 😄
@@ -13,10 +15,11 @@ My prompt and a few scripts that I use every day.
 🚫 => No even started. 😦
 
 ## How to install
+
 Check out the `installation-steps.md` file.
 
 ## TODO
-[] exa
-[] https://github.com/MordechaiHadad/bob
-[] https://github.com/extrawurst/gitui
-[] git update-index --assume-unchanged bash/.gitconfig
+
+- [x] exa
+- [] https://github.com/MordechaiHadad/bob
+- [] https://github.com/extrawurst/gitui
