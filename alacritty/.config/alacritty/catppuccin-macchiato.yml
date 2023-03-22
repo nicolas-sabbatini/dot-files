@@ -1,0 +1,79 @@
+colors:
+  # Default colors
+  bright:
+    black: "#5B6078" # surface2
+    blue: "#8AADF4" # blue
+    cyan: "#8BD5CA" # teal
+    green: "#A6DA95" # green
+    magenta: "#F5BDE6" # pink
+    red: "#ED8796" # red
+    white: "#A5ADCB" # subtext0
+    yellow: "#EED49F" # yellow
+
+  # Cursor colors
+  cursor:
+    cursor: "#F4DBD6" # rosewater
+    text: "#24273A" # base
+  dim:
+    black: "#494D64" # surface1
+    blue: "#8AADF4" # blue
+    cyan: "#8BD5CA" # teal
+    green: "#A6DA95" # green
+    magenta: "#F5BDE6" # pink
+    red: "#ED8796" # red
+    white: "#B8C0E0" # subtext1
+    yellow: "#EED49F" # yellow
+
+  # Search colors
+  hints:
+    end:
+      background: "#A5ADCB" # subtext0
+      foreground: "#24273A" # base
+    start:
+      background: "#EED49F" # yellow
+      foreground: "#24273A" # base
+
+  # Keyboard regex hints
+  indexed_colors:
+    - { color: "#F5A97F", index: 16 }
+    - { color: "#F4DBD6", index: 17 }
+
+  # Selection colors
+  normal:
+    black: "#494D64" # surface1
+    blue: "#8AADF4" # blue
+    cyan: "#8BD5CA" # teal
+    green: "#A6DA95" # green
+    magenta: "#F5BDE6" # pink
+    red: "#ED8796" # red
+    white: "#B8C0E0" # subtext1
+    yellow: "#EED49F" # yellow
+
+  # Normal colors
+  primary:
+    background: "#24273A" # base
+    bright_foreground: "#CAD3F5" # text
+    # Bright and dim foreground colors
+    dim_foreground: "#CAD3F5" # text
+    foreground: "#CAD3F5" # text
+
+  # Bright colors
+  search:
+    focused_match:
+      background: "#A6DA95" # green
+      foreground: "#24273A" # base
+    footer_bar:
+      background: "#A5ADCB" # subtext0
+      foreground: "#24273A" # base
+    matches:
+      background: "#A5ADCB" # subtext0
+      foreground: "#24273A" # base
+
+  # Dim colors
+  selection:
+    background: "#F4DBD6" # rosewater
+    text: "#24273A" # base
+
+  vi_mode_cursor:
+    cursor: "#B7BDF8" # lavender
+    text: "#24273A" # base
