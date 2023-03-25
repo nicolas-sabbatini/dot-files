@@ -4,11 +4,15 @@ return {
     filesystem = {
       window = {
         mappings = {
-          ["Y"] = "copy_absolute_path",
-          ["y"] = "copy_relative_from_root_path",
+          ["y"] = "copy_name",
+          ["Y"] = "copy_relative_from_root_path",
         },
       },
       commands = {
+        copy_name = function(state)
+          local node = state.tree:get_node()
+          vim.call("setreg", "*", node.name)
+        end,
         copy_absolute_path = function(state)
           local node = state.tree:get_node()
           vim.call("setreg", "*", node.path)
