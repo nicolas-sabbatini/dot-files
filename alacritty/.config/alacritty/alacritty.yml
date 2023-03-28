@@ -18,6 +18,9 @@ font:
     family: ComicCodeLigatures Nerd Font Mono
     style: Bold Italic
   builtin_box_drawing: true
+  glyph_offset:
+    x: 0
+    y: 5
   italic:
     family: ComicCodeLigatures Nerd Font Mono
     style: Italic
@@ -25,9 +28,9 @@ font:
     family: ComicCodeLigatures Nerd Font Mono
     style: Regular
   offset:
-    x: 3
-    y: 15
-  size: 12
+    x: 0
+    y: 12
+  size: 13
 
 import:
   - ~/.config/alacritty/catppuccin-macchiato.yml
