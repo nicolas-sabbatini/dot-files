@@ -18,6 +18,7 @@ require("lazy").setup({
     { "folke/tokyonight.nvim", enabled = false },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
+    { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "plugins" },
   },
   defaults = {
