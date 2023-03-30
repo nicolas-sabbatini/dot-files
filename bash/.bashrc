@@ -48,6 +48,9 @@ export EDITOR="nvim"
 # Load aliases
 source "$HOME/.bash_aliases"
 
+# Load completion
+source ~/.bash_completion/alacritty
+
 # Load cargo
 source "$HOME/.cargo/env"
 

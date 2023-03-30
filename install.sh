@@ -27,7 +27,7 @@ echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxi-dev pkg-config python3-pip stow xclip
+sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip
 
 echo ""
 echo "########################"
@@ -58,7 +58,7 @@ rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer
 sudo ln -s $(rustup which rust-analyzer) /usr/local/bin/rust-analyzer
 
-cargo install --locked cargo-update bacon bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli
+cargo install --locked alacritty cargo-update bacon bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 echo ""

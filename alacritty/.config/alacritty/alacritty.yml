@@ -20,7 +20,7 @@ font:
   builtin_box_drawing: true
   glyph_offset:
     x: 0
-    y: 5
+    y: 4
   italic:
     family: ComicCodeLigatures Nerd Font Mono
     style: Italic
@@ -29,7 +29,7 @@ font:
     style: Regular
   offset:
     x: 0
-    y: 12
+    y: 7
   size: 13
 
 import:
