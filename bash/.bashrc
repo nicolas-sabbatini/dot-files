@@ -49,14 +49,17 @@ export EDITOR="nvim"
 source "$HOME/.bash_aliases"
 
 # Load completion
-source ~/.bash_completion/alacritty
+source "$HOME/.bash_completion/alacritty"
 
 # Load cargo
-source "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # Load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# Load ghcup
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 eval "$(starship init bash)"

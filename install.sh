@@ -27,7 +27,7 @@ echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip
+sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip
 
 echo ""
 echo "########################"
@@ -57,8 +57,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer
 sudo ln -s $(rustup which rust-analyzer) /usr/local/bin/rust-analyzer
-
-cargo install --locked alacritty cargo-update bacon bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli
+cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator oxker ripgrep simple-http-server starship wasm-bindgen-cli
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 echo ""
@@ -90,6 +89,12 @@ sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/sha
 stow -t $HOME kitty
 source ~/.bashrc
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
+
+echo ""
+echo "########################"
+echo "#Instaling  HASKELL .#"
+echo "########################"
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 echo ""
 echo "###############"
