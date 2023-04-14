@@ -17,7 +17,7 @@ echo "         So if you don't know what you are doing, press CTRL+C to cancel t
 echo ""
 echo "DO YOU UNDERTAND AND WANT TO CONTINUE? (y/n)"
 
-read CONSENT
+read -r CONSENT
 
 if [ "$CONSENT" != "y" ]; then
 	exit 0
@@ -40,8 +40,8 @@ echo "##############"
 echo "#Update bash.#"
 echo "##############"
 rm ~/.bashrc ~/.bash_aliases
-stow -t $HOME bash
-source ~/.bashrc
+stow -t "$HOME" bash
+source "$HOME/.bashrc"
 
 echo ""
 echo "###################"
@@ -56,8 +56,9 @@ echo "################################"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer
-sudo ln -s $(rustup which rust-analyzer) /usr/local/bin/rust-analyzer
-cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator oxker ripgrep simple-http-server starship wasm-bindgen-cli
+sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
+cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli
+cargo install diesel_cli --no-default-features --features "postgres sqlite"
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 echo ""
@@ -66,7 +67,7 @@ echo "#Installing NVM and deps.#"
 echo "##########################"
 bob install stable
 bob use stable
-source ~/.bashrc
+source "$HOME/.bashrc"
 nvm install --lts
 npm install -g tldr neovim tree-sitter-cli
 
@@ -74,7 +75,7 @@ echo ""
 echo "#########################"
 echo "#🚀 Going to the moon 🚀#"
 echo "#########################"
-stow -t $HOME starship
+stow -t "$HOME" starship
 
 echo ""
 echo "########################"
@@ -86,9 +87,9 @@ cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applicatio
 cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
 sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-stow -t $HOME kitty
-source ~/.bashrc
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
+stow -t "$HOME" kitty
+source "$HOME/.bashrc"
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator "$(which kitty)" 50
 
 echo ""
 echo "########################"
@@ -100,5 +101,5 @@ echo ""
 echo "###############"
 echo "#Update fonts.#"
 echo "###############"
-stow -t $HOME fontconfig
+stow -t "$HOME" fontconfig
 fc-cache -f -v
