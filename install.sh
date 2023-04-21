@@ -61,6 +61,10 @@ cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-ge
 cargo install diesel_cli --no-default-features --features "postgres sqlite"
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
+# Rust programs config config
+stow -t "$HOME" gitui
+stow -t "$HOME" starship
+
 echo ""
 echo "##########################"
 echo "#Installing NVM and deps.#"
@@ -70,12 +74,6 @@ bob use stable
 source "$HOME/.bashrc"
 nvm install --lts
 npm install -g tldr neovim tree-sitter-cli
-
-echo ""
-echo "#########################"
-echo "#🚀 Going to the moon 🚀#"
-echo "#########################"
-stow -t "$HOME" starship
 
 echo ""
 echo "########################"
