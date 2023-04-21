@@ -7,6 +7,8 @@ echo "Update NVM"
 install-update-nvm
 echo "Updating NPM"
 npm update -g
+echo "Cleaning flatpak"
+flatpak uninstall --unused -y
 echo "Updating flatpak"
 flatpak update -y
 echo "Updating rust 🦀"
