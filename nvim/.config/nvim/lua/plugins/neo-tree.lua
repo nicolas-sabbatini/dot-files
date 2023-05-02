@@ -11,11 +11,15 @@ return {
       commands = {
         copy_name = function(state)
           local node = state.tree:get_node()
-          vim.call("setreg", "*", node.name)
+          ---@diagnostic disable-next-line: param-type-mismatch
+          vim.call("setreg", "+", node.name)
+          vim.notify('Copied "' .. node.name .. '" to clipboard', "info", { title = "NeoTree" })
         end,
         copy_absolute_path = function(state)
           local node = state.tree:get_node()
-          vim.call("setreg", "*", node.path)
+          ---@diagnostic disable-next-line: param-type-mismatch
+          vim.call("setreg", "+", node.path)
+          vim.notify('Copied "' .. node.path .. '" to clipboard', "info", { title = "NeoTree" })
         end,
         copy_relative_from_root_path = function(state)
           local node = state.tree:get_node()
@@ -28,7 +32,9 @@ return {
           for i = #path_split - node.level + 1, #path_split, 1 do
             relative_path = relative_path .. "/" .. path_split[i]
           end
-          vim.call("setreg", "*", relative_path)
+          ---@diagnostic disable-next-line: param-type-mismatch
+          vim.call("setreg", "+", relative_path)
+          vim.notify('Copied "' .. relative_path .. '" to clipboard', "info", { title = "NeoTree" })
         end,
       },
     },
