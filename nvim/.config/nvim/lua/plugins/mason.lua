@@ -23,10 +23,8 @@ return {
       "stylua",
       -- Markdown
       "marksman",
-      -- Yml
-      "yaml-language-server",
-      "yamlfmt",
-      "yamllint",
+      -- Go
+      "gopls",
     },
   },
 }
