@@ -25,6 +25,8 @@ return {
       "marksman",
       -- Go
       "gopls",
+      -- Haskell
+      "haskell-language-server",
     },
   },
 }
