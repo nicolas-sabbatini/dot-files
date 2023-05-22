@@ -41,6 +41,9 @@ export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 # Set editor
 export EDITOR="nvim"
 
+# Set kitty socket
+export KITTY_LISTEN_ON=unix:/tmp/mykitty-$PPID
+
 # Load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

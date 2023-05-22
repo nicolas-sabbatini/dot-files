@@ -51,3 +51,31 @@ vim.keymap.set(
   { noremap = true, silent = true, desc = "open documentation" }
 )
 ------------------- crates.nvim -------------------
+
+-------------------- nvim.test --------------------
+vim.keymap.set("n", "<leader>ct", function() end, { noremap = true, silent = true, desc = "+test" })
+vim.keymap.set(
+  "n",
+  "<leader>ctf",
+  "<cmd>TestFile -strategy=kitty<cr>",
+  { noremap = true, silent = true, desc = "Runs the current test file" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>ctt",
+  "<cmd>TestNearest -strategy=kitty<cr>",
+  { noremap = true, silent = true, desc = "Runs the nearest test" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>ctl",
+  "<cmd>TestLast -strategy=kitty<cr>",
+  { noremap = true, silent = true, desc = "Runs the last test" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>cta",
+  "<cmd>TestSuite -strategy=kitty<cr>",
+  { noremap = true, silent = true, desc = "Runs the whole test suite" }
+)
+-------------------- nvim.test --------------------

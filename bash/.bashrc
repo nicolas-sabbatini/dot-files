@@ -51,6 +51,9 @@ source "$HOME/.bash_aliases"
 # Load completion
 source "$HOME/.bash_completion/alacritty"
 
+# Set kitty socket
+export KITTY_LISTEN_ON=unix:/tmp/mykitty-$PPID
+
 # Load cargo
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
