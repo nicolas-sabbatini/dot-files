@@ -6,6 +6,7 @@ return {
         mappings = {
           ["y"] = "copy_name",
           ["Y"] = "copy_relative_from_root_path",
+          ["l"] = "open",
         },
       },
       commands = {
@@ -36,6 +37,16 @@ return {
           vim.call("setreg", "+", relative_path)
           vim.notify('Copied "' .. relative_path .. '" to clipboard', "info", { title = "NeoTree" })
         end,
+      },
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        hide_by_name = {
+          ".DS_Store",
+          "thumbs.db",
+          "node_modules",
+        },
       },
     },
   },
