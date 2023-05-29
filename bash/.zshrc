@@ -65,3 +65,5 @@ source "$HOME/.cargo/env"
 #Start starship
 eval "$(starship init zsh)"
 
+
+[ -f "/Users/nicolas.sabbatini/.ghcup/env" ] && source "/Users/nicolas.sabbatini/.ghcup/env" # ghcup-env
