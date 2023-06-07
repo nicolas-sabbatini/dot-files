@@ -11,8 +11,6 @@ return {
       "prettierd",
       "typescript-language-server",
       "prisma-language-server",
-      -- Python
-      "flake8",
       -- Rust
       "rust-analyzer",
       "rustfmt",
