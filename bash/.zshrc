@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="$HOME/.oh-my-zsh"
  zstyle ':omz:update' mode reminder
 
@@ -67,3 +69,6 @@ eval "$(starship init zsh)"
 
 
 [ -f "/Users/nicolas.sabbatini/.ghcup/env" ] && source "/Users/nicolas.sabbatini/.ghcup/env" # ghcup-env
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
