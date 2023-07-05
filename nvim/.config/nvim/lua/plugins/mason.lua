@@ -13,7 +13,6 @@ return {
       "prisma-language-server",
       -- Rust
       "rust-analyzer",
-      "rustfmt",
       -- JSON
       "json-lsp",
       -- Lua
