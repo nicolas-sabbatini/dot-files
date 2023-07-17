@@ -6,7 +6,8 @@ return {
     defaults = {
       mode = { "n", "v" },
       ["g"] = { name = "+goto" },
-      ["gz"] = { name = "+surround" },
+      ["gl"] = { name = "+lsp" },
+      -- to be
       ["]"] = { name = "+next" },
       ["["] = { name = "+prev" },
       ["<leader><tab>"] = { name = "+tabs" },
