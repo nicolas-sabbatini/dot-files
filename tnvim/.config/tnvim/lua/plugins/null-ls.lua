@@ -12,11 +12,6 @@ return {
 				nls.builtins.formatting.prettier,
 				nls.builtins.diagnostics.eslint,
 				nls.builtins.diagnostics.hadolint, -- Docker files
-				-- GO
-				nls.builtins.code_actions.gomodifytags,
-				nls.builtins.code_actions.impl,
-				nls.builtins.formatting.gofumpt,
-				nls.builtins.formatting.goimports_reviser,
 				-- ts
 				require("typescript.extensions.null-ls.code-actions"),
 			},

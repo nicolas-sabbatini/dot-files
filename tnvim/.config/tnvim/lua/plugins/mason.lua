@@ -23,8 +23,6 @@ return {
 				"stylua",
 				-- Markdown
 				"marksman",
-				-- Go
-				"gopls",
 				-- Haskell
 				"haskell-language-server",
 				-- Docker

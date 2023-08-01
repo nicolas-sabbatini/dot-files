@@ -12,11 +12,13 @@ return {
 		{ "williamboman/mason-lspconfig.nvim" },
 		{ "williamboman/mason.nvim" },
 		{ "zbirenbaum/copilot-cmp" },
+		{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 	},
 	config = function()
 		local lsp = require("lsp-zero").preset({})
 		lsp.on_attach(function(client, bufnr)
 			lsp.default_keymaps({ buffer = bufnr })
+			lsp.buffer_autoformat()
 		end)
 		lsp.set_server_config({
 			capabilities = {
@@ -34,8 +36,7 @@ return {
 				timeout_ms = 10000,
 			},
 			servers = {
-				["null-ls"] = { "javascript", "typescript", "lua", "sh", "bash", "json", "go" },
-				["rust_analyzer"] = { "rust" },
+				["null-ls"] = { "javascript", "typescript", "lua", "sh", "bash", "json" },
 			},
 		})
 
