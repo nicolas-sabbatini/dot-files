@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+echo "Install Gup"
+go install github.com/nao1215/gup@latest
+echo "Install Lazygit"
+go install github.com/jesseduffield/lazygit@latest
+echo "Install Glops"
+go install golang.org/x/tools/gopls@latest
+echo "Install Lazydocker"
+go install github.com/jesseduffield/lazydocker@latest

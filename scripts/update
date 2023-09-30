@@ -3,10 +3,12 @@ set -e
 
 echo "Updating system 💻"
 sudo nala upgrade -y
-echo "Update NVM"
-install-update-nvm
-echo "Updating NPM"
-npm update -g
+# echo "Update NVM"
+# install-update-nvm
+# echo "Updating NPM"
+# npm update -g
+echo "update GO"
+gup update
 echo "Cleaning flatpak"
 flatpak uninstall --unused -y
 echo "Updating flatpak"

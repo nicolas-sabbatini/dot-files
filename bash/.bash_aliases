@@ -24,7 +24,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # local http server
-alias server='simple-http-server --nocache --upload'
+alias server='simple-http-server --nocache --upload ---coep --coop'
 
 # Test midi files (timidity required)
 # alias play-midi='timidity'

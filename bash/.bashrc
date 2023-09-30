@@ -1,10 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
-case $- in
-*i*) ;;
-*) return ;;
-esac
-
 # Forward search dont send terminal to sleep (ctrl+s)
 stty -ixon
 
@@ -43,6 +36,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/dot-files/scripts:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # Set editor
 export EDITOR="nvim"
@@ -52,22 +46,16 @@ source "$HOME/.bash_aliases"
 
 # Load completion
 source "$HOME/.bash_completion/alacritty"
-
-# Set kitty socket
-export KITTY_LISTEN_ON=unix:/tmp/mykitty-$PPID
+source "$HOME/.bash_completion/bun"
 
 # Load cargo
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# Load nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# Load Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
 
 # Load ghcup
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 eval "$(starship init bash)"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"

@@ -58,11 +58,10 @@ rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer rustfmt
 sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
 cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli
-cargo install diesel_cli --no-default-features --features "postgres sqlite"
+# cargo install diesel_cli --no-default-features --features "postgres sqlite"
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 # Rust programs config config
-stow -t "$HOME" gitui
 stow -t "$HOME" starship
 
 echo ""
@@ -71,9 +70,9 @@ echo "#Installing NVM and deps.#"
 echo "##########################"
 bob install stable
 bob use stable
+curl -fsSL https://bun.sh/install | bash
 source "$HOME/.bashrc"
-nvm install --lts
-npm install -g tldr neovim tree-sitter-cli
+bun install -g neovim tree-sitter-cli
 
 echo ""
 echo "########################"
