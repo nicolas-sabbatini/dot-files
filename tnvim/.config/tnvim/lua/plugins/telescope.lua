@@ -11,6 +11,11 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "Telescope",
 		opts = {
+			pickers = {
+				live_grep = {
+					additional_args = { "--hidden" },
+				},
+			},
 			extensions = {
 				file_browser = {
 					theme = "ivy",
