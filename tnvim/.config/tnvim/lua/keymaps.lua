@@ -3,6 +3,20 @@ local function map(mode, lhs, rhs, opts)
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
+-- Split keymaps
+map("n", "<C-h>", "<C-w>h", { desc = "Move left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Move down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Move up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move right" })
+
+map("n", "<leader>h", "<C-w>s", { desc = "Split horizontal" })
+map("n", "<leader>v", "<C-w>v", { desc = "Split vertical" })
+
+map("n", "<C-+>", "<C-w>+", { desc = "Increase heigth" })
+map("n", "<C-->", "<C-w>-", { desc = "Decrease heigth" })
+map("n", "<C->>", "<C-w>>", { desc = "Increase width" })
+map("n", "<C-<>", "<C-w><", { desc = "Decrease width" })
+
 -- LSP keymaps
 map("n", "gld", function()
 	vim.lsp.buf.definition()
@@ -56,4 +70,4 @@ end, { desc = "Line diagnostics" })
 map("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Explorer" })
 
 -- Clear search highlight
-map("n", "<leader>h", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
+map("n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
