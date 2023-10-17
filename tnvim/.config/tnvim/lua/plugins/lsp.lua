@@ -48,10 +48,9 @@ return {
 						loadOutDirsFromCheck = true,
 						runBuildScripts = true,
 					},
-					checkOnSave = {
-						allFeatures = true,
+					check = {
 						command = "clippy",
-						extraArgs = { "--no-deps" },
+						extraArgs = { "--no-deps", "--", "-W", "clippy::pedantic" },
 					},
 				},
 			},

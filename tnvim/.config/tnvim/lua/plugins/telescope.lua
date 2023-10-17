@@ -10,10 +10,10 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	cmd = "Telescope",
 	keys = {
-		{ "<leader>/", call_telescope("live_grep"), desc = "Grep (root dir)" },
+		{ "<leader>/", call_telescope("live_grep", { hidden = true, no_ignore = true }), desc = "Grep (root dir)" },
 		{ "<leader>ff", call_telescope("find_files"), desc = "Find Files" },
 		{ "<leader>fF", call_telescope("find_files", { hidden = true, no_ignore = true }), desc = "Find Files ALL" },
 		{ "<leader>fg", call_telescope("git_files"), desc = "Find Files Git" },
-		{ "<leader>fb", call_telescope("buffers"), desc = "Find Files Git" },
+		{ "<leader>bf", call_telescope("buffers"), desc = "Find Buffer" },
 	},
 }
