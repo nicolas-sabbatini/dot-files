@@ -67,7 +67,7 @@ map("n", "<leader>cd", function()
 end, { desc = "Line diagnostics" })
 
 -- Explorer keymaps
-map("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Explorer" })
+-- map("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Explorer" })
 
 -- Clear search highlight
 map("n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
