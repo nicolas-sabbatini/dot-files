@@ -4,10 +4,10 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Split keymaps
-map("n", "<C-h>", "<C-w>h", { desc = "Move left" })
-map("n", "<C-j>", "<C-w>j", { desc = "Move down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Move up" })
-map("n", "<C-l>", "<C-w>l", { desc = "Move right" })
+map("n", "<C-Left>", "<C-w>h", { desc = "Move left" })
+map("n", "<C-Down>", "<C-w>j", { desc = "Move down" })
+map("n", "<C-Up>", "<C-w>k", { desc = "Move up" })
+map("n", "<C-Right>", "<C-w>l", { desc = "Move right" })
 
 map("n", "<leader>h", "<C-w>s", { desc = "Split horizontal" })
 map("n", "<leader>v", "<C-w>v", { desc = "Split vertical" })
