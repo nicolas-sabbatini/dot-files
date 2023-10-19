@@ -39,12 +39,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/dot-files/scripts:$PATH"
 export PATH=$(brew --prefix)"/opt/python@3.9/libexec/bin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # Set editor
 export EDITOR="nvim"
-
-# Set kitty socket
-export KITTY_LISTEN_ON=unix:/tmp/mykitty-$PPID
 
 # Load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -64,11 +62,11 @@ source "$HOME/.bash_aliases"
 # Load cargo
 source "$HOME/.cargo/env"
 
+# Load ghcup
+[ -f "/Users/nicolas.sabbatini/.ghcup/env" ] && source "/Users/nicolas.sabbatini/.ghcup/env" # ghcup-env
+
 #Start starship
 eval "$(starship init zsh)"
-
-
-[ -f "/Users/nicolas.sabbatini/.ghcup/env" ] && source "/Users/nicolas.sabbatini/.ghcup/env" # ghcup-env
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

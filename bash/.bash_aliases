@@ -34,5 +34,3 @@ alias icat='kitty +kitten icat --scale-up'
 
 # repl
 alias rust-repl='evcxr'
-
-alias nvim='NVIM_APPNAME=tnvim nvim'
