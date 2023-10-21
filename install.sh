@@ -57,7 +57,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer rustfmt
 sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
-cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli
+cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find gitui license-generator ripgrep simple-http-server starship wasm-bindgen-cli
 # cargo install diesel_cli --no-default-features --features "postgres sqlite"
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
