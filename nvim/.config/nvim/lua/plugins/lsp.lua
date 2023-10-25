@@ -13,6 +13,7 @@ return {
 		{ "williamboman/mason.nvim" },
 		{ "zbirenbaum/copilot-cmp" },
 		{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+		{ "folke/neodev.nvim" },
 	},
 	config = function()
 		local lsp = require("lsp-zero").preset({})
@@ -36,7 +37,7 @@ return {
 				timeout_ms = 10000,
 			},
 			servers = {
-				["null-ls"] = { "javascript", "typescript", "lua", "sh", "bash", "json" },
+				["null-ls"] = { "lua", "sh", "bash", "json" },
 			},
 		})
 

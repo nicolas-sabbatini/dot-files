@@ -9,7 +9,6 @@ return {
 			sources = {
 				nls.builtins.formatting.stylua,
 				nls.builtins.formatting.shfmt,
-				nls.builtins.formatting.prettier,
 				nls.builtins.diagnostics.eslint,
 				nls.builtins.diagnostics.hadolint, -- Docker files
 				-- ts

@@ -21,6 +21,7 @@ return {
 					theme = "ivy",
 					hijack_netrw = true,
 					hidden = { file_browser = true, folder_browser = true },
+					collapse_dirs = true,
 				},
 				emoji = {
 					action = function(emoji)
@@ -53,8 +54,21 @@ return {
 				desc = "Find Files Git",
 			},
 			{ "<leader>be", call_telescope("buffers"), desc = "Find Buffer" },
-			{ "<leader>e", "<cmd>Telescope file_browser<cr>", desc = "Explorer" },
-			{ "<leader>te", "<cmd>Telescope emoji theme=ivy<cr>", desc = "Emoji selector" },
+			{
+				"<leader>e",
+				"<cmd>Telescope file_browser path=%:p:h select_buffer=true initial_mode=normal<cr>",
+				desc = "Explorer current file",
+			},
+			{
+				"<leader>E",
+				"<cmd>Telescope file_browser initial_mode=normal initial_mode=normal<cr>",
+				desc = "Explorer root",
+			},
+			{
+				"<leader>te",
+				"<cmd>Telescope emoji theme=ivy<cr>",
+				desc = "Emoji selector",
+			},
 		},
 	},
 	{
