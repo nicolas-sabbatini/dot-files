@@ -51,15 +51,16 @@ source "$HOME/.bash_completion/bun"
 # Load cargo
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# Load Bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-
 # Load ghcup
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
+# Load nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# Load Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
 
 eval "$(starship init bash)"
