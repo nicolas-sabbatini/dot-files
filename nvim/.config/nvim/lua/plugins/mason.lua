@@ -15,6 +15,7 @@ return {
 				"typescript-language-server",
 				-- Rust
 				"rust-analyzer",
+				"taplo",
 				-- JSON
 				"json-lsp",
 				-- Lua
@@ -25,8 +26,8 @@ return {
 				-- Haskell
 				"haskell-language-server",
 				-- Docker
-				"hadolint"
-			}
+				"hadolint",
+			},
 		},
 		config = function(_, opts)
 			require("mason").setup(opts)
@@ -44,7 +45,7 @@ return {
 			else
 				ensure_installed()
 			end
-		end
+		end,
 	},
-	"williamboman/mason-lspconfig.nvim"
+	"williamboman/mason-lspconfig.nvim",
 }
