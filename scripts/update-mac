@@ -3,8 +3,8 @@ set -e
 
 echo "Updating system 💻"
 brew upgrade
-echo "Updating npm "
-npm update -g
+# echo "Updating npm "
+# npm update -g
 echo "Updating rust 🦀"
 rustup update
 echo "Updating cargo 📦"
