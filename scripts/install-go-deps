@@ -9,3 +9,5 @@ echo "Install Lazydocker"
 go install github.com/jesseduffield/lazydocker@latest
 echo "Install air"
 go install github.com/cosmtrek/air@latest
+echo "Install blueprint"
+github.com/melkeydev/go-blueprint@latest
