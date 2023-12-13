@@ -3,11 +3,9 @@ set -e
 
 echo "Install Gup"
 go install github.com/nao1215/gup@latest
-echo "Install Glops"
-go install golang.org/x/tools/gopls@latest
 echo "Install Lazydocker"
 go install github.com/jesseduffield/lazydocker@latest
 echo "Install air"
 go install github.com/cosmtrek/air@latest
 echo "Install blueprint"
-github.com/melkeydev/go-blueprint@latest
+go install github.com/melkeydev/go-blueprint@latest

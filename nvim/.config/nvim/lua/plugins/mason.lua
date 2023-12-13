@@ -27,6 +27,9 @@ return {
 				"haskell-language-server",
 				-- Docker
 				"hadolint",
+				-- Go
+				"goimports",
+				"gopls",
 			},
 		},
 		config = function(_, opts)

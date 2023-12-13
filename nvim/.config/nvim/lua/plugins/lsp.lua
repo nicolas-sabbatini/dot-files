@@ -19,8 +19,8 @@ return {
 		local lsp = require("lsp-zero").preset({})
 		lsp.on_attach(function(client, bufnr)
 			lsp.default_keymaps({ buffer = bufnr })
-			lsp.buffer_autoformat()
 		end)
+
 		lsp.set_server_config({
 			capabilities = {
 				textDocument = {
@@ -29,15 +29,6 @@ return {
 						lineFoldingOnly = true,
 					},
 				},
-			},
-		})
-		lsp.format_on_save({
-			format_opts = {
-				async = false,
-				timeout_ms = 10000,
-			},
-			servers = {
-				["null-ls"] = { "lua", "sh", "bash", "json" },
 			},
 		})
 
