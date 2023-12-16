@@ -21,6 +21,7 @@ return {
 					theme = "ivy",
 					hijack_netrw = true,
 					hidden = { file_browser = true, folder_browser = true },
+					no_ignore = true,
 				},
 				emoji = {
 					action = function(emoji)
