@@ -16,6 +16,8 @@ return {
 				sh = { "shfmt" },
 				javascript = { { "prettierd", "prettier" } },
 				typescript = { { "prettierd", "prettier" } },
+				md = { "prettierd" },
+				markdown = { "prettierd" },
 				["*"] = { "trim_whitespace" },
 			},
 		},
