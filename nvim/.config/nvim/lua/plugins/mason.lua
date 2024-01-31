@@ -30,7 +30,11 @@ return {
 				-- Go
 				"goimports",
 				"gopls",
-			},
+				-- C
+				"clang-format",
+				"clangd",
+				"cpplint",
+			}
 		},
 		config = function(_, opts)
 			require("mason").setup(opts)
