@@ -26,7 +26,6 @@ if ! shopt -oq posix; then
 	elif [ -f /etc/bash_completion ]; then
 		. /etc/bash_completion
 	fi
-	source "$HOME/.bash_completion/alacritty"
 	source "$HOME/.bash_completion/bun"
 fi
 
