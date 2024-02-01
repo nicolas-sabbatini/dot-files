@@ -1,7 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 export ZSH="$HOME/.oh-my-zsh"
- zstyle ':omz:update' mode reminder
+zstyle ':omz:update' mode reminder
 
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -65,8 +63,11 @@ source "$HOME/.cargo/env"
 # Load ghcup
 [ -f "/Users/nicolas.sabbatini/.ghcup/env" ] && source "/Users/nicolas.sabbatini/.ghcup/env" # ghcup-env
 
+# Load bun
+# Bun completions
+[ -s "/Users/nicolas.sabbatini/.bun/_bun" ] && source "/Users/nicolas.sabbatini/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 #Start starship
 eval "$(starship init zsh)"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

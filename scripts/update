@@ -17,3 +17,5 @@ echo "Updating rust 🦀"
 rustup update
 echo "Updating cargo 📦"
 cargo install-update -a
+echo "Update Bun 🥟"
+bun upgrade

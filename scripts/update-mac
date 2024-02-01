@@ -3,9 +3,11 @@ set -e
 
 echo "Updating system 💻"
 brew upgrade
-# echo "Updating npm "
-# npm update -g
+echo "update GO"
+gup update
 echo "Updating rust 🦀"
 rustup update
 echo "Updating cargo 📦"
 cargo install-update -a
+echo "Update Bun 🥟"
+bun upgrade
