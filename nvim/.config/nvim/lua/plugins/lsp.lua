@@ -47,6 +47,19 @@ return {
 				},
 			},
 		})
+		require("lspconfig")["lua_ls"].setup({
+			settings = {
+				Lua = {
+					workspace = {
+						checkThirdParty = true,
+						telemetry = { enable = false },
+						library = {
+							"${3rd}/love2d/library",
+						},
+					},
+				},
+			},
+		})
 
 		lsp.setup()
 		require("luasnip.loaders.from_vscode").lazy_load()
