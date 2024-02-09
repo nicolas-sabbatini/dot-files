@@ -3,7 +3,7 @@ return {
 	lazy = true,
 	name = "catppuccin",
 	opts = {
-		flavour = "frappe",
+		flavour = "latte",
 		integrations = {
 			cmp = true,
 			gitsigns = true,
