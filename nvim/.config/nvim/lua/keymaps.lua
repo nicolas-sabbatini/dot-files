@@ -66,8 +66,16 @@ map("n", "<leader>cd", function()
 	vim.diagnostic.open_float()
 end, { desc = "Line diagnostics" })
 
--- Explorer keymaps
--- map("n", "<leader>e", "<cmd>Ex<cr>", { desc = "Explorer" })
-
 -- Clear search highlight
 map("n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
+
+-- Truble
+vim.keymap.set("n", "<leader>tt", function()
+	require("trouble").toggle()
+end, { desc = "Toggle Truble" })
+vim.keymap.set("n", "<leader>cD", function()
+	require("trouble").toggle("workspace_diagnostics")
+end, { desc = "Open workspace diagnostics" })
+vim.keymap.set("n", "<leader>cq", function()
+	require("trouble").toggle("quickfix")
+end, { desc = "Open quickfix" })
