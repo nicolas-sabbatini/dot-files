@@ -7,6 +7,7 @@ return {
 			["g"] = { name = "+goto" },
 			["gl"] = { name = "+lsp" },
 			["s"] = { name = "+comment" },
+			["<leader>s"] = { name = "+comment" },
 			["<leader>b"] = { name = "+buffer" },
 			["<leader>c"] = { name = "+code" },
 			["<leader>f"] = { name = "+file/find" },
