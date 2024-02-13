@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 -- Add lazypath to vim path
 vim.opt.rtp:prepend(lazypath)
-runtime = vim.api.nvim_list_runtime_paths()
+local runtime = vim.api.nvim_list_runtime_paths()
 
 -- Set map leader to <Space>
 vim.g.mapleader = " "
@@ -34,4 +34,4 @@ end
 -- Set up lazy and plugins
 require("lazy").setup(plugins)
 
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("rose-pine")

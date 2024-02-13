@@ -55,9 +55,12 @@ return {
 						telemetry = { enable = false },
 						library = {
 							"${3rd}/love2d/library",
+							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+							[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
 						},
 					},
 				},
+				globals = { "vim" },
 			},
 		})
 
