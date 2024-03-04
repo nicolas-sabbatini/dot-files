@@ -18,6 +18,7 @@ local runtime = vim.api.nvim_list_runtime_paths()
 vim.g.mapleader = " "
 require("./options")
 require("./keymaps")
+require("./autocmds")
 
 -- Load plugins in the plugins folder
 local plugins_names = vim.fs.dir(runtime[2] .. "/lua/plugins")

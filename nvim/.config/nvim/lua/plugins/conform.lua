@@ -17,6 +17,7 @@ return {
 				javascript = { { "prettierd", "prettier" } },
 				typescript = { { "prettierd", "prettier" } },
 				md = { "prettierd" },
+				html = { "prettierd" },
 				markdown = { "prettierd" },
 				["*"] = { "trim_whitespace" },
 			},
