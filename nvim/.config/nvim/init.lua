@@ -35,4 +35,4 @@ end
 -- Set up lazy and plugins
 require("lazy").setup(plugins)
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("gruvbox-material")
