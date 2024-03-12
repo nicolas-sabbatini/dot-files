@@ -34,6 +34,7 @@ return {
 			"vimdoc",
 			"wgsl_bevy",
 			"yaml",
+			"gleam",
 		},
 		highlight = { enable = true },
 		indent = { enable = true },

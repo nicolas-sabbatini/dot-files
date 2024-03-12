@@ -21,6 +21,18 @@ return {
 				markdown = { "prettierd" },
 				["*"] = { "trim_whitespace" },
 			},
+			formatters = {
+				prettierd = {
+					condition = function()
+						return vim.g.conform
+					end,
+				},
+				prettier = {
+					condition = function()
+						return vim.g.conform
+					end,
+				},
+			},
 		},
 	},
 }

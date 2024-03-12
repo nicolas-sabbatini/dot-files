@@ -69,6 +69,11 @@ end, { desc = "Line diagnostics" })
 -- Clear search highlight
 map("n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
 
+-- Conform
+map("n", "<leader>cc", function()
+	vim.g.conform = not vim.g.conform
+end, { desc = "Toggle Conform" })
+
 -- Truble
 vim.keymap.set("n", "<leader>tt", function()
 	require("trouble").toggle()

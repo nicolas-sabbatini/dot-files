@@ -61,3 +61,6 @@ vim.opt.writebackup = false -- If a file is being edited by anotherprogram (or w
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+
+-- Globals
+vim.g.conform = true
