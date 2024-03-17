@@ -27,6 +27,7 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 	source "$HOME/.bash_completion/bun"
+	source "$HOME/.bash_completion/exercism_completion.bash"
 fi
 
 # GCC colors
