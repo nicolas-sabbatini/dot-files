@@ -11,7 +11,6 @@ return {
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "williamboman/mason-lspconfig.nvim" },
 		{ "williamboman/mason.nvim" },
-		{ "zbirenbaum/copilot-cmp" },
 		{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 		{ "folke/neodev.nvim" },
 	},
@@ -72,17 +71,12 @@ return {
 		cmp.setup({
 			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "copilot" },
 				{ name = "buffer", keyword_length = 3 },
 				{ name = "luasnip", keyword_length = 2 },
 				{ name = "path" },
 				{ name = "crates" },
 			},
 			mapping = {
-				["<CR>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = false,
-				}),
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				["<C-e>"] = cmp.mapping.abort(),
 				["<C-j>"] = cmp.mapping.scroll_docs(-4),
