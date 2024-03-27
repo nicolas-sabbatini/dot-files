@@ -39,6 +39,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/dot-files/scripts:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.luarocks/bin:$PATH"
 
 # Set editor
 export EDITOR="nvim"
