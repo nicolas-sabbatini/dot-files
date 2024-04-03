@@ -27,7 +27,7 @@ echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev libgraphicsmagick1-dev
+sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev luarocks python3.10-venv
 
 echo ""
 echo "########################"
@@ -54,25 +54,41 @@ echo "################################"
 echo "#Instaling 🦀 RUST 🦀 and deps.#"
 echo "################################"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.bashrc"
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer rustfmt
 sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
-cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-edit cargo-generate cargo-info cargo-wgsl evcxr_repl exa fd-find gitui license-generator ripgrep simple-http-server starship wasm-bindgen-cli
-# cargo install diesel_cli --no-default-features --features "postgres sqlite"
+cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-generate cargo-info cargo-wgsl exa fd-find gitui license-generator ripgrep simple-http-server starship wasm-bindgen-cli
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 # Rust programs config config
 stow -t "$HOME" starship
 
 echo ""
-echo "##########################"
-echo "#Installing NVM and deps.#"
-echo "##########################"
+echo "##################"
+echo "#Installing NVIM.#"
+echo "##################"
 bob install stable
 bob use stable
+stow -t "$HOME" nvim
+
+echo ""
+echo "##########################"
+echo "#Installing NVM, Bun and deps.#"
+echo "##########################"
 curl -fsSL https://bun.sh/install | bash
 source "$HOME/.bashrc"
 bun install -g neovim tree-sitter-cli
+./scripts/install-update-nvm
+source "$HOME/.bashrc"
+nvm install node
+
+echo ""
+echo "######################"
+echo "#Installing Lua deps.#"
+echo "######################"
+luarocks install --local busted
+sudo luarocks install magick
 
 echo ""
 echo "########################"
@@ -93,10 +109,3 @@ echo "########################"
 echo "#Instaling  HASKELL .#"
 echo "########################"
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-
-echo ""
-echo "###############"
-echo "#Update fonts.#"
-echo "###############"
-stow -t "$HOME" fontconfig
-fc-cache -f -v

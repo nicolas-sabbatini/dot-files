@@ -11,7 +11,7 @@ return {
 				"shfmt",
 				-- TS
 				"eslint-lsp",
-				"prettierd",
+				"prettier",
 				"typescript-language-server",
 				-- Rust
 				"rust-analyzer",
@@ -34,7 +34,7 @@ return {
 				"clang-format",
 				"clangd",
 				"cpplint",
-			}
+			},
 		},
 		config = function(_, opts)
 			require("mason").setup(opts)

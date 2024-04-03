@@ -17,9 +17,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# Enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+# Enable programmable completion features
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
@@ -47,7 +45,6 @@ export EDITOR="nvim"
 # Load aliases
 source "$HOME/.bash_aliases"
 
-# Load completion
 # Load cargo
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
@@ -62,5 +59,8 @@ export NVM_DIR="$HOME/.nvm"
 # Load Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# Load Go
+[ -s "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
 
 eval "$(starship init bash)"
