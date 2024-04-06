@@ -4,3 +4,6 @@
   uncommit = reset HEAD~
 	last = log -1 HEAD
   alias = config --get-regexp alias
+[user]
+	email = nicolas.sabbatini.95@gmail.com
+	name = Nicolas Sabbatini
