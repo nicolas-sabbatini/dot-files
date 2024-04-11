@@ -12,6 +12,7 @@ return {
 			["<leader>c"] = { name = "+code" },
 			["<leader>f"] = { name = "+file/find" },
 			["<leader>t"] = { name = "+telescope" },
+			["<leader>w"] = { name = "+wiki" },
 		},
 		defaults_visual = {
 			["s"] = { name = "+comment" },
