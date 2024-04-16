@@ -7,3 +7,5 @@
 [user]
 	email = nicolas.sabbatini.95@gmail.com
 	name = Nicolas Sabbatini
+[init]
+	defaultBranch = main
