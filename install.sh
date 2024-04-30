@@ -109,3 +109,9 @@ echo "########################"
 echo "#Instaling  HASKELL .#"
 echo "########################"
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
+echo ""
+echo "#####################"
+echo "#Instaling FlatPaks.#"
+echo "#####################"
+flatpak install flathub org.kde.krita org.inkscape.Inkscape com.obsproject.Studio org.kde.kdenlive com.spotify.Client com.discordapp.Discord
