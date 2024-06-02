@@ -32,20 +32,6 @@ return {
 		},
 	},
 	{
-		"echasnovski/mini.comment",
-		version = "*",
-		config = function()
-			require("mini.comment").setup({
-				mappings = {
-					comment = "sc", -- toggle comment
-					comment_line = "scc", -- comment line
-					textobject = "sc", -- comment text object
-					comment_visual = "sc", -- visual modesual
-				},
-			})
-		end,
-	},
-	{
 		{
 			"echasnovski/mini.surround",
 			version = "*",

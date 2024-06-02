@@ -30,10 +30,12 @@ return {
 				-- Go
 				"goimports",
 				"gopls",
-				-- C
-				"clang-format",
-				"clangd",
-				"cpplint",
+				-- -- C
+				-- "clang-format",
+				-- "clangd",
+				-- "cpplint",
+				-- Godot
+				"gdtoolkit",
 			},
 		},
 		config = function(_, opts)

@@ -10,6 +10,7 @@ return {
 			["<leader>s"] = { name = "+comment" },
 			["<leader>b"] = { name = "+buffer" },
 			["<leader>c"] = { name = "+code" },
+			["<leader>cc"] = { name = "+conform" },
 			["<leader>f"] = { name = "+file/find" },
 			["<leader>t"] = { name = "+telescope" },
 			["<leader>w"] = { name = "+wiki" },

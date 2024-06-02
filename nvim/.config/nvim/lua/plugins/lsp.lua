@@ -19,7 +19,6 @@ return {
 		lsp.on_attach(function(_, bufnr)
 			lsp.default_keymaps({ buffer = bufnr })
 		end)
-
 		lsp.set_server_config({
 			capabilities = {
 				textDocument = {
@@ -31,7 +30,8 @@ return {
 			},
 		})
 
-		require("lspconfig")["rust_analyzer"].setup({
+		local lspconfig = require("lspconfig")
+		lspconfig.rust_analyzer.setup({
 			settings = {
 				["rust-analyzer"] = {
 					cargo = {
@@ -46,7 +46,7 @@ return {
 				},
 			},
 		})
-		require("lspconfig")["lua_ls"].setup({
+		lspconfig.lua_ls.setup({
 			settings = {
 				Lua = {
 					workspace = {
@@ -54,14 +54,15 @@ return {
 						telemetry = { enable = false },
 						library = {
 							"${3rd}/love2d/library",
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+							vim.fn.expand("$VIMRUNTIME/lua"),
+							vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
 						},
 					},
 				},
 				globals = { "vim" },
 			},
 		})
+		lspconfig.gdscript.setup({})
 
 		lsp.setup()
 		require("luasnip.loaders.from_vscode").lazy_load()
