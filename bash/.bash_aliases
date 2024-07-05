@@ -32,5 +32,5 @@ alias server='simple-http-server --nocache --upload ---coep --coop'
 # Pictures in the terminal
 alias icat='kitty +kitten icat --scale-up'
 
-# repl
-alias rust-repl='evcxr'
+# FZF
+alias interactive_find='fzf -m --preview="bat --color=always {}"'

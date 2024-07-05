@@ -20,14 +20,14 @@ echo "DO YOU UNDERTAND AND WANT TO CONTINUE? (y/n)"
 read -r CONSENT
 
 if [ "$CONSENT" != "y" ]; then
-	exit 0
+  exit 0
 fi
 
 echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev luarocks python3.10-venv libudev-dev
+sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev luarocks python3.10-venv libudev-dev fzf
 
 echo ""
 echo "########################"

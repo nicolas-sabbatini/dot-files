@@ -1,5 +1,10 @@
 local has_image_magick, _ = pcall(require, "magick")
 
+if vim.loop.os_uname().sysname == "Darwin" then
+	print("On mac")
+	return {}
+end
+
 return {
 	"3rd/image.nvim",
 	opts = {
