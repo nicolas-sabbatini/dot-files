@@ -38,7 +38,7 @@ map("n", "glr", function()
 	vim.lsp.buf.references()
 end, { desc = "Go references" })
 
-map("n", "gls", function()
+map("i", "<C-h>", function()
 	vim.lsp.buf.signature_help()
 end, { desc = "Go signature help" })
 

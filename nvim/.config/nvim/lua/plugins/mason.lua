@@ -34,8 +34,8 @@ return {
 				-- "clang-format",
 				-- "clangd",
 				-- "cpplint",
-				-- Godot
-				"gdtoolkit",
+				-- GSLS
+				"glsl_analyzer",
 			},
 		},
 		config = function(_, opts)
