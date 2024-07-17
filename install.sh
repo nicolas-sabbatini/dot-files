@@ -27,7 +27,7 @@ echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev luarocks python3.10-venv libudev-dev fzf
+sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev luarocks python3.10-venv libudev-dev fzf libxxf86vm-dev
 
 echo ""
 echo "########################"
@@ -58,7 +58,7 @@ source "$HOME/.bashrc"
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer rustfmt
 sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
-cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-generate cargo-info cargo-wgsl exa fd-find gitui license-generator ripgrep simple-http-server starship wasm-bindgen-cli tokei
+cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-generate cargo-info cargo-wgsl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli tokei
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
 # Rust programs config config
