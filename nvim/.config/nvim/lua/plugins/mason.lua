@@ -30,12 +30,10 @@ return {
 				-- Go
 				"goimports",
 				"gopls",
-				-- -- C
-				-- "clang-format",
-				-- "clangd",
-				-- "cpplint",
 				-- GSLS
 				"glsl_analyzer",
+				-- WSLS
+				"wgsl-analyzer",
 			},
 		},
 		config = function(_, opts)
