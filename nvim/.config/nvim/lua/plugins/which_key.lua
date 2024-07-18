@@ -1,28 +1,31 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
+	dependencies = { "echasnovski/mini.nvim" },
 	opts = {
 		plugins = { spelling = true },
-		defaults_normal = {
-			["g"] = { name = "+goto" },
-			["gl"] = { name = "+lsp" },
-			["s"] = { name = "+comment" },
-			["<leader>s"] = { name = "+comment" },
-			["<leader>b"] = { name = "+buffer" },
-			["<leader>c"] = { name = "+code" },
-			["<leader>cc"] = { name = "+conform" },
-			["<leader>f"] = { name = "+file/find" },
-			["<leader>t"] = { name = "+telescope" },
-			["<leader>w"] = { name = "+wiki" },
+		spec = {
+			{
+				mode = { "n" },
+				{ "g", group = "goto" },
+				{ "gl", group = "lsp" },
+				{ "s", group = "comment" },
+				{ "<leader>s", group = "comment" },
+				{ "<leader>b", group = "buffer" },
+				{ "<leader>c", group = "code" },
+				{ "<leader>cc", group = "conform" },
+				{ "<leader>f", group = "file/find" },
+				{ "<leader>t", group = "telescope" },
+				{ "<leader>w", group = "wiki" },
+			},
 		},
-		defaults_visual = {
-			["s"] = { name = "+comment" },
+		{
+			mode = { "v" },
+			{ "s", group = "surrounding" },
 		},
 	},
 	config = function(_, opts)
 		local wk = require("which-key")
 		wk.setup(opts)
-		wk.register(opts.defaults_normal)
-		wk.register(opts.defaults_visual, { mode = "v" })
 	end,
 }

@@ -79,14 +79,3 @@ map("n", "<leader>cct", function()
 	vim.opt.expandtab = vim.g.expand
 	vim.print("Expand tab is now: " .. tostring(vim.g.expand))
 end, { desc = "Toggle Tabs" })
-
--- Truble
-vim.keymap.set("n", "<leader>tt", function()
-	require("trouble").toggle()
-end, { desc = "Toggle Truble" })
-vim.keymap.set("n", "<leader>cD", function()
-	require("trouble").toggle("workspace_diagnostics")
-end, { desc = "Open workspace diagnostics" })
-vim.keymap.set("n", "<leader>cq", function()
-	require("trouble").toggle("quickfix")
-end, { desc = "Open quickfix" })
