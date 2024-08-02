@@ -3,7 +3,7 @@
 --
 vim.opt.backup = false -- Don't make a backup before overwriting a file
 vim.opt.clipboard = "unnamedplus" -- Allows neovim to access the system clipboard
-vim.opt.cmdheight = 2 -- Height of the cmd
+vim.opt.cmdheight = 1 -- Height of the cmd
 vim.opt.confirm = true -- Operations that would normally fail because of unsaved changes
 -- to a buffer raise a dialog asking if you wish to save
 -- the current file(s)
@@ -11,7 +11,7 @@ vim.opt.conceallevel = 0 -- `` is visible in markdown files
 vim.opt.completeopt = { "menuone", "noselect" } -- Mostly just for cmp
 vim.opt.cursorline = true -- Show cursorline
 vim.opt.cursorlineopt = "both" -- Cursorline highlight text and number
-vim.opt.debug = "msg" -- Show error messages
+-- vim.opt.debug = "msg" -- Show error messages
 vim.opt.emoji = false -- 😁
 vim.opt.errorbells = false -- No sound
 vim.opt.expandtab = true -- Convert tabs to spaces
