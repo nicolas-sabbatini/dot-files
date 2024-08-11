@@ -9,6 +9,7 @@ return {
 				mode = { "n" },
 				{ "g", group = "goto" },
 				{ "gl", group = "lsp" },
+				{ "gs", group = "surrounding" },
 				{ "s", group = "comment" },
 				{ "<leader>s", group = "comment" },
 				{ "<leader>b", group = "buffer" },
@@ -18,10 +19,10 @@ return {
 				{ "<leader>t", group = "telescope" },
 				{ "<leader>w", group = "wiki" },
 			},
-		},
-		{
-			mode = { "v" },
-			{ "s", group = "surrounding" },
+			{
+				mode = { "v" },
+				{ "gs", group = "surrounding" },
+			},
 		},
 	},
 	config = function(_, opts)
