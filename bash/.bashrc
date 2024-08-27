@@ -1,3 +1,13 @@
+__append_to_path() {
+  case ":$PATH:" in
+  *:$1:*) ;;
+  *)
+    export PATH="$1:$PATH"
+    ;;
+  esac
+
+}
+
 # Forward search dont send terminal to sleep (ctrl+s)
 [[ $- == *i* ]] && stty -ixon
 
@@ -10,34 +20,31 @@ HISTFILESIZE=20000
 # Append bash commands to history file
 shopt -s histappend
 
-# If some command change terminal size update lines and columns
-shopt -s checkwinsize
-
 # Less
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Enable programmable completion features
 if ! shopt -oq posix; then
-	if [ -f /usr/share/bash-completion/bash_completion ]; then
-		. /usr/share/bash-completion/bash_completion
-	elif [ -f /etc/bash_completion ]; then
-		. /etc/bash_completion
-	fi
-	source "$HOME/.bash_completion/bun"
-	source "$HOME/.bash_completion/exercism_completion.bash"
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+  source "$HOME/.bash_completion/bun"
+  source "$HOME/.bash_completion/exercism_completion.bash"
 fi
 
 # GCC colors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Exports
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.config/dot-files/scripts:$PATH"
-export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.luarocks/bin:$PATH"
+__append_to_path "$HOME/.local/bin"
+__append_to_path "$HOME/.cargo/bin"
+__append_to_path "$HOME/.config/dot-files/scripts"
+__append_to_path "$HOME/.local/share/bob/nvim-bin"
+__append_to_path "$HOME/go/bin"
+__append_to_path "$HOME/.luarocks/bin"
 
 # Set editor
 export EDITOR="nvim"
@@ -53,14 +60,17 @@ source "$HOME/.bash_aliases"
 
 # Load nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
 
 # Load Bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
+__append_to_path "$BUN_INSTALL/bin"
 
 # Load Go
-[ -s "/usr/local/go/bin" ] && export PATH="/usr/local/go/bin:$PATH"
+[ -s "/usr/local/go/bin" ] && __append_to_path "/usr/local/go/bin"
+
+# Load Zig
+[ -s "$HOME/.local/lib/zig" ] && __append_to_path "$HOME/.local/lib/zig"
 
 eval "$(starship init bash)"

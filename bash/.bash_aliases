@@ -26,9 +26,6 @@ alias egrep='egrep --color=auto'
 # local http server
 alias server='simple-http-server --nocache --upload ---coep --coop'
 
-# Test midi files (timidity required)
-# alias play-midi='timidity'
-
 # Pictures in the terminal
 alias icat='kitty +kitten icat --scale-up'
 

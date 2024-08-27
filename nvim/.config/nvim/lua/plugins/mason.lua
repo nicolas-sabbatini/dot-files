@@ -34,6 +34,8 @@ return {
 				"glsl_analyzer",
 				-- WSLS
 				"wgsl-analyzer",
+				-- Zig
+				"zls",
 			},
 		},
 		config = function(_, opts)
