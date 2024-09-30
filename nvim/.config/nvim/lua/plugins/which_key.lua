@@ -17,7 +17,6 @@ return {
 				{ "<leader>cc", group = "conform" },
 				{ "<leader>f", group = "file/find" },
 				{ "<leader>t", group = "telescope" },
-				{ "<leader>w", group = "wiki" },
 			},
 			{
 				mode = { "v" },
