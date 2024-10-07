@@ -31,7 +31,6 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-  source "$HOME/.bash_completion/bun"
   source "$HOME/.bash_completion/exercism_completion.bash"
 fi
 
@@ -62,10 +61,6 @@ source "$HOME/.bash_aliases"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-
-# Load Bun
-export BUN_INSTALL="$HOME/.bun"
-__append_to_path "$BUN_INSTALL/bin"
 
 # Load Go
 [ -s "/usr/local/go/bin" ] && __append_to_path "/usr/local/go/bin"

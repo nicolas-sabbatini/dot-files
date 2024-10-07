@@ -74,14 +74,12 @@ stow -t "$HOME" nvim
 
 echo ""
 echo "##########################"
-echo "#Installing NVM, Bun and deps.#"
+echo "#Installing NVM and deps.#"
 echo "##########################"
-curl -fsSL https://bun.sh/install | bash
-source "$HOME/.bashrc"
-bun install -g neovim tree-sitter-cli
 ./scripts/install-update-nvm
 source "$HOME/.bashrc"
 nvm install node
+npm install -g neovim tree-sitter-cli
 
 echo ""
 echo "######################"
