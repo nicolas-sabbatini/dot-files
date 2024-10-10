@@ -24,10 +24,44 @@ if [ "$CONSENT" != "y" ]; then
 fi
 
 echo ""
+echo "######################"
+echo "#Ading Charm.sh repo.#"
+echo "######################"
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+
+echo ""
+echo "####################"
+echo "#Ading Docker repo.#"
+echo "####################"
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |
+  sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+
+echo ""
+echo "################"
+echo "#Update system.#"
+echo "################"
+sudo apt update
+sudo apt upgrade -y
+
+echo ""
 echo "#####################"
 echo "#Instaling APT deps.#"
 echo "#####################"
-sudo apt install build-essential cmake libasound2-dev libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev luarocks python3.10-venv libudev-dev fzf libxxf86vm-dev
+sudo apt install build-essential cmake libasound2-dev \
+  libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev \
+  libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev \
+  libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev \
+  libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev \
+  luarocks python3.10-venv libudev-dev fzf libxxf86vm-dev \
+  gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 echo ""
 echo "########################"
@@ -113,3 +147,10 @@ echo "#####################"
 echo "#Instaling FlatPaks.#"
 echo "#####################"
 flatpak install flathub org.kde.krita org.inkscape.Inkscape com.obsproject.Studio org.kde.kdenlive com.spotify.Client com.discordapp.Discord
+
+echo ""
+echo "######################"
+echo "#Set up Docker group.#"
+echo "######################"
+sudo groupadd docker
+sudo usermod -aG docker "$USER"
