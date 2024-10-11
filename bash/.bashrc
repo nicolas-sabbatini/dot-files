@@ -57,15 +57,14 @@ source "$HOME/.bash_aliases"
 # Load ghcup
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-
 # Load Go
 [ -s "/usr/local/go/bin" ] && __append_to_path "/usr/local/go/bin"
 
 # Load Zig
 [ -s "$HOME/.local/lib/zig" ] && __append_to_path "$HOME/.local/lib/zig"
 
+# Load deno
+[ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
+
 eval "$(starship init bash)"
+

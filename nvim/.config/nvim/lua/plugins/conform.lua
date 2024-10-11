@@ -14,20 +14,12 @@ return {
 				go = { "goimports", "gofmt" },
 				lua = { "stylua" },
 				sh = { "shfmt" },
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				md = { "prettier" },
-				html = { "prettier" },
-				markdown = { "prettier" },
-				gdscript = { "gdformat" },
+				javascript = { "deno_fmt" },
+				typescript = { "deno_fmt" },
+				-- html = { "prettier" },
+				md = { "deno_fmt" },
+				markdown = { "deno_fmt" },
 				["*"] = { "trim_whitespace" },
-			},
-			formatters = {
-				prettier = {
-					condition = function()
-						return vim.g.prettier
-					end,
-				},
 			},
 		},
 	},

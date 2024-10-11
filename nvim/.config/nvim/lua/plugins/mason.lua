@@ -6,18 +6,19 @@ return {
 		opts = {
 			ensure_installed = {
 				-- Bash
-				"bash-language-server",
+				-- "bash-language-server",
 				"shellcheck",
 				"shfmt",
 				-- TS
-				"eslint-lsp",
-				"prettier",
-				"typescript-language-server",
+				"deno",
+				-- "eslint-lsp",
+				-- "prettier",
+				-- "typescript-language-server",
 				-- Rust
 				"rust-analyzer",
 				"taplo",
 				-- JSON
-				"json-lsp",
+				-- "json-lsp",
 				-- Lua
 				"lua-language-server",
 				"stylua",
