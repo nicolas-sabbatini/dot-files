@@ -28,6 +28,12 @@ return {
 						vim.fn.setreg("+", emoji.value)
 					end,
 				},
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case",
+				},
 			},
 		},
 		config = function(_, opts)
@@ -35,6 +41,7 @@ return {
 			telescope.setup(opts)
 			telescope.load_extension("file_browser")
 			telescope.load_extension("emoji")
+			telescope.load_extension("fzf")
 		end,
 		keys = {
 			{
@@ -71,12 +78,18 @@ return {
 			},
 		},
 	},
+	-- Telescope deps
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
 	{
 		"xiyaowong/telescope-emoji.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+	},
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
 		dependencies = { "nvim-telescope/telescope.nvim" },
 	},
 }

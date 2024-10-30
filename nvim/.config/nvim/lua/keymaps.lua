@@ -74,8 +74,3 @@ map("n", "<leader>ccp", function()
 	vim.g.prettier = not vim.g.prettier
 	vim.print("Prettier is now: " .. tostring(vim.g.prettier))
 end, { desc = "Toggle Prettier" })
-map("n", "<leader>cct", function()
-	vim.g.expand = not vim.g.expand
-	vim.opt.expandtab = vim.g.expand
-	vim.print("Expand tab is now: " .. tostring(vim.g.expand))
-end, { desc = "Toggle Tabs" })
