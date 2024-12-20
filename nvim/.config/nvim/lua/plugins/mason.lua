@@ -11,14 +11,9 @@ return {
 				"shfmt",
 				-- TS
 				"deno",
-				-- "eslint-lsp",
-				-- "prettier",
-				-- "typescript-language-server",
 				-- Rust
 				"rust-analyzer",
 				"taplo",
-				-- JSON
-				-- "json-lsp",
 				-- Lua
 				"lua-language-server",
 				"stylua",
@@ -28,9 +23,6 @@ return {
 				"haskell-language-server",
 				-- Docker
 				"hadolint",
-				-- Go
-				"goimports",
-				"gopls",
 				-- GSLS
 				"glsl_analyzer",
 				-- WSLS

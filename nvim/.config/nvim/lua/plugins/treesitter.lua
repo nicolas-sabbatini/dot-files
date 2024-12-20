@@ -31,11 +31,6 @@ return {
 			-- Shaders
 			"glsl",
 			"wgsl_bevy",
-			-- Go
-			"go",
-			"gomod",
-			"gosum",
-			"gowork",
 		},
 		highlight = { enable = true },
 		indent = { enable = true },
