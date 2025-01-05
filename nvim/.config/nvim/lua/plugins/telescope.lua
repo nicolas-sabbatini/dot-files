@@ -28,6 +28,12 @@ return {
 						vim.fn.setreg("+", emoji.value)
 					end,
 				},
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case",
+				},
 			},
 		},
 		config = function(_, opts)
@@ -77,6 +83,11 @@ return {
 	},
 	{
 		"xiyaowong/telescope-emoji.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+	},
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
 		dependencies = { "nvim-telescope/telescope.nvim" },
 	},
 }
