@@ -61,10 +61,9 @@ source "$HOME/.bash_aliases"
 [ -s "/usr/local/go/bin" ] && __append_to_path "/usr/local/go/bin"
 
 # Load Zig
-[ -s "$HOME/.local/lib/zig" ] && __append_to_path "$HOME/.local/lib/zig"
+[ -s "$HOME/.zvm/bin" ] && __append_to_path "$HOME/.zvm/bin"
 
 # Load deno
 [ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
 
 eval "$(starship init bash)"
-
