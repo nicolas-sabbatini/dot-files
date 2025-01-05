@@ -5,3 +5,5 @@ echo "Install Gup"
 go install github.com/nao1215/gup@latest
 echo "Install Lazydocker"
 go install github.com/jesseduffield/lazydocker@latest
+echo "Install zvm"
+go install -ldflags "-s -w" github.com/tristanisham/zvm@latest
