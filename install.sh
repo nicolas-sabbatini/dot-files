@@ -124,20 +124,6 @@ sudo luarocks install magick
 
 echo ""
 echo "########################"
-echo "#Instaling 😸 KITTY 😸.#"
-echo "########################"
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-stow -t "$HOME" kitty
-source "$HOME/.bashrc"
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator "$(which kitty)" 50
-
-echo ""
-echo "########################"
 echo "#Instaling  HASKELL .#"
 echo "########################"
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
