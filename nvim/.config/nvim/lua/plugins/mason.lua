@@ -29,6 +29,9 @@ return {
 				"wgsl-analyzer",
 				-- Zig
 				"zls",
+				-- C
+				"clang-format",
+				"clangd",
 			},
 		},
 		config = function(_, opts)
