@@ -2,7 +2,6 @@ return {
 	{
 		"williamboman/mason.nvim",
 		cmd = "Mason",
-		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
 		opts = {
 			ensure_installed = {
 				-- Bash
@@ -52,5 +51,54 @@ return {
 			end
 		end,
 	},
-	"williamboman/mason-lspconfig.nvim",
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				handlers = {
+					function(server_name)
+						require("lspconfig")[server_name].setup({})
+					end,
+					rust_analyzer = function()
+						require("lspconfig").rust_analyzer.setup({
+							settings = {
+								["rust-analyzer"] = {
+									cargo = {
+										allFeatures = true,
+										loadOutDirsFromCheck = true,
+										runBuildScripts = true,
+									},
+									check = {
+										command = "clippy",
+										extraArgs = { "--no-deps", "--", "-W", "clippy::pedantic" },
+									},
+								},
+							},
+						})
+					end,
+					lua_ls = function()
+						require("lspconfig").lua_ls.setup({
+							settings = {
+								Lua = {
+									runtime = {
+										version = "LuaJIT",
+									},
+									workspace = {
+										checkThirdParty = true,
+										telemetry = { enable = false },
+										library = {
+											"${3rd}/love2d/library",
+											vim.fn.expand("$VIMRUNTIME/lua"),
+											vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
+										},
+									},
+								},
+								globals = { "vim" },
+							},
+						})
+					end,
+				},
+			})
+		end,
+	},
 }
