@@ -3,7 +3,6 @@ return {
 		"stevearc/conform.nvim",
 		opts = {
 			format_on_save = {
-				-- I recommend these options. See :help conform.format for details.
 				lsp_fallback = true,
 				timeout_ms = 500,
 			},
@@ -17,10 +16,20 @@ return {
 				javascript = { "deno_fmt" },
 				typescript = { "deno_fmt" },
 				html = { "deno_fmt" },
+				css = { "deno_fmt" },
 				md = { "deno_fmt" },
 				markdown = { "deno_fmt" },
 				c = { "clang-format" },
+				zig = { "zig_format" },
 				["*"] = { "trim_whitespace" },
+			},
+			formatters = {
+				zig_format = {
+					command = "zig",
+					args = { "fmt", "$FILENAME" },
+					stdin = false,
+					tmpfile_format = ".conform.$RANDOM.$FILENAME",
+				},
 			},
 		},
 	},
