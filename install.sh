@@ -61,7 +61,8 @@ sudo apt install build-essential cmake libasound2-dev \
   libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev \
   libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev \
   luarocks python3.10-venv libudev-dev fzf libxxf86vm-dev \
-  gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
+  bison
 
 echo ""
 echo "########################"
