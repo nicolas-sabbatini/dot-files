@@ -6,6 +6,7 @@ return {
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		opts = {
 			ensure_installed = {
+				-- Lenguages
 				"bash",
 				"dockerfile",
 				"javascript",

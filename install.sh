@@ -10,10 +10,12 @@ echo "# ██   ████ ██ ██   ██     ██████   �
 echo "#                                                                                              #"
 echo "################################################################################################"
 echo ""
-echo "WARNING: This script will install a LOT of software and it don't give you option to not do it "
-echo "         if you don't want to do it, press CTRL+C to cancel this script."
-echo "         Also, the scrip espect that if an error occurs YOU must solve it manually."
-echo "         So if you don't know what you are doing, press CTRL+C to cancel this script."
+echo "WARNING: This script will install a large amount of software without prompting for confirmation."
+echo "         It is intended to be run ONLY on Pop!_OS."
+echo "         If you do NOT want to proceed, press CTRL+C now to cancel."
+echo ""
+echo "         IMPORTANT: If an error occurs during installation, YOU are responsible for fixing it manually."
+echo "         If you are unsure about what this script does, it is strongly recommended to press CTRL+C and exit."
 echo ""
 echo "DO YOU UNDERTAND AND WANT TO CONTINUE? (y/n)"
 
@@ -95,9 +97,11 @@ rustup component add rls rust-analysis rust-src rust-analyzer rustfmt
 sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
 cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-generate cargo-info cargo-wgsl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli tokei
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+source "$HOME/.bashrc"
 
-# Rust programs config config
+# Rust programs config
 stow -t "$HOME" starship
+source "$HOME/.bashrc"
 
 echo ""
 echo "##################"
@@ -106,15 +110,7 @@ echo "##################"
 bob install stable
 bob use stable
 stow -t "$HOME" nvim
-
-echo ""
-echo "##########################"
-echo "#Installing NVM and deps.#"
-echo "##########################"
-./scripts/install-update-nvm
 source "$HOME/.bashrc"
-nvm install node
-npm install -g neovim tree-sitter-cli
 
 echo ""
 echo "######################"
@@ -122,12 +118,6 @@ echo "#Installing Lua deps.#"
 echo "######################"
 luarocks install --local busted
 sudo luarocks install magick
-
-echo ""
-echo "########################"
-echo "#Instaling  HASKELL .#"
-echo "########################"
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 echo ""
 echo "#####################"
@@ -141,3 +131,8 @@ echo "#Set up Docker group.#"
 echo "######################"
 sudo groupadd docker
 sudo usermod -aG docker "$USER"
+
+echo "################################"
+echo "# The installation is finished #"
+echo "#  Please reboot the computer  #"
+echo "################################"

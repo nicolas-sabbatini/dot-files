@@ -14,7 +14,7 @@ map("n", "<leader>v", "<C-w>v", { desc = "Split vertical" })
 
 map("n", "<C-+>", "<C-w>+", { desc = "Increase heigth" })
 map("n", "<C-->", "<C-w>-", { desc = "Decrease heigth" })
-map("n", "<C->>", "<C-w>>", { desc = "Increase width" })
+map("n", "<C-S-<>", "<C-w>>", { desc = "Increase width" })
 map("n", "<C-<>", "<C-w><", { desc = "Decrease width" })
 
 -- LSP keymaps
@@ -42,21 +42,17 @@ map("i", "<C-h>", function()
 	vim.lsp.buf.signature_help()
 end, { desc = "Go signature help" })
 
-map("n", "glc", function()
-	vim.diagnostic.goto_prev()
+map("n", "glp", function()
+	vim.diagnostic.jump({ count = -1 })
 end, { desc = "Go prev diagnostic" })
 
 map("n", "gln", function()
-	vim.diagnostic.goto_next()
+	vim.diagnostic.jump({ count = 1 })
 end, { desc = "Go next diagnostic" })
 
 map("n", "<leader>cr", function()
 	vim.lsp.buf.rename()
 end, { desc = "Rename symbol" })
-
-map("n", "<leader>cf", function()
-	vim.lsp.buf.formatting()
-end, { desc = "Code format" })
 
 map("n", "<leader>ca", function()
 	vim.lsp.buf.code_action()

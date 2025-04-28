@@ -18,8 +18,6 @@ return {
 				"stylua",
 				-- Markdown
 				"marksman",
-				-- Haskell
-				"haskell-language-server",
 				-- Docker
 				"hadolint",
 				-- GSLS

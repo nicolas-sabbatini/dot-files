@@ -7,7 +7,7 @@ end
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
+		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "Telescope",
 		opts = {
@@ -23,11 +23,6 @@ return {
 					hidden = { file_browser = true, folder_browser = true },
 					no_ignore = true,
 				},
-				emoji = {
-					action = function(emoji)
-						vim.fn.setreg("+", emoji.value)
-					end,
-				},
 				fzf = {
 					fuzzy = true,
 					override_generic_sorter = true,
@@ -40,7 +35,6 @@ return {
 			local telescope = require("telescope")
 			telescope.setup(opts)
 			telescope.load_extension("file_browser")
-			telescope.load_extension("emoji")
 		end,
 		keys = {
 			{
@@ -70,20 +64,11 @@ return {
 				"<cmd>Telescope file_browser initial_mode=normal initial_mode=normal<cr>",
 				desc = "Explorer root",
 			},
-			{
-				"<leader>te",
-				"<cmd>Telescope emoji theme=ivy<cr>",
-				desc = "Emoji selector",
-			},
 		},
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	},
-	{
-		"xiyaowong/telescope-emoji.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
