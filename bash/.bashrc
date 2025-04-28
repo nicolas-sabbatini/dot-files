@@ -54,11 +54,9 @@ source "$HOME/.bash_aliases"
 # Load cargo
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# Load ghcup
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
-
 # Load Go
-[ -s "/usr/local/go/bin" ] && __append_to_path "/usr/local/go/bin"
+[ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
+[ -s "$HOME/.gvm/scripts/gvm" ] && gvm use go1.24.2 &>/dev/null
 
 # Load Zig
 [ -s "$HOME/.zvm/bin" ] && __append_to_path "$HOME/.zvm/bin"
@@ -67,3 +65,5 @@ source "$HOME/.bash_aliases"
 [ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
 
 eval "$(starship init bash)"
+
+[[ -s "/home/nico/.gvm/scripts/gvm" ]] && source "/home/nico/.gvm/scripts/gvm"

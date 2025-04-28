@@ -63,8 +63,9 @@ sudo apt install build-essential cmake libasound2-dev \
   libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev \
   libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev \
   luarocks python3.10-venv libudev-dev fzf libxxf86vm-dev \
-  gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-  bison
+  gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
+  docker-compose-plugin bison libgtk-4-dev libadwaita-1-dev \
+  blueprint-compiler gettext libxml2-utils
 
 echo ""
 echo "########################"
@@ -95,7 +96,21 @@ source "$HOME/.bashrc"
 rustup target add wasm32-unknown-unknown
 rustup component add rls rust-analysis rust-src rust-analyzer rustfmt
 sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
-cargo install --locked cargo-update cargo-watch bat bob-nvim cargo-generate cargo-info cargo-wgsl exa fd-find license-generator ripgrep simple-http-server starship wasm-bindgen-cli tokei
+cargo install --locked cargo-update \
+  cargo-watch \
+  bat \
+  bob-nvim \
+  cargo-generate \
+  cargo-info \
+  cargo-wgsl \
+  exa \
+  fd-find \
+  license-generator \
+  ripgrep \
+  simple-http-server \
+  starship \
+  wasm-bindgen-cli \
+  tokei
 curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 source "$HOME/.bashrc"
 
@@ -123,7 +138,15 @@ echo ""
 echo "#####################"
 echo "#Instaling FlatPaks.#"
 echo "#####################"
-flatpak install flathub org.kde.krita org.inkscape.Inkscape com.obsproject.Studio org.kde.kdenlive com.spotify.Client com.discordapp.Discord md.obsidian.Obsidian
+flatpak install flathub org.kde.krita \
+  org.inkscape.Inkscape \
+  com.obsproject.Studio \
+  org.kde.kdenlive \
+  com.spotify.Client \
+  com.discordapp.Discord \
+  md.obsidian.Obsidian \
+  com.github.tchx84.Flatseal \
+  com.valvesoftware.Steam
 
 echo ""
 echo "######################"
@@ -131,6 +154,21 @@ echo "#Set up Docker group.#"
 echo "######################"
 sudo groupadd docker
 sudo usermod -aG docker "$USER"
+
+echo ""
+echo "##################"
+echo "#Installing DENO.#"
+echo "##################"
+curl -fsSL https://deno.land/install.sh | sh
+
+echo ""
+echo "################"
+echo "#Installing Go.#"
+echo "################"
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+source "$HOME/.bashrc"
+gvm install go1.24.2 -B
+source "$HOME/.bashrc"
 
 echo "################################"
 echo "# The installation is finished #"
