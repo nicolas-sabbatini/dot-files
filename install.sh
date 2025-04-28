@@ -65,7 +65,8 @@ sudo apt install build-essential cmake libasound2-dev \
   luarocks python3.10-venv libudev-dev fzf libxxf86vm-dev \
   gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
   docker-compose-plugin bison libgtk-4-dev libadwaita-1-dev \
-  blueprint-compiler gettext libxml2-utils
+  blueprint-compiler gettext libxml2-utils libclang-dev libfontconfig-dev \
+  libxkbcommon-dev
 
 echo ""
 echo "########################"
