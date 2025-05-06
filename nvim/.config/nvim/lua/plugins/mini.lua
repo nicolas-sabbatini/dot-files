@@ -1,4 +1,5 @@
 return {
+	{ "echasnovski/mini.icons", version = "*" },
 	{
 		"echasnovski/mini.bufremove",
 		version = "*",
