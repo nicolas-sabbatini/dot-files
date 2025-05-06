@@ -66,6 +66,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/go/bin" ] && __append_to_path "/usr/local/go/bin"
 
 # Load Zig
-[ -s "$HOME/.local/lib/zig" ] && __append_to_path "$HOME/.local/lib/zig"
+[ -s "$HOME/.zvm/bin" ] && __append_to_path "$HOME/.zvm/bin"
 
 eval "$(starship init bash)"
