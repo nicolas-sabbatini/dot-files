@@ -69,3 +69,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$HOME/.zvm/bin" ] && __append_to_path "$HOME/.zvm/bin"
 
 eval "$(starship init bash)"
+. "/home/nicosabbatini/.deno/env"

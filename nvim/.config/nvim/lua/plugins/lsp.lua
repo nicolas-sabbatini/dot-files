@@ -1,6 +1,6 @@
 return {
 	"VonHeikemen/lsp-zero.nvim",
-	branch = "v2.x",
+	branch = "v4.x",
 	dependencies = {
 		{ "hrsh7th/cmp-buffer" },
 		{ "hrsh7th/cmp-nvim-lsp" },
@@ -15,7 +15,7 @@ return {
 		{ "folke/neodev.nvim" },
 	},
 	config = function()
-		local lsp = require("lsp-zero").preset({})
+		local lsp = require("lsp-zero")
 		lsp.on_attach(function(_, bufnr)
 			lsp.default_keymaps({ buffer = bufnr })
 		end)
@@ -31,49 +31,13 @@ return {
 		})
 
 		local lspconfig = require("lspconfig")
-		lspconfig.rust_analyzer.setup({
-			settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						allFeatures = true,
-						loadOutDirsFromCheck = true,
-						runBuildScripts = true,
-					},
-					check = {
-						command = "clippy",
-						extraArgs = { "--no-deps", "--", "-W", "clippy::pedantic" },
-					},
-				},
-			},
-		})
-		lspconfig.lua_ls.setup({
-			settings = {
-				Lua = {
-					workspace = {
-						checkThirdParty = true,
-						telemetry = { enable = false },
-						library = {
-							"${3rd}/love2d/library",
-							vim.fn.expand("$VIMRUNTIME/lua"),
-							vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
-						},
-					},
-				},
-				globals = { "vim" },
-			},
-		})
-		lspconfig.eslint.setup({
-			on_attach = function(client, bufnr)
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					command = "EslintFixAll",
-				})
-			end,
-		})
-
+		lspconfig.util.default_config.capabilities = vim.tbl_deep_extend(
+			"force",
+			lspconfig.util.default_config.capabilities,
+			require("cmp_nvim_lsp").default_capabilities()
+		)
 		lsp.setup()
 		require("luasnip.loaders.from_vscode").lazy_load()
-
 		local cmp = require("cmp")
 		local cmp_select = { "behavior", cmp.SelectBehavior.Select }
 		cmp.setup({
@@ -84,6 +48,18 @@ return {
 				{ name = "path" },
 				{ name = "crates" },
 			},
+			formatting = {
+				fields = { "abbr", "menu", "kind" },
+				format = function(entry, item)
+					local n = entry.source.name
+					if n == "nvim_lsp" then
+						item.menu = "[LSP]"
+					else
+						item.menu = string.format("[%s]", n)
+					end
+					return item
+				end,
+			},
 			mapping = {
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				["<C-e>"] = cmp.mapping.abort(),
@@ -91,6 +67,11 @@ return {
 				["<C-k>"] = cmp.mapping.scroll_docs(-4),
 				["<Up>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<Down>"] = cmp.mapping.select_next_item(cmp_select),
+			},
+			snippet = {
+				expand = function(args)
+					require("luasnip").lsp_expand(args.body)
+				end,
 			},
 		})
 	end,
