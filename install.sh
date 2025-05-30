@@ -66,7 +66,9 @@ sudo apt install build-essential cmake libasound2-dev \
   gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
   docker-compose-plugin bison libgtk-4-dev libadwaita-1-dev \
   blueprint-compiler gettext libxml2-utils libclang-dev libfontconfig-dev \
-  libxkbcommon-dev imagemagick
+  libxkbcommon-dev imagemagick mesa-common-dev libglu1-mesa-dev libgl-dev \
+  libxcursor-dev libxext-dev libxfixes-dev libxinerama-dev libxrandr-dev \
+  libxrender-dev libegl-dev libwayland-dev
 
 echo ""
 echo "########################"

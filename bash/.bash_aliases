@@ -1,6 +1,3 @@
-# Quick alias edit
-alias edit-alias='code ~/.bash_aliases'
-
 ## Rusty tools
 # ls
 alias ls='exa'

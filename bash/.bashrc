@@ -54,7 +54,7 @@ source "$HOME/.bash_aliases"
 # Load cargo
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# Load Go
+# # Load Go
 [ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
 [ -s "$HOME/.gvm/scripts/gvm" ] && gvm use go1.24.2 &>/dev/null
 
@@ -64,6 +64,8 @@ source "$HOME/.bash_aliases"
 # Load deno
 [ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
 
-eval "$(starship init bash)"
+# Load emsdk
+export EMSDK_QUIET=1
+[ -s "$HOME/.local/emsdk" ] && source "$HOME/.local/emsdk/emsdk_env.sh"
 
-[[ -s "/home/nico/.gvm/scripts/gvm" ]] && source "/home/nico/.gvm/scripts/gvm"
+eval "$(starship init bash)"

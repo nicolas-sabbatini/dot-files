@@ -29,6 +29,9 @@ return {
 				-- C
 				"clang-format",
 				"clangd",
+				-- Go
+				"goimports",
+				"gopls",
 			},
 		},
 		config = function(_, opts)
