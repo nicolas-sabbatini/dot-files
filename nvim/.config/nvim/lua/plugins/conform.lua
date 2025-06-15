@@ -15,6 +15,7 @@ return {
 				sh = { "shfmt" },
 				javascript = { "deno_fmt" },
 				typescript = { "deno_fmt" },
+				json = { "deno_fmt" },
 				html = { "deno_fmt" },
 				css = { "deno_fmt" },
 				md = { "deno_fmt" },
