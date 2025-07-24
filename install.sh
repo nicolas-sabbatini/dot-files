@@ -147,7 +147,6 @@ flatpak install flathub org.kde.krita \
   org.kde.kdenlive \
   com.spotify.Client \
   com.discordapp.Discord \
-  md.obsidian.Obsidian \
   com.github.tchx84.Flatseal \
   com.valvesoftware.Steam
 
