@@ -28,14 +28,6 @@ vim.lsp.config("lua_ls", {
 		client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
 			runtime = {
 				version = "LuaJIT",
-				path = {
-					"lua/?.lua",
-					"lua/?/init.lua",
-					"src/?.lua",
-					"src/?/init.lua",
-					"?.lua",
-					"?/init.lua",
-				},
 			},
 			workspace = {
 				checkThirdParty = true,

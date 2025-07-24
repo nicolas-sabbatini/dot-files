@@ -9,7 +9,7 @@ return {
 			desc = "Toggle trouble",
 		},
 		{
-			"<leader>cD",
+			"<leader>cb",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 			desc = "File diagnostics",
 		},
@@ -20,7 +20,7 @@ return {
 		},
 		{
 			"<leader>xQ",
-			"<cmd>Trouble qflist toggle<cr>",
+			"<cmd>Trouble quicklist toggle<cr>",
 			desc = "Quickfix List",
 		},
 	},
