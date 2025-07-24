@@ -9,7 +9,10 @@ return {
 		leader_key = "gb",
 		separate_save_and_remove = true,
 		buffer_leader_key = "ga",
-		global_bookmarks = false,
+		global_bookmarks = true,
+		save_path = function()
+			return vim.fn.getcwd() .. "/.vim/arrow"
+		end,
 		mappings = {
 			edit = "e",
 			delete_mode = "d",
