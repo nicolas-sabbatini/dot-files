@@ -11,7 +11,6 @@ return {
 				{ "gl", group = "lsp" },
 				{ "gs", group = "surrounding" },
 				{ "s", group = "comment" },
-				{ "<leader>s", group = "comment" },
 				{ "<leader>b", group = "buffer" },
 				{ "<leader>c", group = "code" },
 				{ "<leader>cc", group = "conform" },
@@ -24,8 +23,4 @@ return {
 			},
 		},
 	},
-	config = function(_, opts)
-		local wk = require("which-key")
-		wk.setup(opts)
-	end,
 }

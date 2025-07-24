@@ -5,7 +5,7 @@ return {
 		opts = {
 			ensure_installed = {
 				-- Bash
-				-- "bash-language-server",
+				"bash-language-server",
 				"shellcheck",
 				"shfmt",
 				-- TS
@@ -52,10 +52,7 @@ return {
 			end
 		end,
 	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup()
-		end,
-	},
+	{ "williamboman/mason-lspconfig.nvim", opts = {} },
+	{ "j-hui/fidget.nvim", opts = {} },
+	{ "neovim/nvim-lspconfig" },
 }

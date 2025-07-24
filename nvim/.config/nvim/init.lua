@@ -19,6 +19,7 @@ vim.g.mapleader = " "
 require("./options")
 require("./keymaps")
 require("./autocmds")
+require("./lsp")
 
 -- Load plugins in the plugins folder
 local plugins_names = vim.fs.dir(runtime[2] .. "/lua/plugins")
