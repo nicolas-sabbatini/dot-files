@@ -68,5 +68,10 @@ export NVM_DIR="$HOME/.nvm"
 # Load Zig
 [ -s "$HOME/.zvm/bin" ] && __append_to_path "$HOME/.zvm/bin"
 
+# Load emsdk
+export EMSDK_QUIET=1
+[ -s "$HOME/.local/emsdk" ] && source "$HOME/.local/emsdk/emsdk_env.sh"
+
 eval "$(starship init bash)"
 . "/home/nicosabbatini/.deno/env"
+
