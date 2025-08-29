@@ -68,7 +68,7 @@ sudo apt install build-essential cmake libasound2-dev \
   blueprint-compiler gettext libxml2-utils libclang-dev libfontconfig-dev \
   libxkbcommon-dev imagemagick mesa-common-dev libglu1-mesa-dev libgl-dev \
   libxcursor-dev libxext-dev libxfixes-dev libxinerama-dev libxrandr-dev \
-  libxrender-dev libegl-dev libwayland-dev
+  libxrender-dev libegl-dev libwayland-dev ninja-build
 
 echo ""
 echo "########################"
