@@ -1,0 +1,53 @@
+[bell]
+duration = 0
+
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[cursor.vi_mode_style]
+blinking = "Off"
+shape = "Beam"
+
+[font]
+builtin_box_drawing = true
+size = 13
+
+[font.bold]
+family = "ComicCodeLigatures Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "ComicCodeLigatures Nerd Font"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 4
+
+[font.italic]
+family = "ComicCodeLigatures Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "ComicCodeLigatures Nerd Font"
+style = "Regular"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window.dimensions]
+columns = 110
+lines = 50
+
+[window.position]
+x = 0
+y = 0
+
+[general]
+live_config_reload = true
+import = ["/home/nico/.config/alacritty/grubox-dark.toml"]

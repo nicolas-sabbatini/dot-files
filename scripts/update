@@ -4,7 +4,7 @@ set -e
 sudo -p "You must be sudo: " printf "" || exit 1
 
 echo "============================ 💻 Updating  System 💻 ============================"
-sudo apt update && sudo apt upgrade -y
+sudo dnf upgrade -y
 echo "================================================================================"
 
 if command gup &>/dev/null; then

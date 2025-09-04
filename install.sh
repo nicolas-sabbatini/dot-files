@@ -26,55 +26,15 @@ if [ "$CONSENT" != "y" ]; then
 fi
 
 echo ""
-echo "######################"
-echo "#Ading Charm.sh repo.#"
-echo "######################"
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-
-echo ""
-echo "####################"
-echo "#Ading Docker repo.#"
-echo "####################"
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |
-  sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
-
-echo ""
-echo "################"
-echo "#Update system.#"
-echo "################"
-sudo apt update
-sudo apt upgrade -y
-
-echo ""
 echo "#####################"
-echo "#Instaling APT deps.#"
+echo "#Instaling DNF deps.#"
 echo "#####################"
-sudo apt install build-essential cmake libasound2-dev \
-  libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev \
-  libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev \
-  libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev \
-  libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev \
-  luarocks python3.10-venv libudev-dev fzf libxxf86vm-dev \
-  gum wishlist docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
-  docker-compose-plugin bison libgtk-4-dev libadwaita-1-dev \
-  blueprint-compiler gettext libxml2-utils libclang-dev libfontconfig-dev \
-  libxkbcommon-dev imagemagick mesa-common-dev libglu1-mesa-dev libgl-dev \
-  libxcursor-dev libxext-dev libxfixes-dev libxinerama-dev libxrandr-dev \
-  libxrender-dev libegl-dev libwayland-dev ninja-build
-
-echo ""
-echo "########################"
-echo "#Instaling python deps.#"
-echo "########################"
-python3 -m pip install keyring pynvim
+sudo dnf install luarocks stow git cmake freetype-devel \
+  fontconfig-devel libxcb-devel libxkbcommon-devel g++ xclip \
+  python3-pip alsa-lib-devel mesa-libGL-devel libX11-devel \
+  libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel libatomic \
+  wayland-devel wayland-protocols-devel clang-devel systemd-devel \
+  expat-devel pcre2-devel libzstd-devel gtk3-devel
 
 echo ""
 echo "##############"
@@ -96,25 +56,19 @@ echo "#Instaling 🦀 RUST 🦀 and deps.#"
 echo "################################"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.bashrc"
-rustup target add wasm32-unknown-unknown
-rustup component add rls rust-analysis rust-src rust-analyzer rustfmt
-sudo ln -s "$(rustup which rust-analyzer)" /usr/local/bin/rust-analyzer
+rustup component add rust-analysis rust-src rust-analyzer rustfmt
 cargo install --locked cargo-update \
   cargo-watch \
   bat \
   bob-nvim \
-  cargo-generate \
-  cargo-info \
-  cargo-wgsl \
   exa \
   fd-find \
   license-generator \
   ripgrep \
   simple-http-server \
   starship \
-  wasm-bindgen-cli \
   tokei
-curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
 source "$HOME/.bashrc"
 
 # Rust programs config
@@ -128,14 +82,12 @@ echo "##################"
 bob install stable
 bob use stable
 stow -t "$HOME" nvim
-source "$HOME/.bashrc"
 
 echo ""
 echo "######################"
 echo "#Installing Lua deps.#"
 echo "######################"
 luarocks install --local busted
-sudo luarocks install magick
 
 echo ""
 echo "#####################"
@@ -144,11 +96,9 @@ echo "#####################"
 flatpak install flathub org.kde.krita \
   org.inkscape.Inkscape \
   com.obsproject.Studio \
-  org.kde.kdenlive \
   com.spotify.Client \
   com.discordapp.Discord \
-  com.github.tchx84.Flatseal \
-  com.valvesoftware.Steam
+  com.github.tchx84.Flatseal
 
 echo ""
 echo "######################"
