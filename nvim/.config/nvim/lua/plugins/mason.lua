@@ -27,7 +27,6 @@ return {
 				-- Zig
 				"zls",
 				-- C
-				"clang-format",
 				"clangd",
 				-- Go
 				"goimports",
