@@ -10,9 +10,9 @@ My prompt and a few scripts that I use every day.
 - [] a good readme.
 - [] oxidise all
 
-😄 => Done!
-⚠️ => Half baked.
-🚫 => No even started. 😦
+😄 => Done!\
+⚠️ => Half baked.\
+🚫 => No even started.
 
 ## How to install
 

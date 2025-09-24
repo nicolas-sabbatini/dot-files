@@ -93,6 +93,7 @@ echo ""
 echo "#####################"
 echo "#Instaling FlatPaks.#"
 echo "#####################"
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.kde.krita \
   org.inkscape.Inkscape \
   com.obsproject.Studio \
@@ -119,8 +120,9 @@ echo "#Installing Go.#"
 echo "################"
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 source "$HOME/.bashrc"
-gvm install go1.24.2 -B
+gvm install go1.25.1 -B
 source "$HOME/.bashrc"
+install-go-deps
 
 echo "################################"
 echo "# The installation is finished #"

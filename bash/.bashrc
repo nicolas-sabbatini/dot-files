@@ -57,7 +57,7 @@ source "$HOME/.bash_aliases"
 
 # # Load Go
 [ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
-[ -s "$HOME/.gvm/scripts/gvm" ] && gvm use go1.24.2 &>/dev/null
+[ -s "$HOME/.gvm/scripts/gvm" ] && gvm use go1.25.1 &>/dev/null
 [ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
 
 # Load Zig
