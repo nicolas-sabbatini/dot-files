@@ -44,6 +44,7 @@ __append_to_path "$HOME/.cargo/bin"
 __append_to_path "$HOME/.config/dot-files/scripts"
 __append_to_path "$HOME/.local/share/bob/nvim-bin"
 __append_to_path "$HOME/go/bin"
+__append_to_path "/usr/local/go/bin"
 __append_to_path "$HOME/.luarocks/bin"
 
 # Set editor
@@ -55,19 +56,10 @@ source "$HOME/.bash_aliases"
 # Load cargo
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# # Load Go
-[ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
-[ -s "$HOME/.gvm/scripts/gvm" ] && gvm use go1.25.1 &>/dev/null
-[ -s "$HOME/.gvm/scripts/gvm" ] && source "$HOME/.gvm/scripts/gvm"
-
 # Load Zig
 [ -s "$HOME/.zvm/bin" ] && __append_to_path "$HOME/.zvm/bin"
 
 # Load deno
 [ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
-
-# Load emsdk
-export EMSDK_QUIET=1
-[ -s "$HOME/.local/emsdk" ] && source "$HOME/.local/emsdk/emsdk_env.sh"
 
 eval "$(starship init bash)"

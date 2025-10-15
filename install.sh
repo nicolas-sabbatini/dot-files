@@ -118,10 +118,6 @@ echo ""
 echo "################"
 echo "#Installing Go.#"
 echo "################"
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-source "$HOME/.bashrc"
-gvm install go1.25.1 -B
-source "$HOME/.bashrc"
 install-go-deps
 
 echo "################################"
