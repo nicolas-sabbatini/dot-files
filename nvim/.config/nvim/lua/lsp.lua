@@ -35,7 +35,8 @@ vim.lsp.config("lua_ls", {
 				library = {
 					vim.env.VIMRUNTIME,
 					"${3rd}/love2d/library",
-					"${addons}/busted/module/library",
+					"${3rd}/busted/library",
+					"${3rd}/luassert/library",
 					vim.fn.expand("$VIMRUNTIME/lua"),
 					vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
 				},
