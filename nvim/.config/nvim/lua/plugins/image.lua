@@ -1,14 +1,9 @@
-local has_image_magick, _ = pcall(require, "magick")
-
-if vim.loop.os_uname().sysname == "Darwin" then
-	print("On mac")
-	return {}
-end
-
 return {
 	"3rd/image.nvim",
+	build = false,
 	opts = {
 		backend = "kitty",
+		processor = "magick_cli",
 		integrations = {
 			markdown = {
 				enabled = true,
@@ -18,10 +13,6 @@ return {
 				filetypes = { "markdown", "vimwiki", "md" },
 			},
 		},
-		hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" },
+		hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
 	},
-	config = function(_, opts)
-		require("image").setup(opts)
-	end,
-	cond = has_image_magick,
 }

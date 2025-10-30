@@ -34,7 +34,8 @@ sudo dnf install luarocks stow git cmake freetype-devel \
   python3-pip alsa-lib-devel mesa-libGL-devel libX11-devel \
   libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel libatomic \
   wayland-devel wayland-protocols-devel clang-devel systemd-devel \
-  expat-devel pcre2-devel libzstd-devel gtk3-devel libasan-static libasan
+  expat-devel pcre2-devel libzstd-devel gtk3-devel libasan-static libasan \
+  ImageMagick ImageMagick-devel
 
 echo ""
 echo "##############"
