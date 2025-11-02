@@ -62,7 +62,7 @@ cargo install --locked cargo-update \
   cargo-watch \
   bat \
   bob-nvim \
-  exa \
+  eza \
   fd-find \
   license-generator \
   ripgrep \

@@ -1,11 +1,11 @@
 ## Rusty tools
 # ls
-alias ls='exa'
+alias ls='eza'
 alias tls='/usr/bin/ls'
 # ls alias
-alias ll='exa -alFh'
-alias la='exa -a'
-alias l='exa -Flh'
+alias ll='eza -a -l -F -h'
+alias la='eza -a'
+alias l='eza -F -l -h'
 # grep
 alias grep='rg'
 alias tgrep='/usr/bin/grep'
