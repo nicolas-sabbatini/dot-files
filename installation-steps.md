@@ -1,146 +1,97 @@
-<!--toc:start-->
+# Base deps
 
-- [Main:](#main)
-- [MacOS Only](#macos-only)
-- [Dependencies:](#dependencies)
-- [Steps](#steps)
-- [Optional (Quality of life):](#optional-quality-of-life)
-<!--toc:end-->
-
-# Main:
-
-## MacOS Only
-
-- Install brew
+## Fedora:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sudo dnf install luarocks stow git cmake freetype-devel \
+  fontconfig-devel libxcb-devel libxkbcommon-devel g++ xclip \
+  python3-pip alsa-lib-devel mesa-libGL-devel libX11-devel \
+  libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel libatomic \
+  wayland-devel wayland-protocols-devel clang-devel systemd-devel \
+  expat-devel pcre2-devel libzstd-devel gtk3-devel libasan-static libasan \
+  ImageMagick ImageMagick-devel fzf
 ```
 
-## Dependencies:
-
-- install [nvim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+## Ubuntu
 
 ```bash
-# Install AppImage
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-mv nvim.appimage ~/.local/bin/nvim
+sudo apt install build-essential cmake libasound2-dev \
+  libdbus-1-dev libgit2-dev libgl1-mesa-dev libluajit-5.1-dev \
+  libpulse-dev libssh-dev libssl-dev libx11-dev libxcb-xfixes0-dev \
+  libxi-dev pkg-config python3-pip stow xclip libmagickwand-dev \
+  libgraphicsmagick1-dev luajit lua5.1 liblua5.1-dev \
+  luarocks libudev-dev fzf libxxf86vm-dev flatpak
 ```
 
-- install xclip
-- install stow
-- install [nvm](https://github.com/nvm-sh/nvm#install--update-script)
-- Install your favorite [nerdfont](https://www.nerdfonts.com/font-downloads)
+# Flatpak
 
 ```bash
-# Linux add to fonts
-unzip {{Font name}}
-mkdir ~/.local/share/fonts
-mv {{Font name}}* ~/.local/share/fonts/
-fc-cache -f -v
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.kde.krita \
+  org.inkscape.Inkscape \
+  com.obsproject.Studio \
+  com.spotify.Client \
+  com.discordapp.Discord \
+  com.github.tchx84.Flatseal
 ```
 
-## Steps
-
-- change bashrc and bash_alias:
+# Bash
 
 ```bash
 rm ~/.bashrc ~/.bash_aliases
-stow -t $HOME bash
-source ~/.bashrc
+stow -t "$HOME" bash
+source "$HOME/.bashrc"
+mkdir -p ~/.local/bin
 ```
 
-- install node
-
-```bash
-nvm install --lts
-```
-
-- install tldr
-
-```bash
-npm install -g tldr
-```
-
-- install rust
+# Rust
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup target add wasm32-unknown-unknown
-rustup component add rls rust-analysis rust-src
-# on pop os
-sudo apt-get install libssl-dev
+source "$HOME/.bashrc"
+rustup component add rust-analysis rust-src rust-analyzer rustfmt
+cargo install --locked cargo-update \
+  cargo-watch \
+  bat \
+  bob-nvim \
+  eza \
+  fd-find \
+  license-generator \
+  ripgrep \
+  simple-http-server \
+  starship \
+  tokei
+stow -t "$HOME" starship
 ```
 
-- install cargo-libs:
+# Nvim
 
 ```bash
-cargo install --locked cargo-update\
-  bacon\
-  bat\
-  cargo-edit\
-  cargo-generate\
-  evcxr_repl\
-  fd-find\
-  license-generator\
-  ripgrep\
-  simple-http-server\
-  starship\
-  wasm-bindgen-cli\
+bob install stable
+bob use stable
+stow -t "$HOME" nvim
 ```
 
-- install wasm-pack
+# Lua
 
 ```bash
-curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+luarocks install --local busted
 ```
 
-- install lunarvim
+# Deno
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
-rm -r ~/.config/lvim
-stow -t $HOME lvim
+curl -fsSL https://deno.land/install.sh | sh
 ```
 
-- link starship config
+# NVM
 
 ```bash
-ln -s ~/.config/dot-files/starship.toml ~/.config/starship.toml
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 
-- install kitty
+# ZVM
 
 ```bash
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-stow -t $HOME kitty
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator `which kitty` 50
-```
-
-# Optional (Quality of life):
-
-- install alacritty
-
-```bash
-cargo install alacritty
-stow -t $HOME alacritty
-```
-
-- install cheat.sh (you don't want to use the "cheat" script)
-
-```bash
-curl https://cht.sh/:cht.sh > ~/.local/bin/cht.sh
-sudo chmod +x ~/.local/bin/cht.sh
-```
-
-- nvim nik instad of `lunarvim` (Work in progres)
-
-```bash
-stow -t $HOME nvim
+curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
 ```
