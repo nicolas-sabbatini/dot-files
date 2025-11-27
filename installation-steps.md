@@ -42,6 +42,9 @@ rm ~/.bashrc ~/.bash_aliases
 stow -t "$HOME" bash
 source "$HOME/.bashrc"
 mkdir -p ~/.local/bin
+stow -t "$HOME" nvim
+stow -t "$HOME" ghostty
+stow -t "$HOME" starship
 ```
 
 # Rust
@@ -61,7 +64,6 @@ cargo install --locked cargo-update \
   simple-http-server \
   starship \
   tokei
-stow -t "$HOME" starship
 ```
 
 # Nvim
@@ -69,7 +71,6 @@ stow -t "$HOME" starship
 ```bash
 bob install stable
 bob use stable
-stow -t "$HOME" nvim
 ```
 
 # Lua
