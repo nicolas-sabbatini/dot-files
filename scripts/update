@@ -3,7 +3,7 @@ set -e
 
 sudo -p "You must be sudo: " printf "" || exit 1
 
-if command dnf &>/dev/null; then
+if command dnf --version &>/dev/null; then
   echo "============================ 💻 Updating  System 💻 ============================"
   sudo dnf upgrade -y
   echo "================================================================================"
