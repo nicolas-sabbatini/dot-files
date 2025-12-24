@@ -2,8 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = { "BufReadPost", "BufNewFile" },
-		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+		main = "nvim-treesitter.config",
 		opts = {
 			ensure_installed = {
 				-- Lenguages
@@ -34,13 +33,10 @@ return {
 				"glsl",
 				"wgsl_bevy",
 			},
+			auto_install = true,
 			highlight = { enable = true },
 			indent = { enable = true },
-			auto_install = true,
 		},
-		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
-		end,
 	},
 	{
 		"HiPhish/rainbow-delimiters.nvim",
