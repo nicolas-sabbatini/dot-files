@@ -33,7 +33,8 @@ flatpak install flathub org.kde.krita \
   com.obsproject.Studio \
   com.spotify.Client \
   com.discordapp.Discord \
-  com.github.tchx84.Flatseal
+  com.github.tchx84.Flatseal \
+  org.audacityteam.Audacity
 ```
 
 # Bash

@@ -21,7 +21,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # local http server
-alias server='simple-http-server --nocache --upload --cors'
+alias server='simple-http-server --nocache --upload --cors --coop --coep'
 
 # Pictures in the terminal
 alias icat='kitty +kitten icat --scale-up'
