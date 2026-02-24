@@ -4,10 +4,7 @@ return {
 		opts = {
 			format_on_save = {
 				lsp_fallback = true,
-				timeout_ms = 500,
-			},
-			format_after_save = {
-				lsp_fallback = true,
+				timeout_ms = 2500,
 			},
 			formatters_by_ft = {
 				go = { "goimports", "gofmt" },
@@ -24,6 +21,7 @@ return {
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				zig = { "zig_format" },
+				yaml = { "yamlfmt" },
 				["*"] = { "trim_whitespace" },
 			},
 			formatters = {

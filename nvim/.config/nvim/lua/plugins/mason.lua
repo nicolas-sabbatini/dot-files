@@ -10,6 +10,7 @@ return {
 				"shfmt",
 				-- TS
 				"deno",
+				"typescript-language-server",
 				-- Rust
 				"rust-analyzer",
 				"taplo",
@@ -31,6 +32,11 @@ return {
 				-- Go
 				"goimports",
 				"gopls",
+				-- Sonar
+				"sonarlint-language-server",
+				-- Yamal
+				"yamlfmt",
+				"yaml-language-server",
 			},
 		},
 		config = function(_, opts)
