@@ -32,8 +32,6 @@ return {
 				-- Go
 				"goimports",
 				"gopls",
-				-- Sonar
-				"sonarlint-language-server",
 				-- Yamal
 				"yamlfmt",
 				"yaml-language-server",
