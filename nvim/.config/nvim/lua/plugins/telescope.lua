@@ -1,5 +1,10 @@
 local function call_telescope(builtin_module, opts)
 	return function()
+		if opts and opts.file_ignore_patterns then
+			table.insert(opts.file_ignore_patterns, "^.git/")
+		elseif opts then
+			opts.file_ignore_patterns = { "^.git/" }
+		end
 		require("telescope.builtin")[builtin_module](require("telescope.themes").get_ivy(opts))
 	end
 end
@@ -42,11 +47,15 @@ return {
 				call_telescope("live_grep", { hidden = true, no_ignore = true }),
 				desc = "Grep (root dir)",
 			},
-			{ "<leader>ff", call_telescope("find_files"), desc = "Find Files" },
 			{
-				"<leader>fF",
+				"<leader>ff",
 				call_telescope("find_files", { hidden = true, no_ignore = true }),
 				desc = "Find Files ALL",
+			},
+			{
+				"<leader>fF",
+				call_telescope("find_files"),
+				desc = "Find Files",
 			},
 			{
 				"<leader>fg",
