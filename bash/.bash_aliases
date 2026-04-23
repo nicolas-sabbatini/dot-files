@@ -29,4 +29,5 @@ alias icat='kitty +kitten icat --scale-up'
 # FZF
 alias interactive_find='fzf -m --preview="bat --color=always {}"'
 
-alias aseprite='/home/nico/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/common/Aseprite/aseprite &>/dev/null &'
+# Dos
+alias dos_ending_to_linux="sed -i 's/\r$//'"
