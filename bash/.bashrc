@@ -69,4 +69,7 @@ source "$HOME/.bash_aliases"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+# Load emsdk
+[ -s "$HOME/Tools/emsdk/emsdk_env.sh" ] && EMSDK_QUIET=1 \. "$HOME/Tools/emsdk/emsdk_env.sh"
+
 eval "$(starship init bash)"
