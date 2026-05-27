@@ -30,7 +30,7 @@ vim.lsp.config("lua_ls", {
 				},
 			},
 			workspace = {
-				checkThirdParty = true,
+				checkThirdParty = false,
 				telemetry = { enable = false },
 				library = {
 					vim.env.VIMRUNTIME,

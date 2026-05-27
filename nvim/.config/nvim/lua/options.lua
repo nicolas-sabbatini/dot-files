@@ -57,11 +57,10 @@ vim.opt.wrap = true -- Break display lines
 vim.opt.writebackup = false -- If a file is being edited by anotherprogram (or was written to
 -- file while editing with another program), it is not allowed to
 -- be edited
--- ?? I don't know why
-vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
--- Globals
-vim.g.prettier = true
-vim.g.expand = true
+-- Wrap to the next or previous line when using horizontal movement keys
+vim.opt.whichwrap:append("<,>,[,],h,l")
+-- Add list of characters recognized as part of a word.
+vim.opt.iskeyword:append("-")
+
+vim.g.prettier = true -- Use prettier
