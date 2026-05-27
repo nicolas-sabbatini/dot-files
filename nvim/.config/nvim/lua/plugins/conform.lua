@@ -3,8 +3,8 @@ return {
 		"stevearc/conform.nvim",
 		opts = {
 			format_on_save = {
-				lsp_fallback = true,
-				timeout_ms = 2500,
+				lsp_format = "fallback",
+				timeout_ms = 5000,
 			},
 			formatters_by_ft = {
 				go = { "goimports", "gofmt" },
@@ -15,7 +15,6 @@ return {
 				json = { "deno_fmt" },
 				html = { "deno_fmt" },
 				css = { "deno_fmt" },
-				md = { "deno_fmt" },
 				vento = { "deno_fmt" },
 				markdown = { "deno_fmt" },
 				c = { "clang-format" },

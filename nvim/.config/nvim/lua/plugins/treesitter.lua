@@ -13,6 +13,8 @@ return {
 				"rust",
 				"typescript",
 				"zig",
+				"c",
+				"go",
 				-- Lua
 				"lua",
 				"luadoc",

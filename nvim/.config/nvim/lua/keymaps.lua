@@ -1,5 +1,5 @@
 local function map(mode, lhs, rhs, opts)
-	vim.tbl_deep_extend("force", { noremap = true, silent = true }, opts)
+	opts = vim.tbl_deep_extend("force", { noremap = true, silent = false }, opts or {})
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
@@ -12,10 +12,10 @@ map("n", "<C-l>", "<C-w>l", { desc = "Move right" })
 map("n", "<leader>h", "<C-w>s", { desc = "Split horizontal" })
 map("n", "<leader>v", "<C-w>v", { desc = "Split vertical" })
 
-map("n", "<C-+>", "<C-w>+", { desc = "Increase heigth" })
-map("n", "<C-->", "<C-w>-", { desc = "Decrease heigth" })
-map("n", "<C-S-<>", "<C-w>>", { desc = "Increase width" })
-map("n", "<C-<>", "<C-w><", { desc = "Decrease width" })
+map("n", "<C-Up>", "<C-w>+", { desc = "Increase heigth" })
+map("n", "<C-Down>", "<C-w>-", { desc = "Decrease heigth" })
+map("n", "<C-Right>", "<C-w>>", { desc = "Increase width" })
+map("n", "<C-Left>", "<C-w><", { desc = "Decrease width" })
 
 -- LSP keymaps
 map("n", "gld", function()

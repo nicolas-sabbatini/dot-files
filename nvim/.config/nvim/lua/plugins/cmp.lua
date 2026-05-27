@@ -11,7 +11,7 @@ return {
 	opts = function()
 		require("luasnip.loaders.from_vscode").lazy_load()
 		local cmp = require("cmp")
-		local cmp_select = { "behavior", cmp.SelectBehavior.Select }
+		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 		return {
 			sources = {
 				{ name = "nvim_lsp" },

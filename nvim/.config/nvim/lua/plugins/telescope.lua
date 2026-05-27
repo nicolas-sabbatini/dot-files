@@ -13,7 +13,7 @@ end
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "v0.2.0",
+		tag = "v0.2.1",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "Telescope",
 		opts = {
@@ -41,6 +41,7 @@ return {
 			local telescope = require("telescope")
 			telescope.setup(opts)
 			telescope.load_extension("file_browser")
+			telescope.load_extension("fzf")
 		end,
 		keys = {
 			{
@@ -71,7 +72,7 @@ return {
 			},
 			{
 				"<leader>E",
-				"<cmd>Telescope file_browser initial_mode=normal initial_mode=normal<cr>",
+				"<cmd>Telescope file_browser initial_mode=normal<cr>",
 				desc = "Explorer root",
 			},
 		},
