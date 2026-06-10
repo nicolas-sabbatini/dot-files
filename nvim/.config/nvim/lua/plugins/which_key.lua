@@ -10,7 +10,7 @@ return {
 				{ "g", group = "goto" },
 				{ "gl", group = "lsp" },
 				{ "gs", group = "surrounding" },
-				{ "s", group = "comment" },
+				{ "<leader>s", group = "strudel" },
 				{ "<leader>b", group = "buffer" },
 				{ "<leader>c", group = "code" },
 				{ "<leader>cc", group = "conform" },
