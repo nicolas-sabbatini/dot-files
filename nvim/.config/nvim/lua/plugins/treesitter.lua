@@ -54,19 +54,9 @@ return {
 			installed = require("nvim-treesitter").get_installed("parsers")
 
 			vim.api.nvim_create_autocmd("FileType", {
-				callback = function(args)
-					pcall(vim.treesitter.start, args.buf)
-					local ok, indent = pcall(vim.treesitter.indentexpr)
-					if ok and indent then
-						vim.bo[args.buf].indentexpr = "v:lua.vim.treesitter.indentexpr()"
-					end
-				end,
-			})
-
-			vim.api.nvim_create_autocmd("FileType", {
 				group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),
 				callback = function(ev)
-					local ft, _ = ev.match, vim.treesitter.language.get_lang(ev.match)
+					local ft = ev.match
 					if not have_entry(ft, installed) then
 						return
 					end
@@ -77,8 +67,12 @@ return {
 						vim.bo[ev.buf].indentexpr = "v:lua.vim.treesitter.indentexpr()"
 					end
 					if vim.treesitter.foldexpr then
-						vim.wo[0][ev.buf].foldmethod = "expr"
-						vim.wo[0][ev.buf].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+						vim.api.nvim_set_option_value("foldmethod", "expr", { win = 0 })
+						vim.api.nvim_set_option_value(
+							"foldexpr",
+							"v:lua.vim.treesitter.foldexpr()",
+							{ win = 0 }
+						)
 					end
 				end,
 			})
