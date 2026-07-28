@@ -1,12 +1,6 @@
 local function call_telescope(builtin_module, opts)
 	return function()
-		if opts and opts.file_ignore_patterns then
-			table.insert(opts.file_ignore_patterns, "^.git/")
-			table.insert(opts.file_ignore_patterns, "^%.vim/")
-		elseif opts then
-			opts.file_ignore_patterns = { "^.git/", "^%.vim/" }
-		end
-		require("telescope.builtin")[builtin_module](require("telescope.themes").get_ivy(opts))
+		require("telescope.builtin")[builtin_module](require("telescope.themes").get_ivy(opts or {}))
 	end
 end
 
@@ -17,6 +11,9 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "Telescope",
 		opts = {
+			defaults = {
+				file_ignore_patterns = { "^.git/", "^%.vim/" },
+			},
 			pickers = {
 				live_grep = {
 					additional_args = { "--hidden" },

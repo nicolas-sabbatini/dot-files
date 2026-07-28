@@ -13,7 +13,6 @@ return {
 				{ "<leader>s", group = "strudel" },
 				{ "<leader>b", group = "buffer" },
 				{ "<leader>c", group = "code" },
-				{ "<leader>cc", group = "conform" },
 				{ "<leader>f", group = "file/find" },
 				{ "<leader>t", group = "telescope" },
 			},

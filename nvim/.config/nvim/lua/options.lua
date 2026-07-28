@@ -62,5 +62,3 @@ vim.opt.writebackup = false -- If a file is being edited by anotherprogram (or w
 vim.opt.whichwrap:append("<,>,[,],h,l")
 -- Add list of characters recognized as part of a word.
 vim.opt.iskeyword:append("-")
-
-vim.g.prettier = true -- Use prettier

@@ -67,12 +67,20 @@ return {
 						vim.bo[ev.buf].indentexpr = "v:lua.vim.treesitter.indentexpr()"
 					end
 					if vim.treesitter.foldexpr then
-						vim.api.nvim_set_option_value("foldmethod", "expr", { win = 0 })
-						vim.api.nvim_set_option_value(
-							"foldexpr",
-							"v:lua.vim.treesitter.foldexpr()",
-							{ win = 0 }
-						)
+						-- Schedule so we can resolve the actual window showing
+						-- this buffer instead of assuming win=0 is correct.
+						vim.schedule(function()
+							local win = vim.fn.bufwinid(ev.buf)
+							if win == -1 then
+								return
+							end
+							vim.api.nvim_set_option_value("foldmethod", "expr", { win = win })
+							vim.api.nvim_set_option_value(
+								"foldexpr",
+								"v:lua.vim.treesitter.foldexpr()",
+								{ win = win }
+							)
+						end)
 					end
 				end,
 			})

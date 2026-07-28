@@ -1,51 +1,35 @@
 return {
-	"hrsh7th/nvim-cmp",
+	"saghen/blink.cmp",
+	version = "*",
 	dependencies = {
-		{ "hrsh7th/cmp-buffer" },
-		{ "hrsh7th/cmp-nvim-lsp" },
-		{ "hrsh7th/cmp-path" },
-		{ "L3MON4D3/LuaSnip" },
-		{ "saadparwaiz1/cmp_luasnip" },
-		{ "williamboman/mason.nvim" },
+		{ "L3MON4D3/LuaSnip", version = "v2.*" },
 	},
-	opts = function()
-		require("luasnip.loaders.from_vscode").lazy_load()
-		local cmp = require("cmp")
-		-- local cmp_select = { behavior = cmp.SelectBehavior.Select }
-		local cmp_select = {}
-		return {
-			sources = {
-				{ name = "nvim_lsp" },
-				{ name = "buffer", keyword_length = 3 },
-				{ name = "luasnip", keyword_length = 2 },
-				{ name = "path" },
-				{ name = "crates" },
+	event = "InsertEnter",
+	opts = {
+		keymap = {
+			preset = "none",
+			["<C-y>"] = { "select_and_accept" },
+			["<C-e>"] = { "hide", "fallback" },
+			["<C-h>"] = { "select_prev", "fallback" },
+			["<C-l>"] = { "select_next", "fallback" },
+			["<C-j>"] = { "scroll_documentation_down", "fallback" },
+			["<C-k>"] = { "scroll_documentation_up", "fallback" },
+		},
+		snippets = { preset = "luasnip" },
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+		},
+		completion = {
+			documentation = { auto_show = false },
+			menu = {
+				draw = {
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind" },
+					},
+				},
 			},
-			formatting = {
-				fields = { "abbr", "menu", "kind" },
-				format = function(entry, item)
-					local n = entry.source.name
-					if n == "nvim_lsp" then
-						item.menu = "[LSP]"
-					else
-						item.menu = string.format("[%s]", n)
-					end
-					return item
-				end,
-			},
-			mapping = {
-				["<C-y>"] = cmp.mapping.confirm({ select = true }),
-				["<C-e>"] = cmp.mapping.abort(),
-				["<C-j>"] = cmp.mapping.scroll_docs(4),
-				["<C-k>"] = cmp.mapping.scroll_docs(-4),
-				["<C-h>"] = cmp.mapping.select_prev_item(cmp_select),
-				["<C-l>"] = cmp.mapping.select_next_item(cmp_select),
-			},
-			snippet = {
-				expand = function(args)
-					require("luasnip").lsp_expand(args.body)
-				end,
-			},
-		}
-	end,
+		},
+	},
+	opts_extend = { "sources.default" },
 }

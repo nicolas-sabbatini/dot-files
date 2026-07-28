@@ -1,19 +1,60 @@
 return {
 	"gruvw/strudel.nvim",
 	build = "npm ci",
-	config = function()
-		local strudel = require("strudel")
-		strudel.setup({
-			ui = {
-				maximise_menu_panel = false,
-			},
-		})
-		vim.keymap.set("n", "<leader>sl", strudel.launch, { desc = "Launch Strudel" })
-		vim.keymap.set("n", "<leader>sq", strudel.quit, { desc = "Quit Strudel" })
-		vim.keymap.set("n", "<leader>st", strudel.toggle, { desc = "Strudel Toggle Play/Stop" })
-		vim.keymap.set("n", "<leader>su", strudel.update, { desc = "Strudel Update" })
-		vim.keymap.set("n", "<leader>ss", strudel.stop, { desc = "Strudel Stop Playback" })
-		vim.keymap.set("n", "<leader>sb", strudel.set_buffer, { desc = "Strudel set current buffer" })
-		vim.keymap.set("n", "<leader>sx", strudel.execute, { desc = "Strudel set current buffer and update" })
-	end,
+	opts = {
+		ui = {
+			maximise_menu_panel = false,
+		},
+	},
+	keys = {
+		{
+			"<leader>sl",
+			function()
+				require("strudel").launch()
+			end,
+			desc = "Launch Strudel",
+		},
+		{
+			"<leader>sq",
+			function()
+				require("strudel").quit()
+			end,
+			desc = "Quit Strudel",
+		},
+		{
+			"<leader>st",
+			function()
+				require("strudel").toggle()
+			end,
+			desc = "Strudel Toggle Play/Stop",
+		},
+		{
+			"<leader>su",
+			function()
+				require("strudel").update()
+			end,
+			desc = "Strudel Update",
+		},
+		{
+			"<leader>ss",
+			function()
+				require("strudel").stop()
+			end,
+			desc = "Strudel Stop Playback",
+		},
+		{
+			"<leader>sb",
+			function()
+				require("strudel").set_buffer()
+			end,
+			desc = "Strudel set current buffer",
+		},
+		{
+			"<leader>sx",
+			function()
+				require("strudel").execute()
+			end,
+			desc = "Strudel set current buffer and update",
+		},
+	},
 }

@@ -1,6 +1,15 @@
 return {
 	"3rd/image.nvim",
 	build = false,
+	ft = { "markdown", "vimwiki", "md" },
+	event = {
+		"BufReadPre *.png",
+		"BufReadPre *.jpg",
+		"BufReadPre *.jpeg",
+		"BufReadPre *.gif",
+		"BufReadPre *.webp",
+		"BufReadPre *.avif",
+	},
 	opts = {
 		backend = "kitty",
 		processor = "magick_cli",

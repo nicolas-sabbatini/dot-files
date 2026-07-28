@@ -46,9 +46,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Clear search highlight
 map("n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
-
--- Conform
-map("n", "<leader>ccp", function()
-	vim.g.prettier = not vim.g.prettier
-	vim.print("Prettier is now: " .. tostring(vim.g.prettier))
-end, { desc = "Toggle Prettier" })

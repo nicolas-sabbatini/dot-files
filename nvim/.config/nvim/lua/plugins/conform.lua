@@ -1,3 +1,14 @@
+local function pick_js_formatter(bufnr)
+	local matches = vim.fs.find({ "deno.json", "deno.jsonc" }, {
+		upward = true,
+		path = vim.api.nvim_buf_get_name(bufnr),
+	})
+	if #matches > 0 then
+		return { "deno_fmt" }
+	end
+	return { "prettier" }
+end
+
 return {
 	{
 		"stevearc/conform.nvim",
@@ -10,13 +21,13 @@ return {
 				go = { "goimports", "gofmt" },
 				lua = { "stylua" },
 				sh = { "shfmt" },
-				javascript = { "deno_fmt", "prettier" },
-				typescript = { "deno_fmt", "prettier" },
-				json = { "deno_fmt" },
-				html = { "deno_fmt" },
-				css = { "deno_fmt" },
+				javascript = pick_js_formatter,
+				typescript = pick_js_formatter,
+				json = pick_js_formatter,
+				html = pick_js_formatter,
+				css = pick_js_formatter,
+				markdown = pick_js_formatter,
 				vento = { "deno_fmt" },
-				markdown = { "deno_fmt" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				zig = { "zig_format" },
