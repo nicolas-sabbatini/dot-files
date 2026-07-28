@@ -65,7 +65,8 @@ cargo install --locked cargo-update \
   ripgrep \
   simple-http-server \
   starship \
-  tokei
+  tokei \
+  tree-sitter-cli
 ```
 
 # Nvim

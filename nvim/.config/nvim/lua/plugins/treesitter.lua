@@ -1,11 +1,22 @@
+local function have_entry(target, table)
+	for _, v in pairs(table) do
+		if v == target then
+			return true
+		end
+	end
+	return false
+end
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		main = "nvim-treesitter.config",
-		opts = {
-			ensure_installed = {
-				-- Lenguages
+		branch = "main",
+		lazy = false,
+		cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
+		config = function()
+			require("nvim-treesitter").setup()
+			local ensure_installed = {
 				"bash",
 				"dockerfile",
 				"javascript",
@@ -14,31 +25,64 @@ return {
 				"typescript",
 				"zig",
 				"c",
-				"go",
-				-- Lua
+				"json",
 				"lua",
 				"luadoc",
 				"luap",
-				-- Config
-				"json",
 				"ron",
 				"toml",
 				"yaml",
-				-- Markup
 				"html",
 				"markdown",
 				"markdown_inline",
 				"regex",
 				"vim",
 				"vimdoc",
-				-- Shaders
+				"diff",
 				"glsl",
-				"wgsl_bevy",
-			},
-			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
-		},
+				"gdscript",
+				"godot_resource",
+			}
+			local installed = require("nvim-treesitter").get_installed("parsers")
+
+			for _, parser in pairs(ensure_installed) do
+				if not have_entry(parser, installed) then
+					require("nvim-treesitter").install(parser)
+				end
+			end
+
+			installed = require("nvim-treesitter").get_installed("parsers")
+
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function(args)
+					pcall(vim.treesitter.start, args.buf)
+					local ok, indent = pcall(vim.treesitter.indentexpr)
+					if ok and indent then
+						vim.bo[args.buf].indentexpr = "v:lua.vim.treesitter.indentexpr()"
+					end
+				end,
+			})
+
+			vim.api.nvim_create_autocmd("FileType", {
+				group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),
+				callback = function(ev)
+					local ft, _ = ev.match, vim.treesitter.language.get_lang(ev.match)
+					if not have_entry(ft, installed) then
+						return
+					end
+
+					pcall(vim.treesitter.start, ev.buf)
+					local ok, indent = pcall(vim.treesitter.indentexpr)
+					if ok and indent then
+						vim.bo[ev.buf].indentexpr = "v:lua.vim.treesitter.indentexpr()"
+					end
+					if vim.treesitter.foldexpr then
+						vim.wo[0][ev.buf].foldmethod = "expr"
+						vim.wo[0][ev.buf].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					end
+				end,
+			})
+		end,
 	},
 	{
 		"HiPhish/rainbow-delimiters.nvim",

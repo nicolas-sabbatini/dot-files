@@ -21,6 +21,7 @@ return {
 				cpp = { "clang-format" },
 				zig = { "zig_format" },
 				yaml = { "yamlfmt" },
+				gdscript = { "gdscript-formatter" },
 				["*"] = { "trim_whitespace" },
 			},
 			formatters = {

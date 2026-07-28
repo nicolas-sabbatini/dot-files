@@ -73,3 +73,6 @@ source "$HOME/.bash_aliases"
 [ -s "$HOME/Tools/emsdk/emsdk_env.sh" ] && EMSDK_QUIET=1 \. "$HOME/Tools/emsdk/emsdk_env.sh"
 
 eval "$(starship init bash)"
+
+# opencode
+export PATH=/home/nico/.opencode/bin:$PATH
