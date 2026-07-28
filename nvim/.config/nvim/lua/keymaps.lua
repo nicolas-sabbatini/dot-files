@@ -1,5 +1,5 @@
 local function map(mode, lhs, rhs, opts)
-	opts = vim.tbl_deep_extend("force", { noremap = true, silent = false }, opts or {})
+	opts = vim.tbl_deep_extend("force", { noremap = true, silent = true }, opts or {})
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
@@ -17,31 +17,7 @@ map("n", "<C-Down>", "<C-w>-", { desc = "Decrease heigth" })
 map("n", "<C-Right>", "<C-w>>", { desc = "Increase width" })
 map("n", "<C-Left>", "<C-w><", { desc = "Decrease width" })
 
--- LSP keymaps
-map("n", "gld", function()
-	vim.lsp.buf.definition()
-end, { desc = "Go definition" })
-
-map("n", "glD", function()
-	vim.lsp.buf.declaration()
-end, { desc = "Go declaration" })
-
-map("n", "gli", function()
-	vim.lsp.buf.implementation()
-end, { desc = "Go implementation" })
-
-map("n", "glo", function()
-	vim.lsp.buf.type_definition()
-end, { desc = "Go symbol definition" })
-
-map("n", "glr", function()
-	vim.lsp.buf.references()
-end, { desc = "Go references" })
-
-map("i", "<C-h>", function()
-	vim.lsp.buf.signature_help()
-end, { desc = "Go signature help" })
-
+-- Diagnostic keymaps (global — diagnostics can also come from linters, not only LSP)
 map("n", "glp", function()
 	vim.diagnostic.jump({ count = -1 })
 end, { desc = "Go prev diagnostic" })
@@ -50,17 +26,23 @@ map("n", "gln", function()
 	vim.diagnostic.jump({ count = 1 })
 end, { desc = "Go next diagnostic" })
 
-map("n", "<leader>cr", function()
-	vim.lsp.buf.rename()
-end, { desc = "Rename symbol" })
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 
-map("n", "<leader>ca", function()
-	vim.lsp.buf.code_action()
-end, { desc = "Code action" })
-
-map("n", "<leader>cd", function()
-	vim.diagnostic.open_float()
-end, { desc = "Line diagnostics" })
+-- LSP keymaps: registered per-buffer on LspAttach
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("user_lsp_keymaps", { clear = true }),
+	callback = function(args)
+		local buf = args.buf
+		map("n", "gld", vim.lsp.buf.definition, { buffer = buf, desc = "Go definition" })
+		map("n", "glD", vim.lsp.buf.declaration, { buffer = buf, desc = "Go declaration" })
+		map("n", "gli", vim.lsp.buf.implementation, { buffer = buf, desc = "Go implementation" })
+		map("n", "glo", vim.lsp.buf.type_definition, { buffer = buf, desc = "Go symbol definition" })
+		map("n", "glr", vim.lsp.buf.references, { buffer = buf, desc = "Go references" })
+		map("i", "<C-h>", vim.lsp.buf.signature_help, { buffer = buf, desc = "Signature help" })
+		map("n", "<leader>cr", vim.lsp.buf.rename, { buffer = buf, desc = "Rename symbol" })
+		map("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = buf, desc = "Code action" })
+	end,
+})
 
 -- Clear search highlight
 map("n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })

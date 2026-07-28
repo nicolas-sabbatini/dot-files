@@ -15,12 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Set map leader to <Space>
 vim.g.mapleader = " "
-require("./options")
-require("./keymaps")
-require("./autocmds")
-require("./lsp")
+require("options")
+require("keymaps")
+require("autocmds")
 
 -- Set up lazy and plugins
 require("lazy").setup({ { import = "plugins" } })
 
-vim.cmd.colorscheme("gruvbox-material")
+-- LSP config runs after lazy.setup so that plugin dependencies
+-- (e.g. cmp_nvim_lsp for capabilities) are already in the runtime path.
+require("lsp")

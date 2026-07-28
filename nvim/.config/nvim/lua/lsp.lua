@@ -1,3 +1,7 @@
+vim.lsp.config("*", {
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
 vim.lsp.config("rust_analyzer", {
 	settings = {
 		["rust-analyzer"] = {
@@ -15,7 +19,9 @@ vim.lsp.config("rust_analyzer", {
 })
 
 vim.lsp.config("lua_ls", {
-	root_dir = vim.fs.root(0, { ".git", ".luarc.json", "src" }),
+	root_dir = function(bufnr, cb)
+		cb(vim.fs.root(bufnr, { ".git", ".luarc.json", "src" }))
+	end,
 	settings = {
 		Lua = {
 			runtime = {
@@ -55,4 +61,4 @@ vim.lsp.config("gdscript", {
 	end,
 })
 
-vim.lsp.enable("gdscript")
+vim.lsp.enable({ "rust_analyzer", "lua_ls", "gdscript" })
