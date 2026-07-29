@@ -1,12 +1,12 @@
 local function pick_js_formatter(bufnr)
-	local matches = vim.fs.find({ "deno.json", "deno.jsonc" }, {
+	local matches = vim.fs.find({ "package.json", "package-lock.json" }, {
 		upward = true,
 		path = vim.api.nvim_buf_get_name(bufnr),
 	})
 	if #matches > 0 then
-		return { "deno_fmt" }
+		return { "prettier" }
 	end
-	return { "prettier" }
+	return { "deno_fmt" }
 end
 
 return {

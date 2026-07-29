@@ -45,6 +45,9 @@ vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.spell = false -- Turn off spell lang
 vim.opt.spelllang = "es,en" -- Spell language
+vim.opt.spellfile = vim.fn.expand("~/.config/nvim/spell/es.utf-8.add")
+	.. ","
+	.. vim.fn.expand("~/.config/nvim/spell/en.utf-8.add")
 vim.opt.splitbelow = true -- Force all horizontal splits to go below current window
 vim.opt.splitright = true -- Force all vertical splits to go to the right of current window
 vim.opt.swapfile = false -- Don't create a swapfile
