@@ -51,14 +51,4 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
-vim.lsp.config("gdscript", {
-	cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
-	filetypes = { "gd", "gdscript", "gdscript3" },
-	root_markers = { "project.godot", ".git" },
-
-	on_init = function(_, _)
-		vim.fn.serverstart("/tmp/godot.pipe")
-	end,
-})
-
-vim.lsp.enable({ "rust_analyzer", "lua_ls", "gdscript" })
+vim.lsp.enable({ "rust_analyzer", "lua_ls" })

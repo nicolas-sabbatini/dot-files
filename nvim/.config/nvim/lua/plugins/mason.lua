@@ -29,9 +29,6 @@ return {
 				"zls",
 				-- C
 				"clangd",
-				-- Go
-				"goimports",
-				"gopls",
 				-- Yamal
 				"yamlfmt",
 				"yaml-language-server",
