@@ -9,8 +9,8 @@ sudo dnf install luarocks stow git cmake freetype-devel \
   libXrandr-devel libXi-devel libXcursor-devel libXinerama-devel libatomic \
   wayland-devel wayland-protocols-devel clang-devel systemd-devel \
   expat-devel pcre2-devel libzstd-devel gtk3-devel libasan-static libasan \
-  ImageMagick ImageMagick-devel fzf binutils binutils-devel  SDL SDL2 SDL3 \
-  fuse fuse-libs
+  ImageMagick ImageMagick-devel fzf binutils binutils-devel SDL SDL2 SDL3 \
+  fuse fuse-libs hyperfine
 ```
 
 ## Ubuntu
