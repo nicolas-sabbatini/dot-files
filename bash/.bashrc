@@ -61,9 +61,6 @@ source "$HOME/.bash_aliases"
 [ -d "$HOME/.zvm/self" ] && __append_to_path "$HOME/.zvm/self"
 [ -d "$HOME/.zvm/self" ] && export ZVM_INSTALL="$HOME/.zvm/self"
 
-# Load deno
-[ -s "$HOME/.deno/env" ] && source "$HOME/.deno/env"
-
 # Load NVM if exist
 [ -d "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm

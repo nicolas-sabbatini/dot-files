@@ -43,17 +43,17 @@ return {
 		keys = {
 			{
 				"<leader>/",
-				call_telescope("live_grep", { hidden = true, no_ignore = true }),
+				call_telescope("live_grep", { hidden = true, no_ignore = false }),
 				desc = "Grep (root dir)",
 			},
 			{
 				"<leader>ff",
-				call_telescope("find_files", { hidden = true, no_ignore = true }),
+				call_telescope("find_files", { hidden = true, no_ignore = false }),
 				desc = "Find Files ALL",
 			},
 			{
 				"<leader>fF",
-				call_telescope("find_files"),
+				call_telescope("find_files", { hidden = true, no_ignore = true }),
 				desc = "Find Files",
 			},
 			{

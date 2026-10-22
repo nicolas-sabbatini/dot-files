@@ -9,10 +9,9 @@ return {
 				"shellcheck",
 				"shfmt",
 				-- TS
-				"deno",
 				"typescript-language-server",
-				-- Rust
-				"rust-analyzer",
+				"prettier",
+				-- TOML
 				"taplo",
 				-- Lua
 				"lua-language-server",

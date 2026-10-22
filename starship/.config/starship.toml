@@ -53,10 +53,6 @@ disabled = true
 [dart]
 disabled = true
 
-[deno]
-symbol = "🦕 "
-format = '\[[$symbol($version)]($style)\]'
-
 [directory]
 read_only = "🔒"
 

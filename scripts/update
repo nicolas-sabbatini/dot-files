@@ -42,12 +42,6 @@ if command -v rustup &>/dev/null; then
   echo "================================================================================"
 fi
 
-if command -v deno &>/dev/null; then
-  echo "==============================  Updating  Deno  =============================="
-  deno upgrade
-  echo "================================================================================"
-fi
-
 if command -v opencode &>/dev/null; then
   echo "============================ 󰹟 Updating  Opencode 󰹟 ============================"
   opencode upgrade
