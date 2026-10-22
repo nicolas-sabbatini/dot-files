@@ -31,8 +31,10 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-  source "$HOME/.bash_completion/exercism_completion.bash"
-  source "$HOME/.bash_completion/alacritty.bash"
+  for __file in "$HOME/.bash_completion"/*.bash; do
+    [ -e "$__file" ] && source "$__file"
+  done
+  unset __file
 fi
 
 # GCC colors
@@ -69,7 +71,7 @@ source "$HOME/.bash_aliases"
 # Load emsdk
 [ -s "$HOME/Tools/emsdk/emsdk_env.sh" ] && EMSDK_QUIET=1 \. "$HOME/Tools/emsdk/emsdk_env.sh"
 
-eval "$(starship init bash)"
-
-# opencode
+# Load opencode
 export PATH=/home/nico/.opencode/bin:$PATH
+
+eval "$(starship init bash)"

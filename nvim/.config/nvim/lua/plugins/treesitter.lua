@@ -40,8 +40,6 @@ return {
 				"vimdoc",
 				"diff",
 				"glsl",
-				"gdscript",
-				"godot_resource",
 			}
 			local installed = require("nvim-treesitter").get_installed("parsers")
 
@@ -75,11 +73,7 @@ return {
 								return
 							end
 							vim.api.nvim_set_option_value("foldmethod", "expr", { win = win })
-							vim.api.nvim_set_option_value(
-								"foldexpr",
-								"v:lua.vim.treesitter.foldexpr()",
-								{ win = win }
-							)
+							vim.api.nvim_set_option_value("foldexpr", "v:lua.vim.treesitter.foldexpr()", { win = win })
 						end)
 					end
 				end,
