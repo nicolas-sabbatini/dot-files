@@ -65,8 +65,8 @@ source "$HOME/.bash_aliases"
 
 # Load NVM if exist
 [ -d "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Load emsdk
 [ -s "$HOME/Tools/emsdk/emsdk_env.sh" ] && EMSDK_QUIET=1 \. "$HOME/Tools/emsdk/emsdk_env.sh"
