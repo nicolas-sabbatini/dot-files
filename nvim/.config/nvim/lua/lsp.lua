@@ -2,22 +2,6 @@ vim.lsp.config("*", {
 	capabilities = require("blink.cmp").get_lsp_capabilities(),
 })
 
-vim.lsp.config("rust_analyzer", {
-	settings = {
-		["rust-analyzer"] = {
-			cargo = {
-				allFeatures = true,
-				loadOutDirsFromCheck = true,
-				runBuildScripts = true,
-			},
-			check = {
-				command = "clippy",
-				extraArgs = { "--no-deps", "--", "-W", "clippy::pedantic" },
-			},
-		},
-	},
-})
-
 vim.lsp.config("lua_ls", {
 	root_dir = function(bufnr, cb)
 		cb(vim.fs.root(bufnr, { ".git", ".luarc.json", "src" }))
@@ -51,4 +35,4 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
-vim.lsp.enable({ "rust_analyzer", "lua_ls" })
+vim.lsp.enable({ "lua_ls" })

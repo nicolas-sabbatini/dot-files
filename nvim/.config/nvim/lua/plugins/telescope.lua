@@ -41,37 +41,40 @@ return {
 			telescope.load_extension("fzf")
 		end,
 		keys = {
-			{
-				"<leader>/",
-				call_telescope("live_grep", { hidden = true, no_ignore = false }),
-				desc = "Grep (root dir)",
-			},
-			{
-				"<leader>ff",
-				call_telescope("find_files", { hidden = true, no_ignore = false }),
-				desc = "Find Files ALL",
-			},
+			-- General
+			{ "<leader>tr", call_telescope("resume"), desc = "Telescope reume" },
+			{ "<leader>cq", call_telescope("quickfix"), desc = "Quickfix List" },
+			-- Navegation
+			{ "<leader>/", call_telescope("live_grep", { hidden = true }), desc = "Grep (root dir)" },
+			{ "<leader>ff", call_telescope("find_files", { hidden = true }), desc = "Find Files" },
 			{
 				"<leader>fF",
 				call_telescope("find_files", { hidden = true, no_ignore = true }),
-				desc = "Find Files",
+				desc = "Find Files ALL",
 			},
-			{
-				"<leader>fg",
-				call_telescope("git_files"),
-				desc = "Find Files Git",
-			},
+			{ "<leader>fg", call_telescope("git_files"), desc = "Find Files Git" },
 			{ "<leader>be", call_telescope("buffers"), desc = "Find Buffer" },
 			{
 				"<leader>e",
-				"<cmd>Telescope file_browser path=%:p:h select_buffer=true initial_mode=normal<cr>",
-				desc = "Explorer current file",
+				call_telescope("file_browser", { path = "%:p:h", select_buffer = true, initial_mode = "normal" }),
+				desc = "Explorer",
+			},
+			{ "<leader>E", call_telescope("file_browser", { initial_mode = "normal" }), desc = "Explorer root" },
+			-- LSP
+			{
+				"<leader>cb",
+				call_telescope("diagnostics", { bufnr = 0, initial_mode = "normal" }),
+				desc = "File diagnostics",
 			},
 			{
-				"<leader>E",
-				"<cmd>Telescope file_browser initial_mode=normal<cr>",
-				desc = "Explorer root",
+				"<leader>cw",
+				call_telescope("diagnostics", { initial_mode = "normal" }),
+				desc = "Workspace diagnostics",
 			},
+			{ "glr", call_telescope("lsp_references"), desc = "Go references" },
+			{ "gli", call_telescope("lsp_implementations"), desc = "Go implementations" },
+			{ "gld", call_telescope("lsp_definitions"), desc = "Go definition" },
+			{ "glD", call_telescope("lsp_type_definitions"), desc = "Go type definition" },
 		},
 	},
 	{

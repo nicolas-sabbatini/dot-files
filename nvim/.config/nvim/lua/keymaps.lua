@@ -33,11 +33,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("user_lsp_keymaps", { clear = true }),
 	callback = function(args)
 		local buf = args.buf
-		map("n", "gld", vim.lsp.buf.definition, { buffer = buf, desc = "Go definition" })
-		map("n", "glD", vim.lsp.buf.declaration, { buffer = buf, desc = "Go declaration" })
-		map("n", "gli", vim.lsp.buf.implementation, { buffer = buf, desc = "Go implementation" })
-		map("n", "glo", vim.lsp.buf.type_definition, { buffer = buf, desc = "Go symbol definition" })
-		map("n", "glr", vim.lsp.buf.references, { buffer = buf, desc = "Go references" })
 		map("i", "<C-h>", vim.lsp.buf.signature_help, { buffer = buf, desc = "Signature help" })
 		map("n", "<leader>cr", vim.lsp.buf.rename, { buffer = buf, desc = "Rename symbol" })
 		map("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = buf, desc = "Code action" })
