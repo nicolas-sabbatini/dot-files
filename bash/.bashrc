@@ -63,13 +63,19 @@ source "$HOME/.bash_aliases"
 [ -d "$HOME/.zvm/self" ] && __append_to_path "$HOME/.zvm/self"
 [ -d "$HOME/.zvm/self" ] && export ZVM_INSTALL="$HOME/.zvm/self"
 
-# Load NVM if exist
-[ -d "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
+[ -d "$HOME/.config/nvm" ] && export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Load emsdk
 [ -s "$HOME/Tools/emsdk/emsdk_env.sh" ] && EMSDK_QUIET=1 \. "$HOME/Tools/emsdk/emsdk_env.sh"
+
+# Load PNPM
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME/bin:"*) ;;
+*) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
 
 # Load opencode
 export PATH=/home/nico/.opencode/bin:$PATH
